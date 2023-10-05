@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "vite": "^4.4.11",
+    "vite-plugin-rails": "^0.1.0"
+  }
+}
