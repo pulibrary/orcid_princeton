@@ -10,6 +10,7 @@ gem "bootsnap", require: false
 gem "jbuilder"
 gem "pg"
 gem "puma", ">= 5.0"
+gem "simplecov"
 gem "vite_plugin_legacy"
 gem "vite_rails"
 
