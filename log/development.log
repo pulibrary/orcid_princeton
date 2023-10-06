@@ -1,0 +1,288 @@
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "development_db" ENCODING = 'utf8'[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "development_db" ENCODING = 'utf8'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "development_db" ENCODING = 'utf8'[0m
+Started GET "/" for ::1 at 2023-10-06 11:35:37 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (8.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/colec/.asdf/installs/ruby/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/colec/.asdf/installs/ruby/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 374)
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 4232)
+
+
+Started GET "/" for ::1 at 2023-10-06 11:35:38 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/colec/.asdf/installs/ruby/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/colec/.asdf/installs/ruby/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 12)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 192)
+
+
+Started GET "/home" for ::1 at 2023-10-06 11:37:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (7.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/home" for ::1 at 2023-10-06 11:38:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (8.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+Started GET "/" for ::1 at 2023-10-06 11:38:57 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 121)
+Building with Vite ⚡️
+vite v4.4.11 building for development...
+
+transforming...
+
+✓ 1 modules transformed.
+
+rendering chunks...
+
+computing gzip size...
+
+../../public/vite-dev/manifest-assets.json            0.00 kB │ gzip: 0.02 kB
+
+../../public/vite-dev/manifest.json                   0.15 kB │ gzip: 0.11 kB
+
+../../public/vite-dev/assets/application-b40e3d44.js  0.13 kB │ gzip: 0.13 kB
+
+✓ built in 28ms
+
+Build with Vite complete: /Users/colec/projects/pdc_orcid/public/vite-dev
+  Rendered layout layouts/application.html.erb (Duration: 665.2ms | Allocations: 7485)
+Completed 500 Internal Server Error in 669ms (ActiveRecord: 0.0ms | Allocations: 9170)
+
+
+  
+ActionView::Template::Error (Vite Ruby can't find entrypoints/application.css in public/vite-dev/manifest.json or public/vite-dev/manifest-assets.json.
+
+Possible causes:
+  - The file path is incorrect.
+  - The file is not in the entrypoints directory.
+  - Some files are outside the sourceCodeDir, and have not been added to watchAdditionalPaths.
+
+Visit the Troubleshooting guide for more information:
+  https://vite-ruby.netlify.app/guide/troubleshooting.html#troubleshooting
+
+
+Content in your manifests:
+{
+  "entrypoints/application.js": {
+    "file": "/vite-dev/assets/application-b40e3d44.js",
+    "isEntry": true,
+    "src": "entrypoints/application.js"
+  }
+}
+
+Last build in development mode:
+{
+  "success": true,
+  "errors": "",
+  "timestamp": "2023-10-06 11:38:58",
+  "vite_ruby": "3.3.4",
+  "digest": "1d5b77dbe026d1acf8701919981a68f91c05467c"
+}
+
+):
+     8:     <%= csp_meta_tag %>
+     9: 
+    10:     <%= vite_client_tag %>
+    11:     <%= vite_stylesheet_tag 'application', data: { "turbo-track": "reload" } %>
+    12:     <%= vite_javascript_tag 'application' %>
+    13: 
+    14:     <!--
+  
+app/views/layouts/application.html.erb:11
+Started GET "/" for ::1 at 2023-10-06 11:39:39 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 930)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 1198)
+
+
+Started GET "/" for ::1 at 2023-10-06 11:41:14 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 18456)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 18677)
+
+
+Started GET "/" for ::1 at 2023-10-06 11:41:18 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 968)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 1185)
+
+
+Started GET "/" for ::1 at 2023-10-06 11:45:14 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 986)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 1203)
+
+
+Started GET "/" for ::1 at 2023-10-06 11:45:18 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 956)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 1175)
+
+
+Started GET "/" for ::1 at 2023-10-06 11:45:34 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 977)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 1194)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:00:49 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 6)
+Building with Vite ⚡️
+vite v4.4.11 building for development...
+
+transforming...
+
+✓ 2 modules transformed.
+
+rendering chunks...
+
+computing gzip size...
+
+../../public/vite-dev/manifest-assets.json             0.00 kB │ gzip: 0.02 kB
+
+../../public/vite-dev/manifest.json                    0.30 kB │ gzip: 0.14 kB
+
+../../public/vite-dev/assets/application-179954eb.css  0.06 kB │ gzip: 0.06 kB
+
+../../public/vite-dev/assets/application-b40e3d44.js   0.13 kB │ gzip: 0.13 kB
+
+✓ built in 50ms
+
+Build with Vite complete: /Users/colec/projects/pdc_orcid/public/vite-dev
+Skipping vite build. Watched files have not changed since the last build at 2023-10-06 12:00:50
+Skipping vite build. Watched files have not changed since the last build at 2023-10-06 12:00:50
+  Rendered layout layouts/application.html.erb (Duration: 515.6ms | Allocations: 4051)
+Completed 200 OK in 518ms (Views: 518.0ms | ActiveRecord: 0.0ms | Allocations: 4270)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:01:41 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 959)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 1177)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:01:43 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 959)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 1177)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:02:25 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 960)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 1178)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:03:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (8.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2955)
+Completed 200 OK in 15ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 6950)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:03:51 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 973)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1196)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:04:18 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 968)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 1188)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:08:50 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (8.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2955)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 6950)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:08:52 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 967)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 1190)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:10:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (8.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2964)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 6959)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:16:53 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (8.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2970)
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 6964)
+
+
+Started GET "/" for ::1 at 2023-10-06 12:45:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (8.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2955)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 6948)
+
+
