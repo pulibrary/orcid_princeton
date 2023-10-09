@@ -1,5 +1,7 @@
 # pdc_orcid
-To support researchers and leverage ORCiD identifiers for research data in the Princeton community
+This application leverages ORCiD identifiers and ORCiD ID token services for researchers in the Princeton community.
+
+[![CircleCI](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main)
 
 ## Dependencies
 * Ruby: 3.2.0
@@ -41,3 +43,6 @@ To stop database services:
 
 `bundle exec rake servers:stop` or `lando stop`
 
+## Release and deployment
+
+RDSS uses the same [release and deployment process](https://github.com/pulibrary/rdss-handbook/blob/main/release_process.md) for all projects.
