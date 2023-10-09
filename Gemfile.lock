@@ -135,6 +135,7 @@ GEM
     irb (1.8.1)
       rdoc
       reline (>= 0.3.8)
+    isni (1.2)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -327,6 +328,7 @@ DEPENDENCIES
   capybara
   debug
   ed25519
+  isni
   jbuilder
   pg
   puma (>= 5.0)
