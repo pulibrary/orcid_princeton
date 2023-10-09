@@ -3,6 +3,14 @@
     "sourceCodeDir": "app/javascript",
     "watchAdditionalPaths": []
   },
+  "staging": {
+    "publicOutputDir": "vite",
+    "publicDir": "public"
+  },
+  "production": {
+    "publicOutputDir": "vite",
+    "publicDir": "public"
+  },
   "development": {
     "autoBuild": true,
     "publicOutputDir": "vite-dev",

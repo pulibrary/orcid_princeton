@@ -1,4 +1,4 @@
-name: pdc-describe
+name: pdc-orcid
 services:
   database:
     type: postgres:14

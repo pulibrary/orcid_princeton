@@ -6,7 +6,9 @@ ruby "3.2.0"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.0"
 
+gem "bcrypt_pbkdf"
 gem "bootsnap", require: false
+gem "ed25519"
 gem "jbuilder"
 gem "pg"
 gem "puma", ">= 5.0"
@@ -22,6 +24,9 @@ group :development, :test do
 end
 
 group :development do
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-passenger", require: false
+  gem "capistrano-rails", "~> 1.6", require: false
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
