@@ -9,6 +9,7 @@ gem "rails", "~> 7.1.0"
 gem "bcrypt_pbkdf"
 gem "bootsnap", require: false
 gem "ed25519"
+gem "isni"
 gem "jbuilder"
 gem "pg"
 gem "puma", ">= 5.0"
