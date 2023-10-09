@@ -1,7 +1,7 @@
 # pdc_orcid
 This application leverages ORCiD identifiers and ORCiD ID token services for researchers in the Princeton community.
 
-[![CircleCI](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main)
+[![CircleCI](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main) [![Coverage Status](https://coveralls.io/repos/github/pulibrary/pdc_orcid/badge.svg?branch=main)](https://coveralls.io/github/pulibrary/pdc_orcid?branch=main)
 
 ## Dependencies
 * Ruby: 3.2.0

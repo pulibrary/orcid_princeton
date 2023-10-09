@@ -37,4 +37,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "coveralls_reborn", "~> 0.24.0", require: false
+
 end
