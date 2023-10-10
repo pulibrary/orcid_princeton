@@ -9,6 +9,7 @@ parserOptions:
 ignorePatterns:
   - 'app/javascript/entrypoints/vendor/**'
   - 'app/javascript/**/*.css'
+  - 'app/javascript/images/*'
 globals:
   $: readonly
   pdc: readonly     # TODO: Used to pass datacite enums from Ruby to JS. When we move form construction to Ruby, should not be needed.
