@@ -1,7 +1,7 @@
 # pdc_orcid
 This application leverages ORCiD identifiers and ORCiD ID token services for researchers in the Princeton community.
 
-[![CircleCI](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main) [![Coverage Status](https://coveralls.io/repos/github/pulibrary/pdc_orcid/badge.svg?branch=main)](https://coveralls.io/github/pulibrary/pdc_orcid?branch=main)
+[![CircleCI](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main)
 
 ## Dependencies
 * Ruby: 3.2.0
@@ -42,6 +42,14 @@ Start and initialize database services with:
 To stop database services:
 
 `bundle exec rake servers:stop` or `lando stop`
+
+### Running tests
+1. Fast: `bundle exec rspec spec`
+2. Run in browser: `RUN_IN_BROWSER=true bundle exec rspec spec`
+
+### Starting the development server
+1. `bundle exec rails s -p 3000`
+2. Access application at [http://localhost:3000/](http://localhost:3000/)
 
 ## Release and deployment
 
