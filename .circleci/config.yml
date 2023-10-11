@@ -5,7 +5,7 @@ commands:
       - run: gem install bundler -v '2.3.22'
       - run: cp Gemfile.lock Gemfile.lock.bak
       - restore_cache:
-          key: &gem_key pdc_orcid-cimg-{{ checksum "Gemfile.lock.bak" }}
+          key: &gem_key orcid_princeton-cimg-{{ checksum "Gemfile.lock.bak" }}
       - run: bundle install --path ./vendor/bundle
       - save_cache:
           key: *gem_key
@@ -13,7 +13,7 @@ commands:
             - ./vendor/bundle
       - restore_cache:
           name: Restore Yarn Package Cache
-          key: &yarn_key pdc_orcid-yarn-cimg-{{ checksum "yarn.lock" }}
+          key: &yarn_key orcid_princeton-yarn-cimg-{{ checksum "yarn.lock" }}
       - run:
           name: Install NPM Dependencies via Yarn
           command: yarn install --frozen-lockfile
@@ -26,7 +26,7 @@ orbs:
   browser-tools: circleci/browser-tools@1.4.4
 jobs:
   build:
-    working_directory: ~/pdc_orcid
+    working_directory: ~/orcid_princeton
     docker:
       - &ruby_docker
         image: cimg/ruby:3.2.0-browsers
@@ -37,7 +37,7 @@ jobs:
       - run: sudo apt update && sudo apt install postgresql-client libmsgpack-dev
       - install_dependencies
       - persist_to_workspace:
-          root: &root '~/pdc_orcid'
+          root: &root '~/orcid_princeton'
           paths: '*'
 
   rubocop:
@@ -53,14 +53,14 @@ jobs:
 
   eslint:
     # We don't actually need any of the ruby environment to lint JS... but use what we have for now.
-    working_directory: ~/pdc_orcid
+    working_directory: ~/orcid_princeton
     docker:
       - image: cimg/ruby:3.2.0-browsers
         environment:
           RAILS_ENV: test
     steps:
       - attach_workspace:
-          at: '~/pdc_orcid'
+          at: '~/orcid_princeton'
       - install_dependencies
       - run:
           name: Run eslint
@@ -74,7 +74,7 @@ jobs:
       - *ruby_docker
       - image: postgres:15-alpine
         environment:
-          POSTGRES_USER: pdc_orcid_user
+          POSTGRES_USER: orcid_princeton_user
           POSTGRES_DB: test_db
           POSTGRES_HOST_AUTH_METHOD: trust
     steps:
@@ -95,8 +95,8 @@ jobs:
           paths: 'coverage'
       - store_artifacts:
           path:
-            ~/pdc_orcid/coverage
-            ~/pdc_orcid/tmp/screenshots
+            ~/orcid_princeton/coverage
+            ~/orcid_princeton/tmp/screenshots
 
   coverage_report:
     working_directory: *root
@@ -111,7 +111,7 @@ jobs:
             # TODO set this to something better than 0 when we get some tests
             RAILS_ENV=test bundle exec rake simplecov:report_coverage\[32.53\]
       - store_artifacts:
-          path: ~/pdc_orcid/coverage
+          path: ~/orcid_princeton/coverage
           destination: coverage
 
 workflows:
