@@ -2,8 +2,12 @@
 require "devise"
 
 class User < ApplicationRecord
+<<<<<<< HEAD
   devise :omniauthable
   has_many :tokens dependent: :destroy
+=======
+  has_many :tokens, dependent: :destroy
+>>>>>>> Fixed typo
 
   validates :uid, presence: true
   validate do |user|

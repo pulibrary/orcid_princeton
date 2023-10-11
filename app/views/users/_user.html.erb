@@ -31,12 +31,12 @@
 
 </div>
 
-<% if @user.tokens.count > 0 %>
+<% if user.tokens.count > 0 %>
   <div id="user-tokens">
     <br/>
     <b>ORCiD tokens</b>
     <ul>
-      <% @user.tokens.each do |token| %>
+      <% user.tokens.each do |token| %>
         <li><%= token.token_type %>, <%= token.expiration %>, <%= token.scope %></li>
       <% end %>
     </ul>
