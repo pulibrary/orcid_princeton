@@ -18,10 +18,15 @@ gem "simplecov"
 gem "vite_rails"
 gem "vite_ruby"
 
+# Single sign on
+gem "devise"
+gem "omniauth-cas"
+
 group :development, :test do
   gem "bixby"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
+  gem "factory_bot_rails", require: false
   gem "rspec-rails"
 end
 
@@ -36,5 +41,6 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
+  gem "database_cleaner-active_record"
   gem "selenium-webdriver"
 end

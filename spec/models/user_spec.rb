@@ -34,4 +34,28 @@ RSpec.describe User, type: :model do
     expect(user.errors.count).to eq(1)
     expect(user.errors.first.message).to eq("Invalid format for ORCID")
   end
+
+  describe "#from_cas" do
+    let(:access_token_full_extras) do
+      OmniAuth::AuthHash.new(provider: "cas", uid: "test123",
+                             extra: OmniAuth::AuthHash.new(mail: "who@princeton.edu", user: "test123", authnContextClass: "mfa-duo",
+                                                           campusid: "who.areyou", puresidentdepartmentnumber: "41999",
+                                                           title: "The Developer, Library - Information Technology.", uid: "test123",
+                                                           universityid: "999999999", displayname: "Areyou, Who", pudisplayname: "Areyou, Who",
+                                                           edupersonaffiliation: "staff", givenname: "Who",
+                                                           sn: "Areyou", department: "Library - Information Technology",
+                                                           edupersonprincipalname: "who@princeton.edu",
+                                                           puresidentdepartment: "Library - Information Technology",
+                                                           puaffiliation: "stf", departmentnumber: "41999", pustatus: "stf"))
+    end
+
+    it "returns a user object with name values set" do
+      user = described_class.from_cas(access_token_full_extras)
+      expect(user).to be_a described_class
+      expect(user.given_name).to eq("Who")
+      expect(user.family_name).to eq("Areyou")
+      expect(user.display_name).to eq("Areyou, Who")
+      expect(user.email).to eq("who@princeton.edu")
+    end
+  end
 end
