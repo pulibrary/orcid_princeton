@@ -1,4 +1,4 @@
-name: pdc-orcid
+name: orcid-princeton
 services:
   database:
     type: postgres:14

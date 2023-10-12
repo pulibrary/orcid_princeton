@@ -1,4 +1,4 @@
-# pdc_orcid
+# ORCID@Princeton
 This application leverages ORCID services and ORCID iDs for researchers in the Princeton community.
 
 [![CircleCI](https://circleci.com/gh/pulibrary/orcid_princeton/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/orcid_princeton/tree/main)
