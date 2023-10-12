@@ -1,5 +1,5 @@
-# orcid_princeton
-This application leverages ORCiD identifiers and ORCiD ID token services for researchers in the Princeton community.
+# pdc_orcid
+This application leverages ORCID services and ORCID iDs for researchers in the Princeton community.
 
 [![CircleCI](https://circleci.com/gh/pulibrary/orcid_princeton/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/orcid_princeton/tree/main)
 
@@ -54,3 +54,12 @@ To stop database services:
 ## Release and deployment
 
 RDSS uses the same [release and deployment process](https://github.com/pulibrary/rdss-handbook/blob/main/release_process.md) for all projects.
+
+## ORCID Branding
+
+In compliance with ORCID's [general brand guidance](https://info.orcid.org/brand-guidelines/#h-general-brand-guidance) around capitalization of the ORCID organization name and ORCID identifier information, we use the following written style to refer to ORCID and ORCID identifiers:
+
+* **ORCID** - (noun) the ORCID organization; (adjective) part of a noun phrase that refers to things that are about ORCID, but not by the organization itself
+  * Noun example: "ORCID is a global, not-for-profit organization."
+  * Adjective example: "Click here to view your ORCID record"
+* **ORCID identifer** or **ORCID iD** (abbreviation) - unique identifer offered by the ORCID organization
