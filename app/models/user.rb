@@ -3,6 +3,7 @@ require "devise"
 
 class User < ApplicationRecord
   devise :omniauthable
+  has_many :tokens, dependent: :destroy
 
   validates :uid, presence: true
   validate do |user|
