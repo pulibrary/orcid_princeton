@@ -19,6 +19,7 @@ require "rspec/rails"
 # NOTE: require 'devise' after require 'rspec/rails'
 require "devise"
 require "database_cleaner/active_record"
+require "axe-rspec"
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -35,7 +36,7 @@ require "database_cleaner/active_record"
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join("spec", "support", "**", "*.rb")].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
