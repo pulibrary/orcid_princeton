@@ -20,7 +20,7 @@ development:
 test:
   <<: *default
   database: test_db
-  username: <%= ENV["lando_database_creds_user"] || "pdc_orcid_user" %>
+  username: <%= ENV["lando_database_creds_user"] || "orcid_princeton_user" %>
 
 staging: &staging
   adapter: postgresql

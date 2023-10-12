@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
+    root "users#index"
+  end
+
   get "home/index"
   resources :landing, only: [:index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,4 +16,11 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root "home#index"
+
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
+  devise_scope :user do
+    get "sign_in", to: "devise/sessions#new", as: :new_user_session
+    get "sign_out", to: "devise/sessions#destroy", as: :destroy_user_session
+  end
 end

@@ -1,7 +1,7 @@
 # pdc_orcid
 This application leverages ORCID services and ORCID iDs for researchers in the Princeton community.
 
-[![CircleCI](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/pdc_orcid/tree/main)
+[![CircleCI](https://circleci.com/gh/pulibrary/orcid_princeton/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/orcid_princeton/tree/main)
 
 ## Dependencies
 * Ruby: 3.2.0
