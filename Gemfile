@@ -41,6 +41,7 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "axe-core-rspec"
   gem "capybara"
   gem "database_cleaner-active_record"
   gem "selenium-webdriver"
