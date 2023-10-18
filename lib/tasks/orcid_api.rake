@@ -3,7 +3,6 @@ require "sul_orcid_client"
 
 namespace :orcid_api do
   task :fetch, [:orcid_id] => [:environment] do |_, args|
-
     if ENV["ORCID_CLIENT_ID"].nil?
       puts "ORCID_CLIENT_ID not found on the ENV variables"
       exit
@@ -22,7 +21,7 @@ namespace :orcid_api do
     # real ORCID URL once we have access to production.
     client = SulOrcidClient.configure(
       client_id: ENV["ORCID_CLIENT_ID"],
-      client_secret: ENV["ORCID_CLIENT_SECRET"],
+      client_secret: ENV["c"],
       base_url: "https://api.sandbox.orcid.org",
       base_public_url: "https://pub.sandbox.orcid.org",
       base_auth_url: "https://sandbox.orcid.org"
