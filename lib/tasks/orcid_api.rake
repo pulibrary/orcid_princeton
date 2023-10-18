@@ -21,7 +21,7 @@ namespace :orcid_api do
     # real ORCID URL once we have access to production.
     client = SulOrcidClient.configure(
       client_id: ENV["ORCID_CLIENT_ID"],
-      client_secret: ENV["c"],
+      client_secret: ENV["ORCID_CLIENT_SECRET"],
       base_url: "https://api.sandbox.orcid.org",
       base_public_url: "https://pub.sandbox.orcid.org",
       base_auth_url: "https://sandbox.orcid.org"
