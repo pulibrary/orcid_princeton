@@ -9,5 +9,13 @@ describe "accessibility", type: :system, js: true do
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508)
         .skipping(:'color-contrast') # false positives
     end
+
+    # Re-enable this after the orcid auth feature is working
+    xit "prompts the user to register with orcid if they do not have an orcid on file" do
+      visit "/orcid"
+      expect(page).to be_axe_clean
+        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508)
+        .skipping(:'color-contrast') # false positives
+    end
   end
 end

@@ -28,10 +28,12 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
   gem "factory_bot_rails", require: false
+  gem "ffaker"
   gem "rspec-rails"
 end
 
 group :development do
+  gem "byebug"
   gem "capistrano", "~> 3.10", require: false
   gem "capistrano-passenger", require: false
   gem "capistrano-rails", "~> 1.6", require: false
