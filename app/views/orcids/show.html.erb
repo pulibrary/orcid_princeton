@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div class="orcid_welcome">
+Welcome, <%= @user.display_name %>
+<% if @user.orcid %>
+  <%= render "authorize" %>
+<% else %>
+  <%= render "register" %>
+<% end %>
+</div>
