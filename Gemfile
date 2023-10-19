@@ -19,6 +19,8 @@ gem "simplecov"
 gem "vite_rails"
 gem "vite_ruby"
 
+gem "sul_orcid_client"
+
 # Single sign on
 gem "devise"
 gem "omniauth-cas"
