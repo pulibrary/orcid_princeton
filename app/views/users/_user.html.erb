@@ -1,4 +1,22 @@
 <div id="<%= dom_id user %>">
+<h2>Welcome, <%= @user.display_name %></h2>
+
+<% if @user.orcid.blank? %>
+  <div class="no_orcid">You do not have an ORCID iD associated with your account yet.
+    If you already have an ORCID iD, please click <%= link_to "here", edit_user_path(@user), class: "edit-user-link" %>
+ to add it to your account. 
+    If you do not have an ORCID iD, please click <%= link_to "here", "https://orcid.org/register" %> to create one.</div> 
+<% elsif @user.tokens.empty? %>
+<div>
+Your ORCID iD is <%= @user.orcid %>.
+
+This application is asking you to add Princeton University as a <%= link_to "Trusted Organization", "https://support.orcid.org/hc/en-us/articles/360006973893" %>.  
+This will allow Princeton University to read your ORCID record and add information to it. 
+
+<%= link_to "Authenticate to ORCID.org", "https://example.com" %>
+</div>
+<% end %>
+
   <p>
     <strong>Uid:</strong>
     <%= user.uid %>
