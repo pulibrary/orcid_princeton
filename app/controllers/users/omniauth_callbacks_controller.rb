@@ -9,6 +9,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:notice] = "You are not authorized"
     else
       sign_in_and_redirect @user, event: :authentication # this will throw if @user is not activated
+      redirect_to "/orcids/#{@user.id}/show"
       if is_navigational_format?
         set_flash_message(:notice, :success, kind: "Princeton Central Authentication Service")
       end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "orcids/:id", to: "orcids#show", as: :orcid_show
 
-  match '/auth/:provider/callback' => 'orcids#create'
+  match '/auth/:provider/callback' => 'orcids#create' , via: [:get, :post]
 
   get "home/index"
   resources :landing, only: [:index]
