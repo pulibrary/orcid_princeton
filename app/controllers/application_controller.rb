@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def new_session_path(_scope)
     new_user_session_path
   end
+
+  def after_sign_in_path_for(_resource)
+    "/users/#{@user.id}"
+  end
 end
