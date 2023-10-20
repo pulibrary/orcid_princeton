@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+require "byebug"
+
 FactoryBot.define do
   factory :user do
     sequence(:uid) { "uid#{srand}" }
@@ -8,7 +10,7 @@ FactoryBot.define do
     display_name { "#{given_name} #{family_name}" }
 
     factory :user_with_orcid do
-      orcid { "0000-0003-3898-7202" }
+      orcid { User.fake_orcid }
     end
   end
 end
