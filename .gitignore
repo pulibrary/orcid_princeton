@@ -63,3 +63,7 @@ node_modules
 # https://vitejs.dev/guide/env-and-mode.html#env-files
 *.local
 .vite
+
+/config/credentials/staging.key
+
+/config/credentials/production.key
