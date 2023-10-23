@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require "byebug"
 
 FactoryBot.define do
   factory :user do
