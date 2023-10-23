@@ -13,22 +13,6 @@ class User < ApplicationRecord
     end
   end
 
-  def self.fake_orcid
-    orcid_low = 150_000_007
-    orcid_high = 350_000_001
-    raw_orcid = rand(orcid_low..orcid_high).to_s
-    number_array = raw_orcid.to_s.chars
-    total = 0
-    number_array.each_with_index do |number, _index|
-      total = (total + number.to_i) * 2
-    end
-    remainder = total % 11
-    result = (12 - remainder) % 11
-    check_digit = result == 10 ? "X" : result.to_s
-    number_array << check_digit
-    number_array.join.rjust(16, "0").chars.each_slice(4).map(&:join).join("-")
-  end
-
   def self.from_cas(access_token)
     user = User.find_by(uid: access_token.uid)
     if user.nil?
