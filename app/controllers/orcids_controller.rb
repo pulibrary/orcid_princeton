@@ -6,6 +6,7 @@ class OrcidsController < ApplicationController
 
   # Authenticate to ORCID.org
   def create
+    byebug
     omniauth = request.env["omniauth.auth"]
     session[:omniauth] = omniauth
     session[:params]   = params

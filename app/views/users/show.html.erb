@@ -13,7 +13,7 @@ Your ORCID iD is <%= @user.orcid %>.
 This application is asking you to add Princeton University as a <%= link_to "Trusted Organization", "https://support.orcid.org/hc/en-us/articles/360006973893" %>.  
 This will allow Princeton University to read your ORCID record and add information to it. 
 
-    <%= button_to "Log In", user_orcid_omniauth_authorize_path, class: "btn btn-primary log-in" %>
+    <%= button_to "Log In", "https://sandbox.orcid.org/oauth/authorize?client_id=#{ENV["ORCID_CLIENT_ID"]}[&redirect_uri=http:%2F%2Flocalhost:3000%2Forcid_redirect&response_type=code&scope=%2Fauthenticate&show_login=true", class: "btn btn-primary log-in" %>
 </div>
 <% end %>
 

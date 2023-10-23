@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
 
   get "orcids/:id", to: "orcids#show", as: :orcid_show
+  get "orcid_redirect", to: "orcids#create", as: :orcid_create
+  post "orcid_redirect", to: "orcids#create", as: :orcid_create_post
 
   get "home/index"
   resources :landing, only: [:index]
