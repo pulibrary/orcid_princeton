@@ -21,7 +21,7 @@ FactoryBot.define do
         # Calculate the check digit
         number_array = raw_orcid.to_s.chars
         total = 0
-        number_array.each_with_index do |number, _index|
+        number_array.each do |number|
           total = (total + number.to_i) * 2
         end
         remainder = total % 11
