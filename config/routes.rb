@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  mount HealthMonitor::Engine, at: "/"
+
   resources :users do
     root "users#index"
   end
 
   get "orcids/:id", to: "orcids#show", as: :orcid_show
+  match "/auth/:provider/callback" => "orcids#create", via: [:get, :post]
 
   get "home/index"
   resources :landing, only: [:index]
