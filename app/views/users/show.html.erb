@@ -9,7 +9,7 @@ This button does not work:
  <%= button_to "Log In", user_orcid_omniauth_authorize_path, class: "btn btn-primary log-in" %>
 
 This button works:
- <%= button_to "Log In", "https://sandbox.orcid.org/oauth/authorize?client_id=#{ENV["ORCID_CLIENT_ID"]}&redirect_uri=http:%2F%2Forcid-staging.princeton.edu%2Fauth%2Forcid%2Fcallback&response_type=code&scope=%2Fauthenticate&show_login=true", class: "btn btn-primary log-in" %>
+ <%= button_to "Log In", "https://sandbox.orcid.org/oauth/authorize?client_id=#{ENV["ORCID_CLIENT_ID"]}&redirect_uri=https:%2F%2Forcid-staging.princeton.edu%2Fauth%2Forcid%2Fcallback&response_type=code&scope=%2Fauthenticate&show_login=true", class: "btn btn-primary log-in" %>
 
 </div>
 
