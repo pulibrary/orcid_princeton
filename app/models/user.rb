@@ -2,7 +2,7 @@
 require "devise"
 
 class User < ApplicationRecord
-  devise :omniauthable, :omniauth_providers => [:cas, :orcid]
+  devise :omniauthable, omniauth_providers: [:cas, :orcid]
   has_many :tokens, dependent: :destroy
 
   validates :uid, presence: true

@@ -9,7 +9,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -293,10 +292,10 @@ Devise.setup do |config|
   config.omniauth :cas, host: "fed.princeton.edu", url: "https://fed.princeton.edu/cas"
 
   ## For ORCID
-  config.omniauth :orcid, ENV['ORCID_CLIENT_ID'],
-                        ENV['ORCID_CLIENT_SECRET'],
-                        member: true,
-                        sandbox: true
+  config.omniauth :orcid, ENV["ORCID_CLIENT_ID"],
+                        ENV["ORCID_CLIENT_SECRET"]
+  # member: true,
+  # sandbox: true
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine

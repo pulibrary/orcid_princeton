@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   get "orcids/:id", to: "orcids#show", as: :orcid_show
 
-
-
   get "home/index"
   resources :landing, only: [:index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
