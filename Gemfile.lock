@@ -213,6 +213,8 @@ GEM
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (2.1.2)
+    health-monitor-rails (11.2.0)
+      railties (>= 6.1)
     honeybadger (5.2.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -476,6 +478,7 @@ DEPENDENCIES
   ed25519
   factory_bot_rails
   ffaker
+  health-monitor-rails
   honeybadger
   isni
   jbuilder

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  mount HealthMonitor::Engine, at: "/"
+
   resources :users do
     root "users#index"
   end
