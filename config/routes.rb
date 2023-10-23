@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   get "orcids/:id", to: "orcids#show", as: :orcid_show
+  match "/auth/orcid/callback", to: "users/omniauth_callbacks#orcid", via: [:get, :post]
 
   get "home/index"
   resources :landing, only: [:index]

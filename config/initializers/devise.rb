@@ -293,9 +293,9 @@ Devise.setup do |config|
 
   ## For ORCID
   config.omniauth :orcid, ENV["ORCID_CLIENT_ID"],
-                        ENV["ORCID_CLIENT_SECRET"]
-  # member: true,
-  # sandbox: true
+                        ENV["ORCID_CLIENT_SECRET"],
+                        member: true,
+                        sandbox: true
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
