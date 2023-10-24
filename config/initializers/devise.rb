@@ -318,3 +318,17 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
 end
+
+## For ORCID
+#  This is intentionally outside of the devise block,
+#  becuase including it inside the devise block did not allow member and sandbox to be passed
+Rails.application.config.middleware.use OmniAuth::Builder do
+  sandbox = Rails.env.development? || Rails.env.staging?
+  callback = if Rails.env.development?
+               # to allow us to use dev keys
+               "/orcid_redirect"
+             else
+               "/auth/orcid/callback"
+             end
+  provider :orcid, ENV["ORCID_CLIENT_ID"], ENV["ORCID_CLIENT_SECRET"], member: true, sandbox:, callback_path: callback
+end

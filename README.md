@@ -51,6 +51,11 @@ To stop database services:
 1. `bundle exec rails s -p 3000`
 2. Access application at [http://localhost:3000/](http://localhost:3000/)
 
+### ORCID Environment variables
+You need to have the following variables in your environment to connect with the ORCID sandbox.  Actual values are in lastpass under "ORCID Local API key".
+export ORCID_CLIENT_ID="xxx"
+export ORCID_CLIENT_SECRET="xxx"
+
 ## Release and deployment
 
 RDSS uses the same [release and deployment process](https://github.com/pulibrary/rdss-handbook/blob/main/release_process.md) for all projects.

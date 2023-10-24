@@ -7,7 +7,9 @@ class OrcidsController < ApplicationController
   # Authenticate to ORCID.org
   def create
     omniauth = request.env["omniauth.auth"]
-    session[:omniauth] = omniauth
-    session[:params]   = params
+    current_user.orcid = omniauth.uid
+    current_user.save
+    Token.create_from_omniauth(omniauth.credentials, current_user)
+    redirect_to user_path(current_user)
   end
 end

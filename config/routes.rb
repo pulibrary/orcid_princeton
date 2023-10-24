@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   end
 
   get "orcids/:id", to: "orcids#show", as: :orcid_show
-  match "/auth/:provider/callback" => "orcids#create", via: [:get, :post]
+  # match "/auth/orcid/callback", to: "users/omniauth_callbacks#orcid", via: [:get, :post]
+  match "/auth/orcid/callback", to: "orcids#create", via: [:get, :post]
+  # TODO: remove when we get the matching API key from ORCID
+  match "/orcid_redirect", to: "orcids#create", via: [:get, :post]
 
   get "home/index"
   resources :landing, only: [:index]
