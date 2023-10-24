@@ -109,7 +109,7 @@ jobs:
           name: Merge and check coverage
           command: |
             # TODO set this to something better than 0 when we get some tests
-            RAILS_ENV=test bundle exec rake simplecov:report_coverage\[32.53\]
+            RAILS_ENV=test bundle exec rake simplecov:report_coverage\[93.96\]
       - store_artifacts:
           path: ~/orcid_princeton/coverage
           destination: coverage
