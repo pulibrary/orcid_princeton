@@ -22,7 +22,7 @@ RSpec.describe OrcidsController do
     @request.env["omniauth.auth"] = omniauth_hash
   end
 
-  it "creates the token fro omniauth" do
+  it "creates the token from omniauth" do
     sign_in user
     expect(user.orcid).to be_nil
     expect { get :create }.to change { Token.count }.by(1)
