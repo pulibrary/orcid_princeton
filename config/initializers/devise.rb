@@ -295,7 +295,8 @@ Devise.setup do |config|
   config.omniauth :orcid, ENV["ORCID_CLIENT_ID"],
                         ENV["ORCID_CLIENT_SECRET"],
                         member: true,
-                        sandbox: true
+                        sandbox: true,
+                        callback_url: 'http://localhost:3000/orcid_redirect'
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
@@ -323,4 +324,15 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+end
+
+Rails.application.config.middleware.use OmniAuth::Builder do
+  sandbox = Rails.env.development? || Rails.env.staging?
+  callback = if Rails.env.development?
+              # to allow us to use dev keys
+              '/orcid_redirect'
+             else
+              'auth/orcid/callback'
+             end 
+  provider :orcid, ENV['ORCID_CLIENT_ID'], ENV['ORCID_CLIENT_SECRET'], member: true, sandbox: sandbox, callback_path: callback
 end
