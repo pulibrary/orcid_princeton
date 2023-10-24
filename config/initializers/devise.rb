@@ -291,13 +291,6 @@ Devise.setup do |config|
   ## For CAS
   config.omniauth :cas, host: "fed.princeton.edu", url: "https://fed.princeton.edu/cas"
 
-  ## For ORCID
-  config.omniauth :orcid, ENV["ORCID_CLIENT_ID"],
-                        ENV["ORCID_CLIENT_SECRET"],
-                        member: true,
-                        sandbox: true,
-                        callback_url: "http://localhost:3000/orcid_redirect"
-
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
   # is mountable, there are some extra configurations to be taken into account.
@@ -326,6 +319,9 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
 end
 
+## For ORCID
+#  This is intentionally outside of the devise block, 
+#  becuase including it inside the devise block did not allow member and sandbox to be passed
 Rails.application.config.middleware.use OmniAuth::Builder do
   sandbox = Rails.env.development? || Rails.env.staging?
   callback = if Rails.env.development?
