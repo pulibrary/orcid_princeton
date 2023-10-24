@@ -320,7 +320,7 @@ Devise.setup do |config|
 end
 
 ## For ORCID
-#  This is intentionally outside of the devise block, 
+#  This is intentionally outside of the devise block,
 #  becuase including it inside the devise block did not allow member and sandbox to be passed
 Rails.application.config.middleware.use OmniAuth::Builder do
   sandbox = Rails.env.development? || Rails.env.staging?
