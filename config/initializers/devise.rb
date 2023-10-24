@@ -332,7 +332,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
               # to allow us to use dev keys
               '/orcid_redirect'
              else
-              'auth/orcid/callback'
+              '/auth/orcid/callback'
              end 
   provider :orcid, ENV['ORCID_CLIENT_ID'], ENV['ORCID_CLIENT_SECRET'], member: true, sandbox: sandbox, callback_path: callback
 end
