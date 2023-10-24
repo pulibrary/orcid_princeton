@@ -296,7 +296,7 @@ Devise.setup do |config|
                         ENV["ORCID_CLIENT_SECRET"],
                         member: true,
                         sandbox: true,
-                        callback_url: 'http://localhost:3000/orcid_redirect'
+                        callback_url: "http://localhost:3000/orcid_redirect"
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
@@ -329,10 +329,10 @@ end
 Rails.application.config.middleware.use OmniAuth::Builder do
   sandbox = Rails.env.development? || Rails.env.staging?
   callback = if Rails.env.development?
-              # to allow us to use dev keys
-              '/orcid_redirect'
+               # to allow us to use dev keys
+               "/orcid_redirect"
              else
-              '/auth/orcid/callback'
-             end 
-  provider :orcid, ENV['ORCID_CLIENT_ID'], ENV['ORCID_CLIENT_SECRET'], member: true, sandbox: sandbox, callback_path: callback
+               "/auth/orcid/callback"
+             end
+  provider :orcid, ENV["ORCID_CLIENT_ID"], ENV["ORCID_CLIENT_SECRET"], member: true, sandbox:, callback_path: callback
 end
