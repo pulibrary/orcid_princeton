@@ -8,7 +8,8 @@ class Token < ApplicationRecord
   def self.create_from_omniauth(credentials, user)
     create(
       token: credentials.token,
-      expiration: Time.at(credentials.expires_at)
+      expiration: Time.at(credentials.expires_at),
+      user: user
       # TODO: ADD REFRESH TOKEN
       # refresh_token: credentials.refresh_token
     )
