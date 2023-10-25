@@ -1,1 +1,12 @@
 @import "../../assets/stylesheets/application.css";
+
+
+
+.navbar-logo {
+    margin-left: 1em;
+}
+
+.user-info {
+    float: right;
+    margin-right: 1em;
+}
