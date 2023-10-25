@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   mount HealthMonitor::Engine, at: "/"
 
-  resources :users do
-    root "users#index"
-  end
+  resources :users, only: [:show]
 
   get "orcids/:id", to: "orcids#show", as: :orcid_show
   # match "/auth/orcid/callback", to: "users/omniauth_callbacks#orcid", via: [:get, :post]
@@ -13,8 +12,6 @@ Rails.application.routes.draw do
   match "/orcid_redirect", to: "orcids#create", via: [:get, :post]
 
   get "home/index"
-  resources :landing, only: [:index]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
