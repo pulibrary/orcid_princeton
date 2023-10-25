@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   mount HealthMonitor::Engine, at: "/"
 
+  # Branded error pages
+  match "/403", to: "errors#forbidden", via: :all
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
+
   resources :users, only: [:show]
 
   get "orcids/:id", to: "orcids#show", as: :orcid_show

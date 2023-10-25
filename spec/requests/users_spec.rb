@@ -39,12 +39,11 @@ RSpec.describe "/users", type: :request do
   context "Whan a user is signed in" do
     let(:user) { FactoryBot.create :user }
     before do
-      sign_in user
+      login_as user
     end
 
     describe "GET /show" do
       it "renders a successful response" do
-        user = User.create! valid_attributes
         get user_url(user)
         expect(response).to be_successful
       end

@@ -4,6 +4,7 @@ require "rails_helper"
 describe "user experience from start to finish", type: :system, js: true do
   context "a user without an orcid on file" do
     let(:user) { FactoryBot.create :user }
+    let(:user2) { FactoryBot.create :user }
     let(:orcid_identifier) { (FactoryBot.build :user_with_orcid).orcid }
     it "walks the user through the process of entering an ORCID and creating a token" do
       login_as user
@@ -23,6 +24,13 @@ describe "user experience from start to finish", type: :system, js: true do
         .skipping(:'color-contrast')
 
       expect(page).to have_content "This application is asking you to add Princeton University"
+
+      # Trying to access the page of another user should be forbidden.
+      visit "/users/#{user2.id}"
+      expect(page).to have_content "Forbidden"
+      expect(page).to be_axe_clean
+        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508)
+        .skipping(:'color-contrast')
     end
   end
 end
