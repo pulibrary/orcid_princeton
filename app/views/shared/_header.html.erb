@@ -1,10 +1,12 @@
 <header>
 <div>
   <%= link_to "ORCID@Princeton", root_path, class: 'navbar-logo' %>
+  <span class="user-info">
   <% if current_user %>
-    <%= current_user.display_name %>
+    <%= current_user.display_name %> <%= link_to "See your profile", user_path(current_user) %>
   <% else %>
     <%= button_to "Log In", user_cas_omniauth_authorize_path, class: "btn btn-primary log-in" %>
   <% end %>
+  </span>
 </div>
 </header>
