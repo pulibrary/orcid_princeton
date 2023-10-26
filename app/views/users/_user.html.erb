@@ -1,35 +1,11 @@
 <div id="<%= dom_id user %>">
-
   <p>
-    <strong>Uid:</strong>
-    <%= user.uid %>
-  </p>
-
-  <p>
-    <strong>Provider:</strong>
-    <%= user.provider %>
-  </p>
-
-  <p>
+    <div class="orcid_identifier">
     <strong>Orcid:</strong>
-    <%= user.orcid %>
+    <%= image_tag("ORCIDiD_icon32x32.png", options = {}) %>
+      <%= user.orcid %>
+    </div>
   </p>
-
-  <p>
-    <strong>Given name:</strong>
-    <%= user.given_name %>
-  </p>
-
-  <p>
-    <strong>Family name:</strong>
-    <%= user.family_name %>
-  </p>
-
-  <p>
-    <strong>Display name:</strong>
-    <%= user.display_name %>
-  </p>
-
 </div>
 
 <% if user.tokens.count > 0 %>
