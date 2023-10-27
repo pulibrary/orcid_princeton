@@ -1,35 +1,9 @@
 <div id="<%= dom_id user %>">
-
   <p>
-    <strong>Uid:</strong>
-    <%= user.uid %>
+    <div class="orcid_identifier">
+      <%= full_orcid_display(user.orcid) %>
+    </div>
   </p>
-
-  <p>
-    <strong>Provider:</strong>
-    <%= user.provider %>
-  </p>
-
-  <p>
-    <strong>Orcid:</strong>
-    <%= user.orcid %>
-  </p>
-
-  <p>
-    <strong>Given name:</strong>
-    <%= user.given_name %>
-  </p>
-
-  <p>
-    <strong>Family name:</strong>
-    <%= user.family_name %>
-  </p>
-
-  <p>
-    <strong>Display name:</strong>
-    <%= user.display_name %>
-  </p>
-
 </div>
 
 <% if user.tokens.count > 0 %>

@@ -34,6 +34,12 @@ FactoryBot.define do
         # Format the ORCID identifier with dashes between each 4 digits
         number_array.join.rjust(16, "0").chars.each_slice(4).map(&:join).join("-")
       end
+
+      factory :user_with_orcid_and_token do
+        after(:create) do |user|
+          FactoryBot.create(:token, user:)
+        end
+      end
     end
   end
 end
