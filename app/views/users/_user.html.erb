@@ -1,9 +1,7 @@
 <div id="<%= dom_id user %>">
   <p>
     <div class="orcid_identifier">
-    <strong>Orcid:</strong>
-    <%= image_tag vite_asset_path('images/ORCIDiD_icon32x32.png') %>
-      <%= user.orcid %>
+      <%= full_orcid_display(user.orcid) %>
     </div>
   </p>
 </div>

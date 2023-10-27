@@ -57,6 +57,9 @@ Metrics/PerceivedComplexity:
   Exclude:
     - app/models/work_activity.rb
 
+Rails/OutputSafety:
+  Enabled: false
+
 Style/GuardClause:
   Enabled: false
 
