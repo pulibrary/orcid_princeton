@@ -4,5 +4,7 @@
   This will allow Princeton University to read your ORCID record and add information to it.
   </div>
 
-
- <%= button_to "Log In", user_orcid_omniauth_authorize_path, class: "btn btn-primary log-in" %>
+<%= button_to( user_orcid_omniauth_authorize_path, class: "btn btn-primary log-in-orcid") do %>
+  <%= image_tag(vite_asset_path("images/ORCIDiD_icon32x32.png"), alt: "ORCID Logo")%>
+  <span>Create or connect your ORCID iD</span>
+<% end %>
