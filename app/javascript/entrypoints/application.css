@@ -16,3 +16,18 @@
     float: right;
     margin-right: 1em;
 }
+
+button.log-in-orcid {
+    padding: 0.5em;
+    background-color: white;
+    color: black;
+    border-color: black;
+    margin: 1em;
+    border-radius: 0.5em;
+}
+  
+/* Add this to align vertically */
+button > img,
+button > span {
+vertical-align: middle;
+}

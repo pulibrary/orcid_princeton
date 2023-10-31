@@ -24,6 +24,7 @@ describe "user experience from start to finish", type: :system, js: true do
         .skipping(:'color-contrast')
 
       expect(page).to have_content "This application is asking you to add Princeton University"
+      expect(page).to have_button "Create or connect your ORCID iD"
 
       # Trying to access the page of another user should be forbidden.
       visit "/users/#{user2.id}"
