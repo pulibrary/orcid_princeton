@@ -33,4 +33,10 @@ class User < ApplicationRecord
     self.display_name = access_token.extra.displayname || access_token.uid # "Harriet Tubman"
     save!
   end
+
+  # Are all of this user's tokens expired?
+  # returns true or false
+  def tokens_expired?
+    tokens.all?(&:expired?)
+  end
 end

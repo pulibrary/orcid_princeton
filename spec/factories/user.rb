@@ -40,6 +40,12 @@ FactoryBot.define do
           FactoryBot.create(:token, user:)
         end
       end
+
+      factory :user_with_expired_token do
+        after(:create) do |user|
+          FactoryBot.create(:expired_token, user:)
+        end
+      end
     end
   end
 end

@@ -25,4 +25,19 @@ RSpec.describe Token, type: :model do
     expect(token.id).to be_present
     # expect(token.refresh_token).to eq("4daad3c0-5bcd-4d39-b505-a515b32d2f87")
   end
+
+  context "#expired?" do
+    describe "when the expiration date is past" do
+      let(:token) { FactoryBot.build(:expired_token) }
+      it "returns true" do
+        expect(token.expired?).to eq(true)
+      end
+    end
+    describe "when the expiration date is in the future" do
+      let(:token) { FactoryBot.build(:token) }
+      it "returns false" do
+        expect(token.expired?).to eq(false)
+      end
+    end
+  end # context "#expired?"
 end
