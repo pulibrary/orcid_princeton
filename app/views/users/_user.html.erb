@@ -6,15 +6,8 @@
   </p>
 </div>
 
-<% if user.tokens.count > 0 %>
-  <div id="user-tokens">
-    <br/>
-    <b>ORCiD tokens</b>
-    <ul>
-      <% user.tokens.each do |token| %>
-        <li><%= token.token_type %>, <%= token.expiration %>, <%= token.scope %></li>
-      <% end %>
-    </ul>
-    <br/>
-  </div>
+<% if user.valid_token %>
+  <p>
+  Your token <b><%= user.valid_token.token %></b> grants Princeton access to read and update your ORCID record until <%= user.valid_token.expiration.strftime('%m/%d/%Y') %>.
+  </p>
 <% end %>
