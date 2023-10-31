@@ -324,11 +324,6 @@ end
 #  becuase including it inside the devise block did not allow member and sandbox to be passed
 Rails.application.config.middleware.use OmniAuth::Builder do
   sandbox = Rails.env.development? || Rails.env.staging? || ActiveModel::Type::Boolean.new.cast(ENV["ORCID_SANDBOX"])
-  callback = if Rails.env.development?
-               # to allow us to use dev keys
-               "/orcid_redirect"
-             else
-               "/auth/orcid/callback"
-             end
+  callback = "/auth/orcid/callback"
   provider :orcid, ENV["ORCID_CLIENT_ID"], ENV["ORCID_CLIENT_SECRET"], member: true, sandbox:, callback_path: callback
 end
