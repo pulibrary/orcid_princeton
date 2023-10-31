@@ -58,4 +58,20 @@ RSpec.describe User, type: :model do
       expect(user.email).to eq("who@princeton.edu")
     end
   end
+
+  # If all of a user's tokens are expired, then the user should be prompted to make a new one.
+  describe "#tokens_expired?" do
+    describe "when the user has an unexpired token" do
+      let(:user) { FactoryBot.create(:user_with_orcid_and_token) }
+      it "returns false" do
+        expect(user.tokens_expired?).to eq(false)
+      end
+    end
+    describe "when the user has no unexpired tokens" do
+      let(:user) { FactoryBot.create(:user_with_expired_token) }
+      it "returns true" do
+        expect(user.tokens_expired?).to eq(true)
+      end
+    end
+  end
 end
