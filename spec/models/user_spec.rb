@@ -74,4 +74,28 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  # return the unexpired token
+  describe "#valid_token" do
+    describe "when the user has an unexpired token" do
+      let(:user) { FactoryBot.create(:user_with_orcid_and_token) }
+      it "returns false" do
+        expect(user.valid_token).to eq(user.tokens.first)
+      end
+    end
+    describe "when the user has no unexpired tokens" do
+      let(:user) { FactoryBot.create(:user_with_expired_token) }
+      it "returns true" do
+        expect(user.valid_token).to be_nil
+      end
+    end
+    describe "when the user has an expired and unexpired token" do
+      let(:user) { FactoryBot.create(:user_with_expired_token) }
+      let(:second_token) { FactoryBot.create(:token, user:) }
+      it "returns true" do
+        second_token # make sure the second token exists
+        expect(user.valid_token).to eq(second_token)
+      end
+    end
+  end
 end
