@@ -9,6 +9,10 @@ This application leverages ORCID services and ORCID iDs for researchers in the P
 * yarn: 1.22.19
 * Lando: 3.6.2
 
+## Updating the banner
+
+Update the file `config/banner.yml`. Note that each environment can have its own banner text.
+
 ## Creating an ORCID sandbox account
 
   1. A Mailinator account is required for you to be able to verify your ORCID account. "Setup" your Mailinator your email:

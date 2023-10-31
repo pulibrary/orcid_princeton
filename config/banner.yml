@@ -1,0 +1,13 @@
+---
+development:
+  title: Welcome to the development site
+  body: This is a message for development
+test:
+  title: Welcome to the <i>test</i> site
+  body: This is a <b>test</b> <a href="mailto:fake@princeton.edu">message.</a>
+staging:
+  title: Welcome to ORCID@Princeton (Staging)!
+  body: This system is connected to the <a href="https://sandbox.orcid.org/">ORCID Sandbox</a>, NOT the real ORCID API. 
+production:
+  title: Welcome to ORCID@Princeton (Pre-Production)!
+  body: This system is connected to the <a href="https://sandbox.orcid.org/">ORCID Sandbox</a>, NOT the real ORCID API. 

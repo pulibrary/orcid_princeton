@@ -11,14 +11,23 @@ describe "user experience from start to finish", type: :system, js: true do
 
       # The user is redirected to the user edit screen after logging in.
       # The user has no orcid identifier or token yet.
-      # The page should be accessible.
       visit "/"
+
+      # The main page has a banner for annoucements
+      expect(page).to have_css "#banner"
+
+      # The page should be accessible.
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508)
         .skipping(:'color-contrast')
       expect(page).to have_content(user.display_name)
       click_on "See your profile"
+
+      # The user is redirected to the user page after logging in.
       expect(page).to have_content "Welcome, #{user.display_name}"
+
+      # The user page has a banner for annoucements and is accessible.
+      expect(page).to have_css "#banner"
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508)
         .skipping(:'color-contrast')
