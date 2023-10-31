@@ -34,4 +34,12 @@ describe "user experience from start to finish", type: :system, js: true do
         .skipping(:'color-contrast')
     end
   end
+  context "when a user has an expired token" do
+    let(:user) { FactoryBot.create :user_with_expired_token }
+    it "lets them know their token is expired" do
+      login_as user
+      visit "/users/#{user.id}"
+      expect(page).to have_content "Your ORCID token has expired"
+    end
+  end
 end
