@@ -31,3 +31,18 @@ button > img,
 button > span {
 vertical-align: middle;
 }
+
+#banner {
+    text-align: center;
+    background-color: #000000;
+    padding: 20px 0px 10px 0px;
+    border-bottom: #f58025 solid 2px;
+    color: #f58025;
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
