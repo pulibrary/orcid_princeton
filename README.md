@@ -9,6 +9,20 @@ This application leverages ORCID services and ORCID iDs for researchers in the P
 * yarn: 1.22.19
 * Lando: 3.6.2
 
+## Creating an ORCID sandbox account
+
+  1. A Mailinator account is required for you to be able to verify your ORCID account. "Setup" your Mailinator your email:
+     1. visit https://www.mailinator.com/v4/public/inboxes.jsp
+     1. put a fake email address (e.g., myname) into the search box at the top of the page.
+        * your email wil include `@mailinator.com` (e.g. `myname@mailinator.com`) even though you do not need to put `@mailinator.com` in the search box
+     1. Click go and you will be taken to the "inbox" for that email.
+  1. Use the mailinator email address (e.g. `myname@mailinator.com`) to register an account at https://sandbox.orcid.org/register
+  1. Record your login and password in a password manager so you can find them again.
+  1. Now in mailinator respond to the verification email.
+     * If you do not see your email make sure the search box has your email.  You do not need to include `mailinator.com`
+     * Click the verify button in the email
+  1. Your account should now be verified in the OCRID Sandbox
+
 ## Local development
 
 ### Setup
