@@ -39,4 +39,10 @@ class User < ApplicationRecord
   def tokens_expired?
     tokens.all?(&:expired?)
   end
+
+  def valid_token
+    return nil if tokens_expired?
+    valid_tokens = tokens.reject(&:expired?)
+    valid_tokens.first
+  end
 end

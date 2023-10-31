@@ -51,4 +51,13 @@ describe "user experience from start to finish", type: :system, js: true do
       expect(page).to have_content "Your ORCID token has expired"
     end
   end
+
+  context "when a user has a valid token" do
+    let(:user) { FactoryBot.create :user_with_orcid_and_token }
+    it "lets them know their token is expired" do
+      login_as user
+      visit "/users/#{user.id}"
+      expect(page).to have_content "grants Princeton access to read and update your ORCID record"
+    end
+  end
 end
