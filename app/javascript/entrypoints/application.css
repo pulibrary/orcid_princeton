@@ -1,6 +1,12 @@
 @import "../../assets/stylesheets/application.css";
 
-
+.navbar-princeton-logo{
+    margin-left: 1em;
+    text-decoration: none;
+}
+.navbar-princeton-logo img{
+    height: 3em;
+}
 
 .navbar-logo {
     margin-left: 1em;
