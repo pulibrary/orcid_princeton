@@ -12,7 +12,6 @@
   <% if current_user %>
     <p>Welcome, <%= current_user.display_name %></p>
     <p>You have already authenticated via the Princeton Central Authentication System.</p>
-    <p>Please visit <%= link_to "your profile page", "/users/#{current_user.id}" %> to connect your 
-    Princeton identity to your ORCID iD.</p>.
+    <p>Please visit <%= link_to "your profile page", "/users/#{current_user.id}" %>.</p>
   <% end %>
 </div>
