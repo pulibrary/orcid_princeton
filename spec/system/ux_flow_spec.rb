@@ -18,8 +18,7 @@ describe "user experience from start to finish", type: :system, js: true do
 
       # The page should be accessible.
       expect(page).to be_axe_clean
-        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508)
-        .skipping(:'color-contrast')
+        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508, :"best-practice")
       expect(page).to have_content(user.display_name)
       click_on "See your profile"
 
@@ -29,8 +28,7 @@ describe "user experience from start to finish", type: :system, js: true do
       # The user page has a banner for annoucements and is accessible.
       expect(page).to have_css "#banner"
       expect(page).to be_axe_clean
-        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508)
-        .skipping(:'color-contrast')
+        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508, :"best-practice")
 
       expect(page).to have_content "This application is asking you to add Princeton University"
       expect(page).to have_button "Create or connect your ORCID iD"
@@ -39,8 +37,7 @@ describe "user experience from start to finish", type: :system, js: true do
       visit "/users/#{user2.id}"
       expect(page).to have_content "Forbidden"
       expect(page).to be_axe_clean
-        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508)
-        .skipping(:'color-contrast')
+        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508, :"best-practice")
     end
   end
   context "when a user has an expired token" do
@@ -58,6 +55,28 @@ describe "user experience from start to finish", type: :system, js: true do
       login_as user
       visit "/users/#{user.id}"
       expect(page).to have_content "grants Princeton access to read and update your ORCID record"
+    end
+  end
+
+  context "when a banner is not present" do
+    before do
+      @config = Rails.configuration.banner
+      Rails.configuration.banner = nil
+    end
+
+    after do
+      Rails.configuration.banner = @config
+    end
+
+    it "shows no banner and is axe clean" do
+      visit "/"
+
+      # The main page has a banner for annoucements
+      expect(page).not_to have_css "#banner"
+
+      # The page should be accessible.
+      expect(page).to be_axe_clean
+        .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508, :"best-practice")
     end
   end
 end

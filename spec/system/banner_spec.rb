@@ -11,9 +11,9 @@ describe "Website banner", type: :system, js: true do
   it "renders html tags in the banner" do
     visit "/"
     expect(page).not_to have_content "<i>test</i>"
-    expect(page.find("div#banner h1 i").text).to eq "test"
+    expect(page.find("header#banner h1 i").text).to eq "test"
     expect(page).not_to have_content "<b>test</b>"
-    expect(page.find("div#banner p b").text).to eq "test"
+    expect(page.find("header#banner p b").text).to eq "test"
     expect(page).to have_link "message", href: "mailto:fake@princeton.edu"
   end
 end

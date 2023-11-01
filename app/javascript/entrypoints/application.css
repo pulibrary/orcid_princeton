@@ -46,10 +46,13 @@ vertical-align: middle;
       font-size: 18px;
     }
   }
+  .full_orcid_display img{
+    width: 2em
+  }
   @font-face {
     font-family: 'princetonmontidsregular';
-    src: url('fonts/princmonds-webfont.woff2') format('woff2'),
-         url('fonts/princmonds-webfont.woff') format('woff');
+    src: url('/fonts/princmonds-webfont.woff2') format('woff2'),
+         url('/fonts/princmonds-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
