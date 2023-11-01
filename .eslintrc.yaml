@@ -10,6 +10,7 @@ ignorePatterns:
   - 'app/javascript/entrypoints/vendor/**'
   - 'app/javascript/**/*.css'
   - 'app/javascript/images/*'
+  - 'app/javascript/fonts/*'
 globals:
   $: readonly
   isOrcid: readonly # TODO: Clean this up by using ESM import/export.
