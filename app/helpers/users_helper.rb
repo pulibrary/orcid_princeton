@@ -4,7 +4,7 @@ module UsersHelper
     return unless orcid_identifier
     full_orcid_display = ""
     full_orcid_display += "<div class='full_orcid_display'>"
-    full_orcid_display += image_tag vite_asset_path("images/ORCIDiD_icon32x32.png")
+    full_orcid_display += image_tag vite_asset_path("images/ORCIDiD_icon64x64.png"), alt: "OCRID icon"
     full_orcid_display += " "
     orcid_url = "https://orcid.org/#{orcid_identifier}"
     full_orcid_display += link_to orcid_url, orcid_url
