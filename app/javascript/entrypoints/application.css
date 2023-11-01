@@ -46,3 +46,12 @@ vertical-align: middle;
       font-size: 18px;
     }
   }
+  @font-face {
+    font-family: 'princetonmontidsregular';
+    src: url('fonts/princmonds-webfont.woff2') format('woff2'),
+         url('fonts/princmonds-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  p { font-family: 'princetonmontidsregular', Arial, sans-serif; }
