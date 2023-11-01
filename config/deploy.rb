@@ -5,7 +5,7 @@ lock "~> 3.17.3"
 set :application, "orcid_princeton"
 set :repo_url, "https://github.com/pulibrary/orcid_princeton.git"
 
-set :linked_dirs, %w[log public/system public/assets]
+set :linked_dirs, %w[log public/system public/assets node_modules]
 
 # Default branch is :main
 set :branch, ENV["BRANCH"] || "main"
