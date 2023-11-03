@@ -33,11 +33,11 @@ group :development, :test do
   gem "debug", platforms: %i[mri windows]
   gem "factory_bot_rails", require: false
   gem "ffaker"
+  gem "pry-byebug"
   gem "rspec-rails"
 end
 
 group :development do
-  gem "byebug"
   gem "capistrano", "~> 3.10", require: false
   gem "capistrano-passenger", require: false
   gem "capistrano-rails", "~> 1.6", require: false
