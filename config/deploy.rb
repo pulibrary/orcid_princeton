@@ -14,3 +14,5 @@ set :deploy_to, "/opt/orcid_princeton"
 
 # Must match `ViteRuby.config.public_output_dir`, which by default is 'vite'
 set :assets_prefix, "vite"
+
+before "deploy:reverted", "deploy:assets:precompile"
