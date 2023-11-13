@@ -323,7 +323,7 @@ end
 #  This is intentionally outside of the devise block,
 #  becuase including it inside the devise block did not allow member and sandbox to be passed
 Rails.application.config.middleware.use OmniAuth::Builder do
-  sandbox = Rails.env.development? || Rails.env.staging? || ActiveModel::Type::Boolean.new.cast(ENV["ORCID_SANDBOX"].downcase)
+  sandbox = Rails.env.development? || Rails.env.staging? || ActiveModel::Type::Boolean.new.cast(ENV["ORCID_SANDBOX"]&.downcase)
   callback = "/auth/orcid/callback"
   provider :orcid, ENV["ORCID_CLIENT_ID"], ENV["ORCID_CLIENT_SECRET"], member: true, sandbox:, callback_path: callback
 end
