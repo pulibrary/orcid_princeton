@@ -1,13 +1,19 @@
-<div id="<%= dom_id user %>">
+# frozen_string_literal: true
+dom_id user
+ %>">
   <p>
     <div class="orcid_identifier">
-      <%= full_orcid_display(user.orcid) %>
+# frozen_string_literal: true
+full_orcid_display(user.orcid)
+ %>
     </div>
   </p>
 </div>
 
 <% if user.valid_token %>
   <p>
-  Your token <b><%= user.valid_token.token %></b> grants Princeton access to read and update your ORCID record until <%= user.valid_token.expiration.strftime('%m/%d/%Y') %>.
+# frozen_string_literal: true
+user.valid_token.expiration.strftime("%m/%d/%Y")
+ %>.
   </p>
 <% end %>

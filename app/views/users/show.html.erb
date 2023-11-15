@@ -1,16 +1,25 @@
-<h2>Welcome, <%= @user.display_name %></h2>
+# frozen_string_literal: true
+@user.display_name
+ %></h2>
 
 <!-- If the user doesn't have any tokens, prompt them to create one. -->
 <% if @user.tokens.empty? %>
-  <%= render 'tokenprompt' %>
+# frozen_string_literal: true
+render "tokenprompt"
+ %>
 
 <!-- If all of the user's tokens are expired, let them know that and prompt them to create a new one -->
 <% elsif @user.tokens_expired? %>
-  <%= render 'tokensexpired' %>
-  <%= render 'tokenprompt' %>
+# frozen_string_literal: true
+render "tokensexpired"
+ %>
+# frozen_string_literal: true
+render "tokenprompt"
+ %>
 
 <!-- If the user has a valid token, show them their ORCID iD and tokens with expiration dates -->
 <% else %>
-  <%= render @user %>
+# frozen_string_literal: true
+render @user
+ %>
 <% end %>
-

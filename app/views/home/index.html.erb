@@ -1,17 +1,23 @@
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
   <h1>ORCID@Princeton</h1>
-  
+
   <p>
-    ORCID is an independent non-profit organization that provides a persistent identifier – an ORCID iD – that 
-    distinguishes you from other researchers and a mechanism for linking your research outputs and activities to your iD. 
+    ORCID is an independent non-profit organization that provides a persistent identifier – an ORCID iD – that
+    distinguishes you from other researchers and a mechanism for linking your research outputs and activities to your iD.
     ORCID is integrated into many systems used by publishers, funders, institutions, and other research-related services.
     </p>
 
-  <p>Learn more at <%= link_to "ORCID.org", "https://orcid.org/" %></p>
+# frozen_string_literal: true
+link_to "ORCID.org", "https://orcid.org/"
+ %></p>
 
   <% if current_user %>
-    <p>Welcome, <%= current_user.display_name %></p>
+# frozen_string_literal: true
+current_user.display_name
+ %></p>
     <p>You have already authenticated via the Princeton Central Authentication System.</p>
-    <p>Please visit <%= link_to "your profile page", "/users/#{current_user.id}" %>.</p>
+# frozen_string_literal: true
+link_to "your profile page", "/users/#{current_user.id}"
+ %>.</p>
   <% end %>
 </div>

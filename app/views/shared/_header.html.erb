@@ -1,14 +1,24 @@
 <nav>
 <div>
-  <%= link_to("https://princeton.edu", class: 'navbar-princeton-logo') do %>
-    <%= image_tag(vite_asset_path("images/PU-standard.png"), alt: "Princeton Logo")%>
+# frozen_string_literal: true
+link_to("https://princeton.edu", class: "navbar-princeton-logo")
+ do %>
+# frozen_string_literal: true
+image_tag(vite_asset_path("images/PU-standard.png"), alt: "Princeton Logo")
+%>
   <% end %>
-  <%= link_to "ORCID@Princeton", root_path, class: 'navbar-logo' %>
+# frozen_string_literal: true
+link_to "ORCID@Princeton", root_path, class: "navbar-logo"
+ %>
   <span class="user-info">
   <% if current_user %>
-    <%= current_user.display_name %> <%= link_to "See your profile", user_path(current_user) %>
+# frozen_string_literal: true
+link_to "See your profile", user_path(current_user)
+ %>
   <% else %>
-    <%= button_to "Log In", user_cas_omniauth_authorize_path, class: "btn btn-primary log-in" %>
+# frozen_string_literal: true
+button_to "Log In", user_cas_omniauth_authorize_path, class: "btn btn-primary log-in"
+ %>
   <% end %>
   </span>
 </div>

@@ -67,6 +67,19 @@ jobs:
           # Quote directory globs so not they are expanded by shell,
           # and every file will be checked, regardless of extension.
           command: yarn run eslint 'app/javascript/**'
+  erblint:
+    working_directory: ~/orcid_princeton
+    docker:
+      - image: cimg/ruby:3.2.0-browsers
+        environment:
+          RAILS_ENV: test
+    steps:
+      - attach_workspace:
+          at: '~/orcid_princeton'
+      - install_dependencies
+      - run:
+          name: Run erblint
+          command: bundle exec erblint --config .erb-lint.yml --lint-all
 
   test:
     working_directory: *root
@@ -123,6 +136,9 @@ workflows:
           requires:
             - build
       - rubocop:
+          requires:
+            - build
+      - erblint:
           requires:
             - build
       - eslint:
