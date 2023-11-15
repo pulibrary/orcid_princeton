@@ -1,6 +1,10 @@
 <% if banner_content %>
   <header id="banner" aria-label="announcement banner">
-   <%= sanitize @banner_title %>
-    <%= sanitize @banner_body %>
+# frozen_string_literal: true
+sanitize @banner_title
+ %>
+# frozen_string_literal: true
+sanitize @banner_body
+ %>
   </header>
 <% end %>

@@ -1,10 +1,16 @@
 
   <div id="minting_a_token_explanation">
-  This application is asking you to add Princeton University as a <%= link_to "Trusted Organization", "https://support.orcid.org/hc/en-us/articles/360006973893" %>.  
+# frozen_string_literal: true
+link_to "Trusted Organization", "https://support.orcid.org/hc/en-us/articles/360006973893"
+ %>.
   This will allow Princeton University to read your ORCID record and add information to it.
   </div>
 
-<%= button_to( user_orcid_omniauth_authorize_path, class: "btn btn-primary log-in-orcid") do %>
-  <%= image_tag(vite_asset_path("images/ORCIDiD_icon32x32.png"), alt: "ORCID Logo")%>
+# frozen_string_literal: true
+button_to(user_orcid_omniauth_authorize_path, class: "btn btn-primary log-in-orcid")
+ do %>
+# frozen_string_literal: true
+image_tag(vite_asset_path("images/ORCIDiD_icon32x32.png"), alt: "ORCID Logo")
+%>
   <span>Create or connect your ORCID iD</span>
 <% end %>

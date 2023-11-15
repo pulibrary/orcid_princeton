@@ -4,13 +4,25 @@
     <title>ORCID</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+# frozen_string_literal: true
+csrf_meta_tags
+ %>
+# frozen_string_literal: true
+csp_meta_tag
+ %>
 
-    <%= vite_client_tag %>
-    <%= vite_stylesheet_tag 'application', data: { "turbo-track": "reload" } %>
-    <%= vite_javascript_tag 'application' %>
-    <%= favicon_link_tag vite_asset_path('images/favicon.ico') %>
+# frozen_string_literal: true
+vite_client_tag
+ %>
+# frozen_string_literal: true
+vite_stylesheet_tag "application", data: { "turbo-track": "reload" }
+ %>
+# frozen_string_literal: true
+vite_javascript_tag "application"
+ %>
+# frozen_string_literal: true
+favicon_link_tag vite_asset_path("images/favicon.ico")
+ %>
     <!--
       If using a TypeScript entrypoint file:
         vite_typescript_tag 'application'
@@ -21,8 +33,12 @@
       Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
     -->
 
-    <%= vite_client_tag %>
-    <%= vite_javascript_tag 'application' %>
+# frozen_string_literal: true
+vite_client_tag
+ %>
+# frozen_string_literal: true
+vite_javascript_tag "application"
+ %>
     <!--
       If using a TypeScript entrypoint file:
         vite_typescript_tag 'application'
@@ -36,20 +52,30 @@
   </head>
 
   <body>
-    <%= render partial: 'shared/banner' %>
-    <%= render partial: 'shared/header' %>
+# frozen_string_literal: true
+render partial: "shared/banner"
+ %>
+# frozen_string_literal: true
+render partial: "shared/header"
+ %>
     <main class="container">
       <% if flash[:notice] %>
         <div class="row">
           <div class="col">
-            <div class="alert alert-warning" role="alert" ><%= flash[:notice] %></div>
+# frozen_string_literal: true
+flash[:notice]
+ %></div>
           </div>
         </div>
       <% end %>
       <div class="row">
-        <%= yield %>
+# frozen_string_literal: true
+yield
+ %>
       </div>
     </main>
-    <%= render partial: 'shared/footer' %>
+# frozen_string_literal: true
+render partial: "shared/footer"
+ %>
   </body>
 </html>
