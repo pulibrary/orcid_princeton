@@ -12,4 +12,10 @@ class OrcidsController < ApplicationController
     Token.create_from_omniauth(omniauth.credentials, current_user)
     redirect_to user_path(current_user)
   end
+
+  def failure
+    message = request.env["omniauth.error"].detailed_message
+    flash[:notice] = "Omniauth linking failed #{message}.  Consider linking your account"
+    redirect_to user_path(current_user)
+  end
 end
