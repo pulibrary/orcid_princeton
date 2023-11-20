@@ -291,6 +291,9 @@ Devise.setup do |config|
   ## For CAS
   config.omniauth :cas, host: "fed.princeton.edu", url: "https://fed.princeton.edu/cas"
 
+  ## For OCID Failure
+  config.omniauth :orcid, callback: "/auth/orcid/callback"
+
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
   # is mountable, there are some extra configurations to be taken into account.
@@ -326,4 +329,16 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   sandbox = Rails.env.development? || Rails.env.staging? || ActiveModel::Type::Boolean.new.cast(ENV["ORCID_SANDBOX"]&.downcase)
   callback = "/auth/orcid/callback"
   provider :orcid, ENV["ORCID_CLIENT_ID"], ENV["ORCID_CLIENT_SECRET"], member: true, sandbox:, callback_path: callback
+
+  # Devise and this configuration are competing for error handling
+  #  This set of code stores off the original devise proc and calls that
+  #  unless the error is an OmniAuth::Strategies::ORCID failure (the one being configured here)
+  Rails.application.config.orgina_omniauth_failure = OmniAuth.config.on_failure
+  OmniAuth.config.on_failure = proc do |env|
+    if env["omniauth.strategy"].class == OmniAuth::Strategies::ORCID
+      OrcidsController.action(:failure).call(env)
+    else
+      Rails.application.config.orgina_omniauth_failure.call(env)
+    end
+  end
 end
