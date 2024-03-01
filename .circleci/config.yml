@@ -6,7 +6,8 @@ commands:
       - run: cp Gemfile.lock Gemfile.lock.bak
       - restore_cache:
           key: &gem_key orcid_princeton-cimg-{{ checksum "Gemfile.lock.bak" }}
-      - run: bundle install --path ./vendor/bundle
+      - run: bundle config set path './vendor/bundle'
+      - run: bundle install --jobs=4 --retry=3
       - save_cache:
           key: *gem_key
           paths:
@@ -23,13 +24,13 @@ commands:
           paths:
             - ~/.cache/yarn
 orbs:
-  browser-tools: circleci/browser-tools@1.4.4
+  browser-tools: circleci/browser-tools@1.4.6
 jobs:
   build:
     working_directory: ~/orcid_princeton
     docker:
       - &ruby_docker
-        image: cimg/ruby:3.2.0-browsers
+        image: cimg/ruby:3.2-browsers
         environment:
           RAILS_ENV: test
     steps:
@@ -55,7 +56,7 @@ jobs:
     # We don't actually need any of the ruby environment to lint JS... but use what we have for now.
     working_directory: ~/orcid_princeton
     docker:
-      - image: cimg/ruby:3.2.0-browsers
+      - image: cimg/ruby:3.2-browsers
         environment:
           RAILS_ENV: test
     steps:
