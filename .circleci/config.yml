@@ -23,13 +23,13 @@ commands:
           paths:
             - ~/.cache/yarn
 orbs:
-  browser-tools: circleci/browser-tools@1.4.4
+  browser-tools: circleci/browser-tools@1.4.6
 jobs:
   build:
     working_directory: ~/orcid_princeton
     docker:
       - &ruby_docker
-        image: cimg/ruby:3.2.0-browsers
+        image: cimg/ruby:3.2-browsers
         environment:
           RAILS_ENV: test
     steps:
@@ -55,7 +55,7 @@ jobs:
     # We don't actually need any of the ruby environment to lint JS... but use what we have for now.
     working_directory: ~/orcid_princeton
     docker:
-      - image: cimg/ruby:3.2.0-browsers
+      - image: cimg/ruby:3.2-browsers
         environment:
           RAILS_ENV: test
     steps:
