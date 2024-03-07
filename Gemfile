@@ -24,8 +24,9 @@ gem "vite_ruby"
 gem "sul_orcid_client"
 
 # Single sign on
+# Note that as of March 2024, upgrading to omniauth-cas 3.x will break authentication
 gem "devise"
-gem "omniauth-cas"
+gem "omniauth-cas", "~> 2.0.0"
 
 group :development, :test do
   gem "bixby"
