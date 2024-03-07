@@ -162,7 +162,7 @@ GEM
       activesupport
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (4.9.3)
+    devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -273,24 +273,22 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
-    oauth2 (2.0.9)
+    oauth2 (1.4.11)
       faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 4)
-      snaky_hash (~> 2.0)
-      version_gem (~> 1.1)
-    omniauth (2.1.2)
+    omniauth (1.9.2)
       hashie (>= 3.4.6)
-      rack (>= 2.2.3)
-      rack-protection
-    omniauth-cas (3.0.0)
-      addressable (~> 2.8)
-      nokogiri (~> 1.12)
-      omniauth (~> 2.1)
-    omniauth-oauth2 (1.8.0)
-      oauth2 (>= 1.4, < 3)
-      omniauth (~> 2.0)
+      rack (>= 1.6.2, < 3)
+    omniauth-cas (2.0.0)
+      addressable (~> 2.3)
+      nokogiri (~> 1.5)
+      omniauth (~> 1.2)
+    omniauth-oauth2 (1.5.0)
+      oauth2 (~> 1.1)
+      omniauth (~> 1.2)
     omniauth-orcid (2.1.1)
       omniauth-oauth2 (~> 1.3)
       ruby_dig (~> 0.0.2)
@@ -313,9 +311,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (2.2.8.1)
-    rack-protection (3.2.0)
-      base64 (>= 0.1.0)
-      rack (~> 2.2, >= 2.2.4)
     rack-proxy (0.7.7)
       rack
     rack-session (1.0.2)
@@ -418,9 +413,6 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    snaky_hash (2.0.1)
-      hashie
-      version_gem (~> 1.1, >= 1.1.1)
     sshkit (1.22.0)
       mutex_m
       net-scp (>= 1.1.2)
@@ -445,7 +437,6 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
     uri (0.13.0)
-    version_gem (1.1.3)
     virtus (2.0.0)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -500,7 +491,7 @@ DEPENDENCIES
   honeybadger
   isni
   jbuilder
-  omniauth-cas
+  omniauth-cas (~> 2.0.0)
   omniauth-orcid
   pg
   puma (= 5.6.8)
