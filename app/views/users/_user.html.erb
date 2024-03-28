@@ -8,6 +8,6 @@
 
 <% if user.valid_token %>
   <p>
-  Your token <b><%= user.valid_token.token %></b> grants Princeton access to read and update your ORCID record until <%= user.valid_token.expiration.strftime('%m/%d/%Y') %>.
+  Your token grants Princeton access to read and update your ORCID record until <%= user.valid_token.expiration.strftime('%m/%d/%Y') %>.
   </p>
 <% end %>
