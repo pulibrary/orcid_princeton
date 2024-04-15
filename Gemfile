@@ -13,6 +13,7 @@ gem "health-monitor-rails"
 gem "honeybadger"
 gem "isni"
 gem "jbuilder"
+gem "oauth2", "~> 2.0.x"
 gem "omniauth-orcid"
 gem "pg"
 gem "puma", "5.6.8"
@@ -53,3 +54,5 @@ group :test do
   gem "database_cleaner-active_record"
   gem "selenium-webdriver"
 end
+
+
