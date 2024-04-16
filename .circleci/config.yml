@@ -24,6 +24,7 @@ commands:
           paths:
             - ~/.cache/yarn
 orbs:
+  coveralls: coveralls/coveralls@2.2.1
   browser-tools: circleci/browser-tools@1.4.6
 jobs:
   build:
@@ -90,7 +91,7 @@ jobs:
       - run: bundle exec rake db:migrate RAILS_ENV=test
       - run:
           name: Run Rspec
-          command: bundle exec rspec
+          command: COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN bundle exec rspec --format progress
       - persist_to_workspace:
           root: *root
           paths: 'coverage'
@@ -98,22 +99,6 @@ jobs:
           path:
             ~/orcid_princeton/coverage
             ~/orcid_princeton/tmp/screenshots
-
-  coverage_report:
-    working_directory: *root
-    docker:
-      - *ruby_docker
-    steps:
-      - attach_workspace:
-          at: *root
-      - run:
-          name: Merge and check coverage
-          command: |
-            # TODO set this to something better than 0 when we get some tests
-            RAILS_ENV=test bundle exec rake simplecov:report_coverage\[93.9\]
-      - store_artifacts:
-          path: ~/orcid_princeton/coverage
-          destination: coverage
 
 workflows:
   version: 2
@@ -129,6 +114,3 @@ workflows:
       - eslint:
           requires:
             - build
-      - coverage_report:
-          requires:
-            - test
