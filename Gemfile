@@ -13,6 +13,7 @@ gem "health-monitor-rails"
 gem "honeybadger"
 gem "isni"
 gem "jbuilder"
+gem "oauth2", "~> 2.0.x"
 gem "omniauth-orcid"
 gem "pg"
 gem "puma", "5.6.8"
@@ -39,7 +40,7 @@ end
 
 group :development do
   gem "byebug"
-  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano", "3.17.2", require: false
   gem "capistrano-passenger", require: false
   gem "capistrano-rails", "~> 1.6", require: false
   # Use console on exceptions pages [https://github.com/rails/web-console]
