@@ -478,7 +478,7 @@ DEPENDENCIES
   bixby
   bootsnap
   byebug
-  capistrano (~> 3.10)
+  capistrano (~> 3.18.0)
   capistrano-passenger
   capistrano-rails (~> 1.6)
   capybara
