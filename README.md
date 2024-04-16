@@ -3,7 +3,7 @@ This application leverages ORCID services and ORCID iDs for researchers in the P
 
 [![CircleCI](https://circleci.com/gh/pulibrary/orcid_princeton/tree/main.svg?style=svg)](https://circleci.com/gh/pulibrary/orcid_princeton/tree/main)
 
-[![Coverage Status](https://coveralls.io/repos/github/pulibrary/orcid_princeton/badge.svg?branch=i132-add-coveralls)](https://coveralls.io/github/pulibrary/orcid_princeton?branch=i132-add-coveralls)
+[![Coverage Status](https://coveralls.io/repos/github/pulibrary/orcid_princeton/badge.svg?branch=main)](https://coveralls.io/github/pulibrary/orcid_princeton?branch=main)
 
 ## Dependencies
 * Ruby: 3.2.0
