@@ -97,9 +97,7 @@ jobs:
           paths: 'coverage'
       - store_artifacts:
           path:
-            ~/orcid_princeton/coverage
-            ~/orcid_princeton/tmp/capybara
-            ~/orcid_princeton/tmp/screenshots
+            /home/circleci/orcid_princeton/tmp/capybara
 
 workflows:
   version: 2
