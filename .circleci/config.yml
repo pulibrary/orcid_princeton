@@ -34,7 +34,6 @@ jobs:
         image: cimg/ruby:3.2-browsers
         environment:
           RAILS_ENV: test
-    working_directory: /tmp
     steps:
       - checkout
       - run: sudo apt update && sudo apt install postgresql-client libmsgpack-dev
@@ -42,17 +41,6 @@ jobs:
       - persist_to_workspace:
           root: &root '~/orcid_princeton'
           paths: '*'
-      - run:
-          name: Creating Dummy Artifacts
-          command: |
-            echo "my artifact file" > /tmp/art-1;
-            mkdir /tmp/artifacts;
-            echo "my artifact files in a dir" > /tmp/artifacts/art-2;
-      - store_artifacts:
-          path: /tmp/art-1
-          destination: artifact-file
-      - store_artifacts:
-          path: /tmp/artifacts
 
   rubocop:
     working_directory: *root
@@ -110,6 +98,7 @@ jobs:
       - store_artifacts:
           path:
             ~/orcid_princeton/coverage
+            ~/orcid_princeton/tmp/capybara
             ~/orcid_princeton/tmp/screenshots
 
 workflows:
