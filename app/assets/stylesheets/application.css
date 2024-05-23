@@ -1,2 +1,10 @@
  /* Import all of Bootstrap's CSS */
  @import "~bootstrap/scss/bootstrap.scss";
+
+ a {
+   color: rgb(12, 7, 150); 
+ }
+
+ #banner a {
+    color: #f58025;
+ }
