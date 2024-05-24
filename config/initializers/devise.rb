@@ -290,6 +290,7 @@ Devise.setup do |config|
 
   ## For CAS
   config.omniauth :cas, host: "fed.princeton.edu", url: "https://fed.princeton.edu/cas"
+  OmniAuth.config.allowed_request_methods = [:get, :post]
 
   ## For OCID Failure
   config.omniauth :orcid, callback: "/auth/orcid/callback"
