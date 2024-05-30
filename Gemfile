@@ -27,7 +27,7 @@ gem "sul_orcid_client"
 
 # Single sign on
 gem "devise"
-gem "omniauth-cas", "~> 2.0.0"
+gem "omniauth-cas"
 
 group :development, :test do
   gem "bixby"
