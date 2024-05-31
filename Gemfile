@@ -14,7 +14,7 @@ gem "honeybadger"
 gem "isni"
 gem "jbuilder"
 gem "oauth2", "~> 2.0.x"
-gem 'omniauth', '~> 2.1', '>= 2.1.2'
+gem "omniauth", "~> 2.1", ">= 2.1.2"
 gem "omniauth-orcid"
 gem "pg"
 gem "puma", "5.6.8"
@@ -27,7 +27,7 @@ gem "sul_orcid_client"
 
 # Single sign on
 gem "devise"
-gem 'omniauth-cas', '~> 3.0'
+gem "omniauth-cas", "~> 3.0"
 
 group :development, :test do
   gem "bixby"
