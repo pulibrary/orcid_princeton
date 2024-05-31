@@ -26,7 +26,7 @@ gem "vite_ruby"
 gem "sul_orcid_client"
 
 # Single sign on
-gem "devise"
+gem "devise", "~> 4.9"
 gem "omniauth-cas", "~> 3.0"
 
 group :development, :test do
@@ -39,10 +39,10 @@ group :development, :test do
 end
 
 group :development do
-  gem "byebug"
   gem "capistrano", "3.17.2", require: false
   gem "capistrano-passenger", require: false
   gem "capistrano-rails", "~> 1.6", require: false
+  gem "pry-byebug"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
@@ -55,5 +55,3 @@ group :test do
   gem "database_cleaner-active_record"
   gem "selenium-webdriver"
 end
-
-gem "pry-byebug"

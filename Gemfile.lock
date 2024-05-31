@@ -168,7 +168,7 @@ GEM
       activesupport
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (4.8.1)
+    devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -511,7 +511,6 @@ DEPENDENCIES
   bcrypt_pbkdf
   bixby
   bootsnap
-  byebug
   capistrano (= 3.17.2)
   capistrano-passenger
   capistrano-rails (~> 1.6)
@@ -519,7 +518,7 @@ DEPENDENCIES
   coveralls_reborn
   database_cleaner-active_record
   debug
-  devise
+  devise (~> 4.9)
   ed25519
   factory_bot_rails
   ffaker
