@@ -55,3 +55,5 @@ group :test do
   gem "database_cleaner-active_record"
   gem "selenium-webdriver"
 end
+
+gem "pry-byebug"
