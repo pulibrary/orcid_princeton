@@ -520,8 +520,8 @@ DEPENDENCIES
   isni
   jbuilder
   oauth2 (~> 2.0.x)
-  omniauth (>= 2.0.0)
-  omniauth-cas
+  omniauth (~> 2.1, >= 2.1.2)
+  omniauth-cas (~> 3.0)
   omniauth-orcid
   pg
   puma (= 5.6.8)
