@@ -14,6 +14,7 @@ gem "honeybadger"
 gem "isni"
 gem "jbuilder"
 gem "oauth2", "~> 2.0.x"
+gem "omniauth", "~> 2.1", ">= 2.1.2"
 gem "omniauth-orcid"
 gem "pg"
 gem "puma", "5.6.8"
@@ -25,7 +26,7 @@ gem "vite_ruby"
 gem "sul_orcid_client"
 
 # Single sign on
-gem "devise"
+gem "devise", "~> 4.9"
 gem "omniauth-cas", "~> 3.0"
 
 group :development, :test do
@@ -38,10 +39,10 @@ group :development, :test do
 end
 
 group :development do
-  gem "byebug"
   gem "capistrano", "3.17.2", require: false
   gem "capistrano-passenger", require: false
   gem "capistrano-rails", "~> 1.6", require: false
+  gem "pry-byebug"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
