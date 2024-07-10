@@ -3,16 +3,6 @@
 //
 //    <%= vite_client_tag %>
 //    <%= vite_javascript_tag 'application' %>
-console.warn('Vite ⚡️ Rails');
-
-// If using a TypeScript entrypoint file:
-//     <%= vite_typescript_tag 'application' %>
-//
-// If you want to use .jsx or .tsx, add the extension:
-//     <%= vite_javascript_tag 'application.jsx' %>
-
-console.warn('Visit the guide for more information: ', 'https://vite-ruby.netlify.app/guide/rails');
-
 // Example: Load Rails libraries in Vite.
 //
 // import * as Turbo from '@hotwired/turbo'
@@ -26,3 +16,28 @@ console.warn('Visit the guide for more information: ', 'https://vite-ruby.netlif
 
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
+
+import { createApp } from 'vue';
+import lux from 'lux-design-system';
+import 'lux-design-system/dist/style.css';
+
+console.warn('Vite ⚡️ Rails');
+
+// If using a TypeScript entrypoint file:
+//     <%= vite_typescript_tag 'application' %>
+//
+// If you want to use .jsx or .tsx, add the extension:
+//     <%= vite_javascript_tag 'application.jsx' %>
+
+console.warn('Visit the guide for more information: ', 'https://vite-ruby.netlify.app/guide/rails');
+
+const app = createApp({});
+const createMyApp = () => createApp(app);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.getElementsByClassName('lux');
+  for (let i = 0; i < elements.length; i += 1) {
+    createMyApp().use(lux)
+      .mount(elements[i]);
+  }
+});
