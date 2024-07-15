@@ -1,14 +1,21 @@
 # frozen_string_literal: true
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require "simplecov"
+require "simplecov_json_formatter"
 SimpleCov.start "rails" do
   add_filter "lib/simple_cov_helper.rb"
   add_filter "app/mailers/application_mailer.rb"
   add_filter "app/jobs/application_job.rb"
   add_filter "app/channels/application_cable/connection.rb"
   add_filter "app/channels/application_cable/channel.rb"
+
+  multi = SimpleCov::Formatter::MultiFormatter.new([
+                                                     SimpleCov::Formatter::SimpleFormatter,
+                                                     SimpleCov::Formatter::HTMLFormatter,
+                                                     SimpleCov::Formatter::JSONFormatter
+                                                   ])
+  formatter(multi)
 end
-require "simplecov_json_formatter"
 require "spec_helper"
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
