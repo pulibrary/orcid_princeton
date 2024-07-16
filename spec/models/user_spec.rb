@@ -49,6 +49,20 @@ RSpec.describe User, type: :model do
                                                            puaffiliation: "stf", departmentnumber: "41999", pustatus: "stf"))
     end
 
+    let(:access_token_blank_provider) do
+      OmniAuth::AuthHash.new(provider: nil, uid: "test1234", extra: OmniAuth::AuthHash.new(
+                            mail: "test@princeton.edu", user: "test1234", authnContextClass: "mfa-duo",
+                            campusid: "test.person", puresidentdepartmentnumber: "41999",
+                            title: "The Developer II, Library - Information Technology.", uid: "test1234",
+                            universityid: "888888888", displayname: "Person, Test", pudisplayname: "Person, Test",
+                            edupersonaffiliation: "staff", givenname: "Test",
+                            sn: "Person", department: "Library - Information Technology",
+                            edupersonprincipalname: "test@princeton.edu",
+                            puresidentdepartment: "Library - Information Technology",
+                            puaffiliation: "stf", departmentnumber: "41999", pustatus: "stf"
+                          ))
+    end
+
     it "returns a user object with name values set" do
       user = described_class.from_cas(access_token_full_extras)
       expect(user).to be_a described_class
@@ -56,6 +70,17 @@ RSpec.describe User, type: :model do
       expect(user.family_name).to eq("Areyou")
       expect(user.display_name).to eq("Areyou, Who")
       expect(user.email).to eq("who@princeton.edu")
+    end
+
+    it "returns a user object with name values set when provider is blank" do
+      user = User.create(uid: "test1234")
+      user.save
+      user = described_class.from_cas(access_token_blank_provider)
+      expect(user).to be_a described_class
+      expect(user.given_name).to eq("Test")
+      expect(user.family_name).to eq("Person")
+      expect(user.display_name).to eq("Person, Test")
+      expect(user.email).to eq("test@princeton.edu")
     end
   end
 
