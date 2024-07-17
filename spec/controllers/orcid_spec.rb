@@ -29,4 +29,10 @@ RSpec.describe OrcidsController do
     expect(user.reload.orcid).to eq(user_with_orcid.orcid)
     expect(response).to redirect_to(user_path(user))
   end
+
+  # it "displays user" do
+  #  sign_in user
+  #  get :show, params: { id: user.id }
+  #  expect(response).to have_http_status(:success)
+  # end
 end
