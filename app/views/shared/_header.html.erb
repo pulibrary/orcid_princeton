@@ -1,7 +1,7 @@
 <nav>
 <div class="lux">
   <% if current_user %>
-    <lux-library-header app-name="Orchid@Princeton" abbr-name="LTR" app-url="<%=root_path%>" theme="dark">
+    <lux-library-header app-name="" abbr-name="LTR" app-url="<%=root_path%>" theme="dark">
       <lux-menu-bar type="main-menu" :menu-items="[
           {name: '<%= current_user.display_name %>', component: 'Account', href: '/account/', children: [
             {name: 'Profile', component: 'Feedback', href: '<%= user_path(current_user )%> '},
@@ -11,7 +11,7 @@
       ></lux-menu-bar>
     </lux-library-header>
   <% else %>
-    <lux-library-header app-name="Orchid@Princeton" abbr-name="LTR" app-url="<%=root_path%>" theme="dark">
+    <lux-library-header app-name="" abbr-name="LTR" app-url="<%=root_path%>" theme="dark">
       <lux-menu-bar type="main-menu" :menu-items="[
           {name: 'Log In', component: 'Logout', href: '<%=user_cas_omniauth_authorize_path%>'}
         ]"

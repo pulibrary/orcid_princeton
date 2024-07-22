@@ -7,9 +7,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= vite_client_tag %>
+    <%= vite_client_tag %><%= stylesheet_link_tag "example", "data-turbo-track": "reload" %>
+
     <%= vite_stylesheet_tag 'application', data: { "turbo-track": "reload" } %>
     <%= vite_javascript_tag 'application' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+
+
     <%= favicon_link_tag vite_asset_path('images/favicon-32x32.png') %>
     <!--
       If using a TypeScript entrypoint file:
@@ -49,6 +53,9 @@
         </div>
       <% end %>
       <div class="row">
+      <div id="page-header">
+        <h1>ORCID@Princeton</h1>
+      </div>
         <%= yield %>
       </div>
     </main>
