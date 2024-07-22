@@ -1,15 +1,22 @@
 <nav>
-<div>
-  <%= link_to("https://princeton.edu", class: 'navbar-princeton-logo') do %>
-    <%= image_tag(vite_asset_path("images/PU-standard.png"), alt: "Princeton Logo")%>
-  <% end %>
-  <%= link_to "ORCID@Princeton", root_path, class: 'navbar-logo' %>
-  <span class="user-info">
+<div class="lux">
   <% if current_user %>
-    <%= current_user.display_name %> <%= link_to "See your profile", user_path(current_user) %>
+    <lux-library-header app-name="Orchid@Princeton" abbr-name="LTR" app-url="<%=root_path%>" theme="dark">
+      <lux-menu-bar type="main-menu" :menu-items="[
+          {name: '<%= current_user.display_name %>', component: 'Account', href: '/account/', children: [
+            {name: 'Profile', component: 'Feedback', href: '<%= user_path(current_user )%> '},
+            {name: 'Logout', component: 'Logout', href: '<%= main_app.destroy_user_session_path %> '}
+          ]}
+        ]"
+      ></lux-menu-bar>
+    </lux-library-header>
   <% else %>
-    <%= button_to "Log In", user_cas_omniauth_authorize_path, class: "btn btn-primary log-in" %>
+    <lux-library-header app-name="Orchid@Princeton" abbr-name="LTR" app-url="<%=root_path%>" theme="dark">
+      <lux-menu-bar type="main-menu" :menu-items="[
+          {name: 'Log In', component: 'Logout', href: '<%=user_cas_omniauth_authorize_path%>'}
+        ]"
+      ></lux-menu-bar>
+    </lux-library-header>
   <% end %>
-  </span>
 </div>
 </nav>
