@@ -7,6 +7,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'application', data: { "turbo-track": "reload" } %>
+
+
     <%= vite_client_tag %>
     <%= vite_stylesheet_tag 'application', data: { "turbo-track": "reload" } %>
     <%= vite_javascript_tag 'application' %>
@@ -50,9 +53,6 @@
         </div>
       <% end %>
       <div class="row">
-      <div id="page-header">
-        <h1>ORCID@Princeton</h1>
-      </div>
         <%= yield %>
       </div>
     </main>
