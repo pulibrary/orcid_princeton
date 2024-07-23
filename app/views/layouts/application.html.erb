@@ -7,9 +7,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'application', data: { "turbo-track": "reload" } %>
+
+
     <%= vite_client_tag %>
     <%= vite_stylesheet_tag 'application', data: { "turbo-track": "reload" } %>
     <%= vite_javascript_tag 'application' %>
+
     <%= favicon_link_tag vite_asset_path('images/favicon-32x32.png') %>
     <!--
       If using a TypeScript entrypoint file:
