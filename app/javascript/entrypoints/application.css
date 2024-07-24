@@ -1,5 +1,29 @@
 @import "../../assets/stylesheets/application.css";
 
+#help-section {
+  padding: 2.5rem 0 2rem 0;
+  background-color: #F3F3F3;
+}
+
+#help-text {
+  padding-top: 0.9rem;
+  width: 45vw;
+}
+
+#help-text p {
+  font-family: "Roboto", sans-serif;
+}
+
+.help-contents {
+  margin-left: 10vw;
+}
+
+#help-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
 .navbar-princeton-logo{
     margin-left: 1em;
     text-decoration: none;
