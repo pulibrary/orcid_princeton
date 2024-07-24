@@ -9,6 +9,13 @@
 
   <p>Learn more at <%= link_to "ORCID.org", "https://orcid.org/" %></p>
 
+  <div id="help-section">
+    <h2 class="help-contents" id="help-title">Need help?</h2>
+    <div class="help-contents" id="help-text">
+      <p>If you have questions about the value of having an ORCID iD or how it will be used at Princeton, please contact the <a href="mailto:prds@princeton.edu">Princeton Research Data Service</a>.</p>
+    </div>
+  </div>
+
   <% if current_user %>
     <p>Welcome, <%= current_user.display_name %></p>
     <p>You have already authenticated via the Princeton Central Authentication System.</p>
