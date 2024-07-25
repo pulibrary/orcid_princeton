@@ -1,4 +1,16 @@
-@import "../../assets/stylesheets/application.css";
+/* Import all of Bootstrap's CSS */
+@import "~bootstrap/scss/bootstrap.scss";
+
+/* Import the LUX styles */
+@import "lux-design-system/dist/style.css";
+
+a {
+  color: rgb(12, 7, 150);
+}
+
+#banner a {
+  color: #f58025;
+}
 
 #login-section {
   padding: 2rem 2rem 2rem 3rem;
