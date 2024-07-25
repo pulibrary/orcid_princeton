@@ -12,6 +12,11 @@ a {
   color: #f58025;
 }
 
+.page-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
 .line {
   background-color: #E77500;
   width: 100%;
@@ -57,10 +62,31 @@ h1 {
   margin-left: 10vw;
 }
 
-#help-title, .project-title {
+#help-title, .project-title, .info-title, #sponsors-title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1.4rem;
+}
+
+.sponsors-component {
+  margin: 5vh 5vw 5vh 5vw;
+}
+
+.sponsors-component img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#sponsors-display {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  flex-direction: row;
+}
+
+#sponsors-section {
+  margin: 5vh 5vw 5vh 5vw;
 }
 
 .navbar-princeton-logo{
