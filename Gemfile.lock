@@ -217,6 +217,7 @@ GEM
     faraday-retry (2.2.1)
       faraday (~> 2.0)
     ffaker (2.23.0)
+    foreman (0.88.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (5.0.0)
@@ -526,6 +527,7 @@ DEPENDENCIES
   ed25519
   factory_bot_rails
   ffaker
+  foreman
   health-monitor-rails
   honeybadger
   isni

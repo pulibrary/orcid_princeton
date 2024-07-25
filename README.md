@@ -68,7 +68,7 @@ To stop database services:
 2. Run in browser: `RUN_IN_BROWSER=true bundle exec rspec spec`
 
 ### Starting the development server
-1. `bundle exec rails s -p 3000`
+1. `bundle exec foreman start`
 2. Access application at [http://localhost:3000/](http://localhost:3000/)
 
 ### ORCID Environment variables
