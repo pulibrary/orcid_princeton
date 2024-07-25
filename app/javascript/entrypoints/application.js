@@ -20,6 +20,7 @@
 import { createApp } from 'vue';
 import lux from 'lux-design-system';
 import 'lux-design-system/dist/style.css';
+import './application.scss';
 
 console.warn('Vite ⚡️ Rails');
 
