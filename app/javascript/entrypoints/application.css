@@ -1,5 +1,30 @@
 @import "../../assets/stylesheets/application.css";
 
+.line {
+  background-color: #E77500;
+  width: 100%;
+  height: 3px;
+  margin: 2vh 0;
+}
+
+h1 {
+  margin: 5vh 5vw 5vh 5vw;
+}
+
+.info-component {
+  margin: 5vh 5vw 5vh 5vw;
+}
+
+.info-component p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+}
+
+#info-section {
+  display: flex;
+  flex-direction: row;
+}
+
 #help-section {
   padding: 2.5rem 0 2rem 0;
   background-color: #F3F3F3;
@@ -8,17 +33,19 @@
 #help-text {
   padding-top: 0.9rem;
   width: 45vw;
+  min-width: 220px;
 }
 
 #help-text p {
   font-family: "Roboto", sans-serif;
+  font-size: 1rem;
 }
 
 .help-contents {
   margin-left: 10vw;
 }
 
-#help-title {
+#help-title, .project-title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1.4rem;
@@ -82,3 +109,17 @@ vertical-align: middle;
   }
 
   p { font-family: 'princetonmontidsregular', Arial, sans-serif; }
+
+  @media (max-width: 770px) {
+    #info-section {
+      display: flex;
+      flex-direction: column;
+    }
+    .info-component {
+      margin: 5vh 5vw 5vh 5vw;
+      min-width: 340px;
+    }
+    #what-is-orcid {
+      margin-bottom: 0;
+    }
+  }
