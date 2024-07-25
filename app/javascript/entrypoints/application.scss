@@ -18,7 +18,7 @@ a {
 }
 
 .line {
-  background-color: #E77500;
+  background-color: #e77500;
   width: 100%;
   height: 3px;
   margin: 2vh 0;
@@ -44,7 +44,7 @@ h1 {
 
 #help-section {
   padding: 2.5rem 0 2rem 0;
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
 }
 
 #help-text {
@@ -62,7 +62,10 @@ h1 {
   margin-left: 10vw;
 }
 
-#help-title, .project-title, .info-title, #sponsors-title {
+#help-title,
+.project-title,
+.info-title,
+#sponsors-title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1.4rem;
@@ -89,75 +92,78 @@ h1 {
   margin: 5vh 5vw 5vh 5vw;
 }
 
-.navbar-princeton-logo{
-    margin-left: 1em;
-    text-decoration: none;
+.navbar-princeton-logo {
+  margin-left: 1em;
+  text-decoration: none;
 }
-.navbar-princeton-logo img{
-    height: 3em;
+.navbar-princeton-logo img {
+  height: 3em;
 }
 
 .navbar-logo {
-    margin-left: 1em;
+  margin-left: 1em;
 }
 
 .user-info {
-    float: right;
-    margin-right: 1em;
+  float: right;
+  margin-right: 1em;
 }
 
 button.log-in-orcid {
-    padding: 0.5em;
-    background-color: white;
-    color: black;
-    border-color: black;
-    margin: 1em;
-    border-radius: 0.5em;
+  padding: 0.5em;
+  background-color: white;
+  color: black;
+  border-color: black;
+  margin: 1em;
+  border-radius: 0.5em;
 }
-  
+
 /* Add this to align vertically */
 button > img,
 button > span {
-vertical-align: middle;
+  vertical-align: middle;
 }
 
 #banner {
-    text-align: center;
-    background-color: #000000;
-    padding: 20px 0px 10px 0px;
-    border-bottom: #f58025 solid 2px;
-    color: #f58025;
-    h1 {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    p {
-      font-size: 18px;
-    }
+  text-align: center;
+  background-color: #000000;
+  padding: 20px 0px 10px 0px;
+  border-bottom: #f58025 solid 2px;
+  color: #f58025;
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
   }
-  .full_orcid_display img{
-    width: 2em
+  p {
+    font-size: 18px;
   }
-  @font-face {
-    font-family: 'princetonmontidsregular';
-    src: url('/fonts/princmonds-webfont.woff2') format('woff2'),
-         url('/fonts/princmonds-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+}
+.full_orcid_display img {
+  width: 2em;
+}
+@font-face {
+  font-family: "princetonmontidsregular";
+  src:
+    url("/fonts/princmonds-webfont.woff2") format("woff2"),
+    url("/fonts/princmonds-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  p { font-family: 'princetonmontidsregular', Arial, sans-serif; }
+p {
+  font-family: "princetonmontidsregular", Arial, sans-serif;
+}
 
-  @media (max-width: 770px) {
-    #info-section {
-      display: flex;
-      flex-direction: column;
-    }
-    .info-component {
-      margin: 5vh 5vw 5vh 5vw;
-      min-width: 340px;
-    }
-    #what-is-orcid {
-      margin-bottom: 0;
-    }
+@media (max-width: 770px) {
+  #info-section {
+    display: flex;
+    flex-direction: column;
   }
+  .info-component {
+    margin: 5vh 5vw 5vh 5vw;
+    min-width: 340px;
+  }
+  #what-is-orcid {
+    margin-bottom: 0;
+  }
+}
