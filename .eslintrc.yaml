@@ -9,6 +9,7 @@ parserOptions:
 ignorePatterns:
   - 'app/javascript/entrypoints/vendor/**'
   - 'app/javascript/**/*.css'
+  - 'app/javascript/**/*.scss'
   - 'app/javascript/images/*'
   - 'app/javascript/fonts/*'
 globals:
