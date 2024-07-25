@@ -3,6 +3,8 @@ import FullReload from "vite-plugin-full-reload"
 import RubyPlugin from 'vite-plugin-ruby'
 import StimulusHMR from 'vite-plugin-stimulus-hmr'
 import vue from '@vitejs/plugin-vue'
+import inject from "@rollup/plugin-inject"
+
 const path = require('path')
 
   export default ({ command, mode }) => {
@@ -25,6 +27,10 @@ const path = require('path')
         }
       },
       plugins: [
+        inject({
+          $: 'jquery',
+          jQuery: 'jquery',
+        }),
           RubyPlugin(), 
           StimulusHMR(), 
           FullReload(["config/routes.rb", "app/views/**/*"], {delay: 300}),

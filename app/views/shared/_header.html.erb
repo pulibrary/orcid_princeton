@@ -10,13 +10,6 @@
         ]"
       ></lux-menu-bar>
     </lux-library-header>
-  <% else %>
-    <lux-library-header app-name="ORCID@Princeton" abbr-name="LTR" app-url="<%=root_path%>" theme="dark">
-      <lux-menu-bar type="main-menu" :menu-items="[
-          {name: 'Log In', component: 'Logout', href: '<%=user_cas_omniauth_authorize_path%>'}
-        ]"
-      ></lux-menu-bar>
-    </lux-library-header>
   <% end %>
 </div>
 </nav>

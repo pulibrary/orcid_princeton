@@ -1,7 +1,13 @@
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
   <h1>ORCiD@Princeton</h1>
-
   <div id="info-section">
+
+    <% unless current_user %>
+      <div class="info-component">
+        <a href="<%=user_cas_omniauth_authorize_path%>" class="login-button" onclick="log_plausible_cas_user_login()">Log In</a>
+      </div>
+    <% end %>
+  
     <div class="info-component" id="what-is-orcid">
       <h2 class="info-title">What is ORCiD?</h2>
       <div class="line"></div>

@@ -20,6 +20,8 @@
 import { createApp } from 'vue';
 import lux from 'lux-design-system';
 import 'lux-design-system/dist/style.css';
+import $ from 'jquery';
+window.$ = $;
 
 console.warn('Vite ⚡️ Rails');
 
@@ -41,3 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
       .mount(elements[i]);
   }
 });
+
+window.log_plausible_cas_user_login = function() {
+  console.log("log_plausible_cas_user_login event logged");
+  plausible("Log in to CAS", { props: { test_property: "Sample value" } });
+  alert("log plausible");
+}
