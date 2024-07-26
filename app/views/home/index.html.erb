@@ -1,5 +1,5 @@
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
-  <h1>ORCiD@Princeton</h1>
+  <h1 class="page-title">ORCiD@Princeton</h1>
 
   <div id="login-section" style="background-image:url(<%=vite_asset_path 'images/info-section-banner-v3.jpg'%>);">
     <div id="info-box">
@@ -29,10 +29,4 @@
       <p>If you have questions about the value of having an ORCID iD or how it will be used at Princeton, please contact the <a href="mailto:prds@princeton.edu">Princeton Research Data Service</a>.</p>
     </div>
   </div>
-
-  <% if current_user %>
-    <p>Welcome, <%= current_user.display_name %></p>
-    <p>You have already authenticated via the Princeton Central Authentication System.</p>
-    <p>Please visit <%= link_to "your profile page", "/users/#{current_user.id}" %>.</p>
-  <% end %>
 </div>
