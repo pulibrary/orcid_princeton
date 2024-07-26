@@ -9,7 +9,6 @@ gem "rails", "~> 7.1.0"
 gem "bcrypt_pbkdf"
 gem "bootsnap", require: false
 gem "ed25519"
-gem "foreman"
 gem "health-monitor-rails"
 gem "honeybadger"
 gem "isni"
