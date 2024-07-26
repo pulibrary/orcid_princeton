@@ -1,12 +1,12 @@
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
   <h1 class="page-title">ORCiD@Princeton</h1>
 
-  <div id="login-section" style="background-image:url(<%=vite_asset_path 'images/info-section-banner-v3.jpg'%>);">
+  <div id="login-section">
     <div id="info-box">
       <div id="text-box">
         <p>Connect your ORCID id to Princeton so that published works can be easily identified as belonging to all Princeton researchers.</p>
       </div>
-      <button id="login-button">Log-in</button>
+      <%= button_to "Log-in", user_cas_omniauth_authorize_path, :id => "login-button", :onclick => "log_plausible_cas_user_login()", :method => :get %>
     </div>
   </div>
 
