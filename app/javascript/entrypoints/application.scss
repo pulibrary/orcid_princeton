@@ -17,6 +17,45 @@ a {
   font-weight: bold;
 }
 
+.faq-section {
+  background-color: #F3F3F3;
+  padding: 2rem 20vw;
+}
+
+.accordion-body {
+  border-left: 2px solid #E77500;
+  margin: 1rem 0 1rem 2rem;
+}
+
+.accordion-body p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.accordion-button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+}
+
+.accordion {
+  --bs-accordion-btn-bg: #f3f3f3;
+  --bs-accordion-active-bg: #f3f3f3;
+  --bs-accordion-btn-focus-box-shadow: #f3f3f3;
+  --bs-accordion-bg: #f3f3f3;
+  --bs-accordion-border-width: 1px;
+  --bs-accordion-border-color: #ccc;
+  --bs-accordion-btn-focus-box-shadow: none;
+  --bs-accordion-btn-icon-width: 25px;
+}
+
+.line-userpage {
+  background-color: #E77500;
+  width: 80%;
+  height: 3px;
+  margin: 2vh 0;
+}
+
 #login-section {
   padding: 2rem 2rem 2rem 3rem;
   background-size: cover;
@@ -117,7 +156,8 @@ h1 {
 #help-title,
 .project-title,
 .info-title,
-#sponsors-title {
+#sponsors-title,
+#faq-title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1.8rem;
