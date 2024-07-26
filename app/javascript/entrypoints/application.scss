@@ -17,6 +17,55 @@ a {
   font-weight: bold;
 }
 
+#login-section {
+  padding: 2rem 2rem 2rem 3rem;
+  background-size: cover;
+  height: 370px;
+  background-repeat: no-repeat;
+  min-width: 475px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#info-box {
+  background-color: #000;
+  border: solid 1px #595959;
+  width: 710px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 710px;
+}
+
+#text-box {
+  width: 60%;
+  margin: 4rem 1.8rem 3rem 2rem;
+}
+
+#text-box p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+#login-button {
+  box-shadow: 10px 10px #e57401;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  background-color: #fff;
+  border: none;
+  padding: 0.7rem 2.4rem;
+  height: 3.5rem;
+  margin-right: 2rem;
+}
+
+#text-box,
+#login-button {
+  display: inline-block;
+}
+
 .line {
   background-color: #e77500;
   width: 100%;
@@ -25,7 +74,10 @@ a {
 }
 
 h1 {
-  margin: 5vh 5vw 5vh 5vw;
+  margin: 2rem 3rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .info-component {
@@ -34,7 +86,7 @@ h1 {
 
 .info-component p {
   font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 #info-section {
@@ -68,7 +120,7 @@ h1 {
 #sponsors-title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 .sponsors-component {
@@ -154,16 +206,42 @@ p {
   font-family: "princetonmontidsregular", Arial, sans-serif;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 810px) {
   #info-section {
     display: flex;
     flex-direction: column;
   }
   .info-component {
-    margin: 5vh 5vw 5vh 5vw;
+    margin: 5vh 10vw 5vh 10vw;
     min-width: 340px;
   }
   #what-is-orcid {
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 775px) {
+  #info-box {
+    width: 100%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  #text-box {
+    margin: 2.5rem 2.5rem 1rem;
+    text-align: center;
+  }
+  #login-button {
+    margin: 0 0 2.5rem;
+    box-shadow: 10px 10px #e57401;
+    padding: 0.7rem 2.4rem;
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #login-section {
+    overflow: auto;
+    padding: 2rem 2rem 2rem 3rem;
   }
 }
