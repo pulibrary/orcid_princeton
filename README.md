@@ -68,8 +68,14 @@ To stop database services:
 2. Run in browser: `RUN_IN_BROWSER=true bundle exec rspec spec`
 
 ### Starting the development server
-1. `bundle exec foreman start`
-2. Access application at [http://localhost:3000/](http://localhost:3000/)
+1. `bundle exec rails server`
+2. `bundle exec ./bin/vite dev` (within another terminal)
+3. Access application at [http://localhost:3000/](http://localhost:3000/)
+
+#### Using `foreman`
+1. `gem install foreman`
+2. `bundle exec foreman start` (this runs the Rails server and Vite simultaneously)
+3. Access application at [http://localhost:3000/](http://localhost:3000/)
 
 ### ORCID Environment variables
 You need to have the following variables in your environment to connect with the ORCID sandbox.  Actual values are in lastpass under "ORCID Local API key".
