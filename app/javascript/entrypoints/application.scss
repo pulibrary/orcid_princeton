@@ -12,10 +12,15 @@ a {
   color: #f58025;
 }
 
+.page-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
 #login-section {
   padding: 2rem 2rem 2rem 3rem;
   background-size: cover;
-  height:370px;
+  height: 370px;
   background-repeat: no-repeat;
   min-width: 475px;
   display: flex;
@@ -56,7 +61,8 @@ a {
   margin-right: 2rem;
 }
 
-#text-box, #login-button {
+#text-box,
+#login-button {
   display: inline-block;
 }
 
@@ -108,7 +114,10 @@ h1 {
   margin-left: 10vw;
 }
 
-#help-title, .info-title {
+#help-title,
+.project-title,
+.info-title,
+#sponsors-title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1.8rem;
@@ -117,114 +126,149 @@ h1 {
 #help-section-user {
   padding: 2.5rem 0 2rem 0;
   background-color: #000;
+
   a {
     color: #fff;
   }
+
   #help-text p {
     color: white;
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
   }
+
   h2 {
     color: white;
   }
 }
 
-.navbar-princeton-logo{
-    margin-left: 1em;
-    text-decoration: none;
+.sponsors-component {
+  margin: 5vh 5vw 5vh 5vw;
 }
-.navbar-princeton-logo img{
-    height: 3em;
+
+.sponsors-component img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#sponsors-display {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  flex-direction: row;
+}
+
+#sponsors-section {
+  margin: 5vh 5vw 5vh 5vw;
+}
+
+.navbar-princeton-logo {
+  margin-left: 1em;
+  text-decoration: none;
+}
+
+.navbar-princeton-logo img {
+  height: 3em;
 }
 
 .navbar-logo {
-    margin-left: 1em;
+  margin-left: 1em;
 }
 
 .user-info {
-    float: right;
-    margin-right: 1em;
+  float: right;
+  margin-right: 1em;
 }
 
 button.log-in-orcid {
-    padding: 0.5em;
-    background-color: white;
-    color: black;
-    border-color: black;
-    margin: 1em;
-    border-radius: 0.5em;
+  padding: 0.5em;
+  background-color: white;
+  color: black;
+  border-color: black;
+  margin: 1em;
+  border-radius: 0.5em;
 }
-  
+
 /* Add this to align vertically */
-button > img,
-button > span {
-vertical-align: middle;
+button>img,
+button>span {
+  vertical-align: middle;
 }
 
 #banner {
+  text-align: center;
+  background-color: #000000;
+  padding: 20px 0px 10px 0px;
+  border-bottom: #f58025 solid 2px;
+  color: #f58025;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
+
+.full_orcid_display img {
+  width: 2em
+}
+
+@font-face {
+  font-family: 'princetonmontidsregular';
+  src: url('/fonts/princmonds-webfont.woff2') format('woff2'),
+    url('/fonts/princmonds-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+p {
+  font-family: 'princetonmontidsregular', Arial, sans-serif;
+}
+
+@media (max-width: 810px) {
+  #info-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-component {
+    margin: 5vh 10vw 5vh 10vw;
+    min-width: 340px;
+  }
+
+  #what-is-orcid {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 775px) {
+  #info-box {
+    width: 100%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #text-box {
+    margin: 2.5rem 2.5rem 1rem;
     text-align: center;
-    background-color: #000000;
-    padding: 20px 0px 10px 0px;
-    border-bottom: #f58025 solid 2px;
-    color: #f58025;
-    h1 {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    p {
-      font-size: 18px;
-    }
-  }
-  .full_orcid_display img{
-    width: 2em
-  }
-  @font-face {
-    font-family: 'princetonmontidsregular';
-    src: url('/fonts/princmonds-webfont.woff2') format('woff2'),
-         url('/fonts/princmonds-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
   }
 
-  p { font-family: 'princetonmontidsregular', Arial, sans-serif; }
-
-  @media (max-width: 810px) {
-    #info-section {
-      display: flex;
-      flex-direction: column;
-    }
-    .info-component {
-      margin: 5vh 10vw 5vh 10vw;
-      min-width: 340px;
-    }
-    #what-is-orcid {
-      margin-bottom: 0;
-    }
+  #login-button {
+    margin: 0 0 2.5rem;
+    box-shadow: 10px 10px #E57401;
+    padding: 0.7rem 2.4rem;
+    height: 3.5rem;
   }
+}
 
-  @media (max-width: 775px) {
-    #info-box {
-      width: 100%;
-      min-width: 300px;
-      display: flex;
-      flex-direction: column;
-    }
-    #text-box {
-      margin: 2.5rem 2.5rem 1rem;
-      text-align: center;
-    }
-    #login-button {
-      margin: 0 0 2.5rem;
-      box-shadow: 10px 10px #E57401;
-      padding: 0.7rem 2.4rem;
-      height: 3.5rem;
-    }
+@media (max-width: 480px) {
+  #login-section {
+    overflow: auto;
+    padding: 2rem 2rem 2rem 3rem;
   }
-
-  @media (max-width: 480px) {
-    #login-section {
-      overflow: auto;
-      padding: 2rem 2rem 2rem 3rem;
-    }
-  }
+}
