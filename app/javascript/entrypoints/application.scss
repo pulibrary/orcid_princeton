@@ -20,7 +20,7 @@ a {
 #login-section {
   padding: 2rem 2rem 2rem 3rem;
   background-size: cover;
-  height: 370px;
+  height:370px;
   background-repeat: no-repeat;
   min-width: 475px;
   display: flex;
@@ -50,7 +50,7 @@ a {
 }
 
 #login-button {
-  box-shadow: 10px 10px #e57401;
+  box-shadow: 10px 10px #E57401;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1.3rem;
@@ -61,8 +61,7 @@ a {
   margin-right: 2rem;
 }
 
-#text-box,
-#login-button {
+#text-box, #login-button {
   display: inline-block;
 }
 
@@ -114,10 +113,7 @@ h1 {
   margin-left: 10vw;
 }
 
-#help-title,
-.project-title,
-.info-title,
-#sponsors-title {
+#help-title, .project-title, .info-title, #sponsors-title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1.8rem;
@@ -239,9 +235,44 @@ p {
   }
 }
 
-@media (max-width: 480px) {
-  #login-section {
-    overflow: auto;
-    padding: 2rem 2rem 2rem 3rem;
+  p { font-family: 'princetonmontidsregular', Arial, sans-serif; }
+
+  @media (max-width: 810px) {
+    #info-section {
+      display: flex;
+      flex-direction: column;
+    }
+    .info-component {
+      margin: 5vh 10vw 5vh 10vw;
+      min-width: 340px;
+    }
+    #what-is-orcid {
+      margin-bottom: 0;
+    }
   }
-}
+
+  @media (max-width: 775px) {
+    #info-box {
+      width: 100%;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+    #text-box {
+      margin: 2.5rem 2.5rem 1rem;
+      text-align: center;
+    }
+    #login-button {
+      margin: 0 0 2.5rem;
+      box-shadow: 10px 10px #E57401;
+      padding: 0.7rem 2.4rem;
+      height: 3.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #login-section {
+      overflow: auto;
+      padding: 2rem 2rem 2rem 3rem;
+    }
+  }
