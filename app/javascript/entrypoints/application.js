@@ -22,7 +22,6 @@ import lux from 'lux-design-system';
 import 'lux-design-system/dist/style.css';
 import './application.scss';
 
-
 console.warn('Vite ⚡️ Rails');
 
 // If using a TypeScript entrypoint file:
@@ -44,8 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-window.log_plausible_cas_user_login = function() {
-  console.log("log_plausible_cas_user_login event logged");
-  plausible("Log in to CAS", { props: { test_property: "Example value" } });
-}
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
+window.log_plausible_cas_user_login = function () {
+  console.log('log_plausible_cas_user_login event logged');
+  plausible('Log in to CAS');
+};
+/* eslint-enable no-console */
+/* eslint-enable no-undef */
