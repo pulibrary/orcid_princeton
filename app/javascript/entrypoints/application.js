@@ -42,3 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
       .mount(elements[i]);
   }
 });
+
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
+window.log_plausible_cas_user_login = function () {
+  console.log('log_plausible_cas_user_login event logged');
+  plausible('Log in to CAS');
+};
+/* eslint-enable no-console */
+/* eslint-enable no-undef */
