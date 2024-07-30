@@ -88,6 +88,31 @@ a {
   font-size: 1.2rem;
 }
 
+#text-box-user {
+  width: 100%;
+  margin: 4rem 0 4rem 2rem;
+  color: white;
+  a {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
+    color: white;
+    font-weight: bold;
+  }
+  p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+  }
+}
+
+#info-box-user {
+  background-color: #000;
+  border: solid 1px #595959;
+  width: 550px;
+  color: #fff;
+  align-items: center;
+  max-width: 550px;
+}
+
 #login-button {
   box-shadow: 10px 10px #E57401;
   font-family: "Montserrat", sans-serif;
