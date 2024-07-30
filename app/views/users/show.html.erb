@@ -1,5 +1,7 @@
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
-  <h1 class="page-title">ORCiD@Princeton</h1>
+
+  <div class="user-page-content">
+  <h1 class="page-title">ORCID@Princeton</h1>
   <div class="welcome-section">
       <h2>Welcome, <%= @user.display_name %></h2>
 
@@ -20,7 +22,6 @@
       <% end %>
   </div>
 
-
 <%= render 'faqsection' %>
 
 <div id="help-section-user">
@@ -29,4 +30,8 @@
     <p>If you have questions about the value of having an ORCID iD or how it will be used at Princeton, please contact the <a href="mailto:prds@princeton.edu">Princeton Research Data Service</a>.</p>
   </div>
 </div>
+
+  </div>
+
 </div>
+
