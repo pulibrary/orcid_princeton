@@ -8,6 +8,10 @@ a {
   color: rgb(12, 7, 150);
 }
 
+.deployment-version a {
+  color: black;
+}
+
 #banner a {
   color: #f58025;
 }
@@ -59,8 +63,10 @@ a {
 #login-section {
   padding: 2rem 2rem 2rem 3rem;
   background-size: cover;
-  height: 370px;
+  height:370px;
+  background-image: url('~/images/info-section-banner-v3.jpg');
   background-repeat: no-repeat;
+  background-position: bottom;
   min-width: 475px;
   display: flex;
   flex-direction: column;

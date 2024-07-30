@@ -10,6 +10,8 @@
   <%= render 'tokenprompt' %>
 
 <!-- If the user has a valid token, show them their ORCID iD and tokens with expiration dates -->
+<p>ORCID iD, @user.valid_token, is connected to your NetID, @user.uid</p>
+<p>Your token grants Princeton access to read and update your ORCID record until @user.valid_token.expiration.strftime('%m/%d/%Y').</p>
 <% else %>
   <%= render @user %>
 <% end %>
