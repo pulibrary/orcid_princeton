@@ -9,7 +9,7 @@
           <p>Go to your <%= link_to "Profile Page", "/users/#{current_user.id}" %> to view your account.</p>
         </div>
       </div>
-    </div>  
+    </div>
   <% else %>
     <div id="login-section" style="background-image:url(<%=vite_asset_path 'images/info-section-banner-v3.jpg'%>);">
       <div id="info-box">
@@ -37,7 +37,7 @@
   <div id="help-section">
     <h2 class="help-contents" id="help-title">Need help?</h2>
     <div class="help-contents" id="help-text">
-      <p>If you have questions about the value of having an ORCID iD or how it will be used at Princeton, please contact the <a href="mailto:prds@princeton.edu">Princeton Research Data Service</a>.</p>
+      <p>If you have questions about the value of having an ORCID iD or how it will be used at Princeton, please contact the <a href="mailto:prds@princeton.edu" , :onclick => "log_plausible_contact_us ()">Princeton Research Data Service</a>.</p>
     </div>
   </div>
 </div>
