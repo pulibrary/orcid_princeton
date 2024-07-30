@@ -119,16 +119,20 @@ a {
   max-width: 550px;
 }
 
-#login-button {
+#login-button, .primary-button {
   box-shadow: 10px 10px #E57401;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 1.3rem;
-  background-color: #fff;
   border: none;
   padding: 0.7rem 2.4rem;
   height: 3.5rem;
   margin-right: 2rem;
+}
+
+
+#login-button {
+  background-color: #fff;
 }
 
 #text-box,
@@ -159,9 +163,10 @@ h1 {
   font-size: 1rem;
 }
 
-#info-section {
+#info-section, .info-section {
   display: flex;
   flex-direction: row;
+  margin-bottom: 1rem;
 }
 
 #help-section {
@@ -258,11 +263,11 @@ h1 {
 
 button.log-in-orcid {
   padding: 0.5em;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   border-color: black;
   margin: 1em;
-  border-radius: 0.5em;
+  width: 20rem; 
 }
 
 /* Add this to align vertically */
@@ -304,8 +309,29 @@ p {
   font-family: 'princetonmontidsregular', Arial, sans-serif;
 }
 
+.welcome-section {
+  padding-left: 8rem;
+}
+
+.welcome-section h2 {
+  padding-top: 3rem;
+}
+
+.text-box {
+  width: 60%;
+  margin: 1rem 1.8rem 3rem 2rem;
+}
+
+a[target="_blank"]::after {
+  content: "";width: 11px;height: 11px;margin-left: 4px;background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");background-position: center;background-repeat: no-repeat;background-size: contain;display: inline-block;
+} 
+
+.orcid-connect .line {
+  width: 60%;
+}
+
 @media (max-width: 810px) {
-  #info-section {
+  #info-section, .info-section {
     display: flex;
     flex-direction: column;
   }
@@ -317,6 +343,10 @@ p {
 
   #what-is-orcid {
     margin-bottom: 0;
+  }
+
+  .orcid-connect .line {
+    width: 95%;
   }
 }
 
@@ -346,4 +376,18 @@ p {
     overflow: auto;
     padding: 2rem 2rem 2rem 3rem;
   }
+
+  .welcome-section {
+    padding-left: 3rem;
+
+  }
+
+  .welcome-section h2 {
+    padding-top: 1rem;
+  }
+
+  button.log-in-orcid {
+    width: 18rem; 
+  }
+  
 }
