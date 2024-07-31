@@ -43,7 +43,7 @@ group :development do
   gem "capistrano", "~> 3.18.0", require: false
   gem "capistrano-passenger", require: false
   gem "capistrano-rails", "~> 1.6", require: false
-  gem 'capistrano-yarn', require: false
+  gem "capistrano-yarn", require: false
   gem "pry-byebug"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
