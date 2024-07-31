@@ -1,10 +1,11 @@
 
+  <% token_prompt ||= "There is no ORCID iD associated with your NetID, #{current_user.uid}" %>
   <div id="minting_a_token_explanation">
   <div class="lux">
     <lux-icon-base width="30" height="30" icon-name="denied" icon-color="red">
       <lux-icon-denied></lux-icon-denied>
     </lux-icon-base>
-    <span>There is no ORCID iD associated with your NetID, <%= current_user.uid %></span>
+    <span><%= token_prompt %></span>
   </div>
   <div class="orcid-connect">
     <h2>Connect your ORCID iD </h2>

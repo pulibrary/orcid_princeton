@@ -32,6 +32,7 @@ describe "user experience from start to finish", type: :system, js: true do
       expect(page).to be_axe_clean
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508, :"best-practice")
 
+      expect(page).to have_content "There is no ORCID iD associated with your NetID"
       expect(page).to have_content "This button will take you to ORCID to sign and and will add Princeton University as a Trusted Organization."
       expect(page).to have_content "This will allow Princeton University to read your ORCID record and add information to it."
       expect(page).to have_button "Connect ORCID iD"
@@ -50,6 +51,7 @@ describe "user experience from start to finish", type: :system, js: true do
       login_as user
       visit "/users/#{user.id}"
       expect(page).to have_content "Your ORCID token has expired"
+      expect(page).not_to have_content "There is no ORCID iD associated with your NetID"
     end
   end
 
