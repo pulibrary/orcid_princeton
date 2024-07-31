@@ -48,7 +48,7 @@ class User < ApplicationRecord
 
   def revoke_active_tokens
     now = DateTime.now
-    tokens.where("expiration > ?", now).each do |token|
+    tokens.where("expiration > ?", now).find_each do |token|
       token.expiration = now
       token.save!
     end
