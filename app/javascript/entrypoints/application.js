@@ -49,5 +49,10 @@ window.log_plausible_cas_user_login = function () {
   console.log('log_plausible_cas_user_login event logged');
   plausible('Log in to CAS');
 };
+
+window.log_plausible_contact_us = function () {
+  console.log('log_plausible_contact_us event logged');
+  plausible('Contact Us');
+};
 /* eslint-enable no-console */
 /* eslint-enable no-undef */
