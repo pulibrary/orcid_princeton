@@ -62,6 +62,9 @@ a {
   --bs-accordion-border-color: #ccc;
   --bs-accordion-btn-focus-box-shadow: none;
   --bs-accordion-btn-icon-width: 25px;
+
+  --bs-accordion-btn-icon: url('~/images/plus-icon.png');
+  --bs-accordion-btn-active-icon: url('~/images/minus-icon.png');
 }
 
 .line-userpage {
