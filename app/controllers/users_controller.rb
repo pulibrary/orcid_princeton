@@ -10,6 +10,12 @@ class UsersController < ApplicationController
     render "errors/forbidden", status: :forbidden, formats: [:html] unless @my_page
   end
 
+  def orcid_revoke
+    user = User.find(params[:id])
+    user.revoke_active_tokens
+    redirect_to user_path(user)
+  end
+
   private
 
     # Use callbacks to share common setup or constraints between actions.
