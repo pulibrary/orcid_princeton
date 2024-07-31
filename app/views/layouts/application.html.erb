@@ -25,8 +25,12 @@
       Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
     -->
 
-    <%= render plausible_partial %>
-
+    <% if Rails.env.development? || Rails.env.staging? %>
+      <%= render 'shared/plausible_dev_staging' %>
+    <% elsif Rails.env.production? %> 
+      <%= render 'shared/plausible' %>
+    <% end %>
+  
     <!-- Montserrat font for site -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
