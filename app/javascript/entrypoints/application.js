@@ -56,8 +56,8 @@ window.log_plausible_contact_us = function () {
 };
 
 window.log_plausible_faq = function (section) {
-  console.log('log_plausible_faq event: ' + section + 'logged');
-  plausible('FAQ');
+  console.log(`log_plausible_faq event: ${section} logged`);
+  plausible('FAQ', { props: { section } });
 };
 /* eslint-enable no-console */
 /* eslint-enable no-undef */
