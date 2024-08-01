@@ -27,5 +27,6 @@ Rails.application.routes.draw do
     get "sign_in", to: "devise/sessions#new", as: :new_user_session
     get "sign_in", to: "users/omniauth_callbacks#passthru", as: :session
     get "sign_out", to: "devise/sessions#destroy", as: :destroy_user_session
+    post ":id/orcid_revoke", to: "users#orcid_revoke", as: :orcid_revoke
   end
 end
