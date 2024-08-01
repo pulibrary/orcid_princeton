@@ -55,6 +55,11 @@ window.log_plausible_contact_us = function () {
   console.log('log_plausible_contact_us event logged');
   plausible('Contact Us');
 };
+
+window.log_plausible_faq = function (section) {
+  console.log(`log_plausible_faq event: ${section} logged`);
+  plausible('FAQ', { props: { section } });
+};
 /* eslint-enable no-console */
 /* eslint-enable no-undef */
 /* eslint-enable func-names */
