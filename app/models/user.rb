@@ -45,4 +45,12 @@ class User < ApplicationRecord
     valid_tokens = tokens.reject(&:expired?)
     valid_tokens.first
   end
+
+  def revoke_active_tokens
+    now = DateTime.now
+    tokens.where("expiration > ?", now).find_each do |token|
+      token.expiration = now
+      token.save!
+    end
+  end
 end

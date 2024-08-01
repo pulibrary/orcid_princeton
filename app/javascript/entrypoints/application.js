@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
+/* eslint-disable func-names */
 window.log_plausible_cas_user_login = function () {
   console.log('log_plausible_cas_user_login event logged');
   plausible('Log in to CAS');
@@ -54,5 +55,26 @@ window.log_plausible_contact_us = function () {
   console.log('log_plausible_contact_us event logged');
   plausible('Contact Us');
 };
+
+window.log_plausible_faq = function (section) {
+  console.log(`log_plausible_faq event: ${section} logged`);
+  plausible('FAQ', { props: { section } });
+};
 /* eslint-enable no-console */
 /* eslint-enable no-undef */
+/* eslint-enable func-names */
+
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-alert */
+window.confirmOrcidRemove = function confirmOrcidRemove(id) {
+  const button = document.getElementById(id);
+  button.onclick = function confirmDialog(event) {
+    const remove = confirm('Are you sure you want to revoke Princeton access to your ORCiD profile?');
+    if (remove !== true) {
+      // cancel the button click
+      event.preventDefault();
+    }
+  };
+};
+/* eslint-enable no-restricted-globals */
+/* eslint-enable no-alert */

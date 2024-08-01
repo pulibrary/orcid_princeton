@@ -10,4 +10,11 @@
   <p>
   Your token grants Princeton access to read and update your ORCID record until <%= user.valid_token.expiration.strftime('%m/%d/%Y') %>.
   </p>
+  <%= form_with method: :post, url: orcid_revoke_path(user) do |form| %>
+    <button id="remove-orcid-tokens" class="btn btn-danger">Revoke Authentication</button>
+  <% end %>
 <% end %>
+
+<script type="module">
+  confirmOrcidRemove("remove-orcid-tokens");
+</script>

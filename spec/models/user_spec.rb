@@ -123,4 +123,14 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe "#revoke_active_tokens" do
+    let(:user) { FactoryBot.create(:user_with_orcid_and_token) }
+    it "expires all valid tokes" do
+      expect(user.valid_token).to_not be nil
+      user.revoke_active_tokens
+      user.reload
+      expect(user.valid_token).to be nil
+    end
+  end
 end
