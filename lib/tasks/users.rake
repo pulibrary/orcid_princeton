@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 namespace :users do
-  # Adds a fake token to emulate a linking to ORCiD within the application
+  desc "Adds a fake token to a user to emulate linking to ORCiD"
   task :fake_orcid_link, [:netid] => [:environment] do |_, args|
     netid = args[:netid]
     user = User.where(uid: netid).first

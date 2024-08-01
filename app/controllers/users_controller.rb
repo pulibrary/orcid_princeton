@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     render "errors/forbidden", status: :forbidden, formats: [:html] unless @my_page
   end
 
+  # POST /users/1/orcid_revoke
   def orcid_revoke
     user = User.find(params[:id])
     user.revoke_active_tokens
