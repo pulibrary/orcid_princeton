@@ -60,6 +60,11 @@ window.log_plausible_faq = function (section) {
   console.log(`log_plausible_faq event: ${section} logged`);
   plausible('FAQ', { props: { section } });
 };
+
+window.log_plausible_connect_orcid = function () {
+  console.log('log_plausible_connect_orcid event logged');
+  plausible('Connect ORCID');
+};
 /* eslint-enable no-console */
 /* eslint-enable no-undef */
 /* eslint-enable func-names */
