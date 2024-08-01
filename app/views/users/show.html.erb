@@ -1,26 +1,36 @@
-<h2>Welcome, <%= @user.display_name %></h2>
+<div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
 
-<!-- If the user doesn't have any tokens, prompt them to create one. -->
-<% if @user.tokens.empty? %>
-  <%= render 'tokenprompt' %>
+  <div class="user-page-content">
+  <h1 class="page-title">ORCID@Princeton</h1>
+  <div class="welcome-section">
+      <h2>Welcome, <%= @user.display_name %></h2>
 
-<!-- If all of the user's tokens are expired, let them know that and prompt them to create a new one -->
-<% elsif @user.tokens_expired? %>
-  <%= render 'tokensexpired' %>
-  <%= render 'tokenprompt' %>
+      <!-- If the user doesn't have any tokens, prompt them to create one. -->
+      <% if @user.tokens.empty? %>
+        <%= render 'tokenprompt' %>
+      
+      <!-- If all of the user's tokens are expired, let them know that and prompt them to create a new one -->
+      <% elsif @user.tokens_expired? %>
+        <%= render 'tokenprompt', token_prompt: "Your ORCID token has expired. Please click the button below to re-authorize Princeton University to access your ORCID record." %>
 
-<!-- If the user has a valid token, show them their ORCID iD and tokens with expiration dates -->
-<p>ORCID iD, @user.valid_token, is connected to your NetID, @user.uid</p>
-<p>Your token grants Princeton access to read and update your ORCID record until @user.valid_token.expiration.strftime('%m/%d/%Y').</p>
-<% else %>
-  <%= render @user %>
-<% end %>
+        <!-- If the user has a valid token, show them their ORCID iD and tokens with expiration dates -->
+      <p>ORCID iD, @user.valid_token, is connected to your NetID, @user.uid</p>
+      <p>Your token grants Princeton access to read and update your ORCID record until @user.valid_token.expiration.strftime('%m/%d/%Y').</p>
+      <% else %>
+        <%= render @user %>
+      <% end %>
+  </div>
 
 <%= render 'faqsection' %>
 
 <div id="help-section-user">
   <h2 class="help-contents" id="help-title">Need help?</h2>
   <div class="help-contents" id="help-text">
-    <p>If you have questions about the value of having an ORCID iD or how it will be used at Princeton, please contact the <a href="mailto:prds@princeton.edu">Princeton Research Data Service</a>.</p>
+    <p>If you have questions about the value of having an ORCID iD or how it will be used at Princeton, please contact the <a href="mailto:prds@princeton.edu" onclick="log_plausible_contact_us()">Princeton Research Data Service</a>.</p>
   </div>
 </div>
+
+  </div>
+
+</div>
+

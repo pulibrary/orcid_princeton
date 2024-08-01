@@ -16,14 +16,25 @@ a {
   color: #f58025;
 }
 
+.site-image {
+  background-image: url('~/images/info-section-banner-v3.jpg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  width: 100%;
+}
+
 .page-title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
+  margin: 1rem auto;
+  max-width: 1440px;
 }
 
 .faq-section {
   background-color: #F3F3F3;
-  padding: 2rem 20vw;
+  padding: 2rem 5vw;
+  margin-top: 1rem;
 }
 
 .accordion-body {
@@ -51,6 +62,9 @@ a {
   --bs-accordion-border-color: #ccc;
   --bs-accordion-btn-focus-box-shadow: none;
   --bs-accordion-btn-icon-width: 25px;
+
+  --bs-accordion-btn-icon: url('~/images/plus-icon.png');
+  --bs-accordion-btn-active-icon: url('~/images/minus-icon.png');
 }
 
 .line-userpage {
@@ -60,17 +74,22 @@ a {
   margin: 2vh 0;
 }
 
+.user-page-content {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #login-section {
   padding: 2rem 2rem 2rem 3rem;
-  background-size: cover;
   height:370px;
-  background-image: url('~/images/info-section-banner-v3.jpg');
-  background-repeat: no-repeat;
-  background-position: bottom;
   min-width: 475px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #info-box {
@@ -162,11 +181,16 @@ h1 {
 #info-section {
   display: flex;
   flex-direction: row;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #help-section {
   padding: 2.5rem 0 2rem 0;
   background-color: #F3F3F3;
+  max-width: 1440px;
+  margin: 0vh auto 5vh auto;
 }
 
 #help-text {
@@ -201,6 +225,8 @@ h1 {
 #help-section-user {
   padding: 2.5rem 0 2rem 0;
   background-color: #000;
+  max-width: 1440px;
+  margin: 1rem auto 0 auto;
 
   a {
     color: #fff;
@@ -225,7 +251,7 @@ h1 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 70%;
 }
 
 #sponsors-display {
@@ -235,7 +261,9 @@ h1 {
 }
 
 #sponsors-section {
-  margin: 5vh 5vw 5vh 5vw;
+  max-width: 1440px;
+  min-width: 710px;
+  margin: 1rem auto 0 auto;
 }
 
 .navbar-princeton-logo {
@@ -302,6 +330,27 @@ button>span {
 
 p {
   font-family: 'princetonmontidsregular', Arial, sans-serif;
+}
+
+.welcome-section {
+  padding-left: 8rem;
+}
+
+.welcome-section h2 {
+  padding-top: 3rem;
+}
+
+.text-box {
+  width: 60%;
+  margin: 1rem 1.8rem 3rem 2rem;
+}
+
+a[target="_blank"]::after {
+  content: "";width: 11px;height: 11px;margin-left: 4px;background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");background-position: center;background-repeat: no-repeat;background-size: contain;display: inline-block;
+} 
+
+.orcid-connect .line {
+  width: 60%;
 }
 
 @media (max-width: 810px) {

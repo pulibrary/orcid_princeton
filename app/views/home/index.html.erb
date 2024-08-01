@@ -1,25 +1,27 @@
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
-  <h1 class="page-title">ORCiD@Princeton</h1>
+  <h1 class="page-title">ORCID@Princeton</h1>
 
+  <div class="site-image">
   <% if current_user %>
-    <div id="login-section" style="background-image:url(<%=vite_asset_path 'images/info-section-banner-v3.jpg'%>);">
-      <div id="info-box-user">
-        <div id="text-box-user">
-          <p>Hello, <%= current_user.given_name %>!</p>
-          <p>Go to your <%= link_to "Profile Page", "/users/#{current_user.id}" %> to view your account.</p>
-        </div>
-      </div>
-    </div>  
-  <% else %>
-    <div id="login-section" style="background-image:url(<%=vite_asset_path 'images/info-section-banner-v3.jpg'%>);">
-      <div id="info-box">
-        <div id="text-box">
-          <p>Connect your ORCID id to Princeton so that published works can be easily identified as belonging to all Princeton researchers.</p>
-        </div>
-        <button id="login-button">Log-in</button>
+  <div id="login-section">
+    <div id="info-box-user">
+      <div id="text-box-user">
+        <p>Hello, <%= current_user.given_name %>!</p>
+        <p>Go to your <%= link_to "Profile Page", "/users/#{current_user.id}" %> to view your account.</p>
       </div>
     </div>
+  </div>  
+  <% else %>
+  <div id="login-section">
+    <div id="info-box">
+      <div id="text-box">
+        <p>Connect your ORCID id to Princeton so that published works can be easily identified as belonging to all Princeton researchers.</p>
+      </div>
+      <%= button_to "Log-in", user_cas_omniauth_authorize_path, :id => "login-button", :onclick => "log_plausible_cas_user_login()", :method => :get %>
+    </div>
+  </div>
   <% end %>
+  </div>
 
   <div id="info-section">
     <div class="info-component" id="what-is-orcid">
@@ -37,7 +39,9 @@
   <div id="help-section">
     <h2 class="help-contents" id="help-title">Need help?</h2>
     <div class="help-contents" id="help-text">
-      <p>If you have questions about the value of having an ORCID iD or how it will be used at Princeton, please contact the <a href="mailto:prds@princeton.edu">Princeton Research Data Service</a>.</p>
+      <p>If you have questions about the value of having an ORCID iD or how it will be used at Princeton, please contact the
+        <a href="mailto:prds@princeton.edu" onclick="log_plausible_contact_us()">Princeton Research Data Service</a>.
+      </p>
     </div>
   </div>
 </div>
