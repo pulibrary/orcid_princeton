@@ -125,6 +125,10 @@ RSpec.describe User, type: :model do
   end
 
   describe "#revoke_active_tokens" do
+    #
+    # TODO: we should stub the API call to ORCiD that happen in the call
+    # to user.revoke_invalid_tokens
+    #
     let(:user) { FactoryBot.create(:user_with_orcid_and_token) }
     it "expires invalid tokes" do
       expect(user.valid_token).to_not be nil

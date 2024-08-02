@@ -11,6 +11,10 @@ describe "user show screen", type: :system, js: true do
     end
 
     it "it allows a user to revoke linking to ORCiD" do
+      #
+      # TODO: we should stub the API call to ORCiD that happens when the user clicks
+      # the "Check Authentication to ORCiD" button
+      #
       login_as user
       visit "/users/#{user.id}"
       # user has linked their account to ORCiD

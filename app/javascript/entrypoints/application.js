@@ -68,4 +68,3 @@ window.log_plausible_connect_orcid = function () {
 /* eslint-enable no-console */
 /* eslint-enable no-undef */
 /* eslint-enable func-names */
-
