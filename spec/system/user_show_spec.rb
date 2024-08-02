@@ -15,8 +15,7 @@ describe "user show screen", type: :system, js: true do
       visit "/users/#{user.id}"
       # user has linked their account to ORCiD
       expect(page).to have_content("https://orcid.org/#{user.orcid}")
-      click_on "Revoke Authentication"
-      page.driver.browser.switch_to.alert.accept
+      click_on "Check Authentication to ORCiD"
       # account is not linked anymore
       expect(page).to have_content("Connect your ORCID iD")
     end

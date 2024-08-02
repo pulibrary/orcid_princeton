@@ -158,6 +158,7 @@ GEM
       thor (~> 1.2)
       tins (~> 1.32)
     crass (1.0.6)
+    csv (3.3.0)
     database_cleaner-active_record (2.1.0)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
@@ -225,6 +226,10 @@ GEM
     health-monitor-rails (12.1.0)
       railties (>= 6.1)
     honeybadger (5.8.0)
+    httparty (0.22.0)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -531,6 +536,7 @@ DEPENDENCIES
   ffaker
   health-monitor-rails
   honeybadger
+  httparty
   isni
   jbuilder
   oauth2 (~> 2.0.x)

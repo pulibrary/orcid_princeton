@@ -69,17 +69,3 @@ window.log_plausible_connect_orcid = function () {
 /* eslint-enable no-undef */
 /* eslint-enable func-names */
 
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-alert */
-window.confirmOrcidRemove = function confirmOrcidRemove(id) {
-  const button = document.getElementById(id);
-  button.onclick = function confirmDialog(event) {
-    const remove = confirm('Are you sure you want to revoke Princeton access to your ORCiD profile?');
-    if (remove !== true) {
-      // cancel the button click
-      event.preventDefault();
-    }
-  };
-};
-/* eslint-enable no-restricted-globals */
-/* eslint-enable no-alert */

@@ -23,4 +23,20 @@ class Token < ApplicationRecord
   def expired?
     expiration < Time.zone.now
   end
+
+  # Checks is a token is still valid with ORCiD
+  # A token can become invalid if the user revokes it within ORCiD
+  def self.valid_in_orcid?(token, orcid)
+    url = "https://api.sandbox.orcid.org/v3.0/#{orcid}/record"
+    headers = {
+      "Accept" => "application/json",
+      "Authorization" => "Bearer #{token}"
+    }
+    response = HTTParty.get(url, headers:)
+    return true if response.code == 200
+
+    # Assume it's invalid for all other statuses.
+    # We could also look inside response.parsed_response for other errors if need to.
+    false
+  end
 end
