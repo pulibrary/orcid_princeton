@@ -46,11 +46,14 @@ class User < ApplicationRecord
     valid_tokens.first
   end
 
-  def revoke_active_tokens
+  # Revokes tokens that ORCiD reports as not valid anymore
+  def revoke_invalid_tokens
     now = DateTime.now
     tokens.where("expiration > ?", now).find_each do |token|
-      token.expiration = now
-      token.save!
+      if Token.valid_in_orcid?(token.token, orcid) == false
+        token.expiration = now
+        token.save!
+      end
     end
   end
 end

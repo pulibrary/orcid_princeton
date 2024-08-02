@@ -11,6 +11,7 @@ gem "bootsnap", require: false
 gem "ed25519"
 gem "health-monitor-rails"
 gem "honeybadger"
+gem "httparty"
 gem "isni"
 gem "jbuilder"
 gem "oauth2", "~> 2.0.x"
@@ -56,4 +57,5 @@ group :test do
   gem "coveralls_reborn", require: false
   gem "database_cleaner-active_record"
   gem "selenium-webdriver"
+  gem "webmock"
 end

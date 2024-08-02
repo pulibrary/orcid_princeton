@@ -10,4 +10,12 @@ namespace :users do
     user_token.save!
     puts "Added token #{token_value} to user #{netid}. Expiration: #{expiration}"
   end
+
+  desc "Checks if an ORCiD token is valid for a given ORCiD"
+  task :check_orcid_token, [:token, :orcid] => [:environment] do |_, args|
+    token = args[:token]
+    orcid = args[:orcid]
+    valid = Token.valid_in_orcid?(token, orcid)
+    puts "Token #{token} is valid for ORCiD #{orcid}: #{valid}"
+  end
 end
