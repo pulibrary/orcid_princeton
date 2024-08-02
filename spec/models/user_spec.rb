@@ -124,17 +124,52 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "#revoke_active_tokens" do
-    #
-    # TODO: we should stub the API call to ORCiD that happen in the call
-    # to user.revoke_invalid_tokens
-    #
-    let(:user) { FactoryBot.create(:user_with_orcid_and_token) }
-    it "expires invalid tokes" do
-      expect(user.valid_token).to_not be nil
-      user.revoke_invalid_tokens
-      user.reload
-      expect(user.valid_token).to be nil
+  describe "#revoke_invalid_tokens" do
+    context "when token has been revoked from ORCiD" do
+      let(:user) { FactoryBot.create(:user_with_orcid_and_token) }
+
+      before do
+        stub_request(:get, "https://api.sandbox.orcid.org/v3.0/#{user.orcid}/record").
+        with(
+          headers: {
+          'Accept'=>'application/json',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Authorization'=>"Bearer #{user.tokens.first.token}",
+          'User-Agent'=>'Ruby'
+          }).
+        to_return(status: 401, body: "", headers: {}) # HTTP 401 means that token has been revoked
+      end
+
+      it "it expires the invalid tokes" do
+        expect(user.valid_token).to_not be nil
+        user.revoke_invalid_tokens
+        user.reload
+        expect(user.valid_token).to be nil
+      end
+
+    end
+
+    context "when token is still valid in ORCiD" do
+      let(:user) { FactoryBot.create(:user_with_orcid_and_token) }
+
+      before do
+        stub_request(:get, "https://api.sandbox.orcid.org/v3.0/#{user.orcid}/record").
+        with(
+          headers: {
+          'Accept'=>'application/json',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Authorization'=>"Bearer #{user.tokens.first.token}",
+          'User-Agent'=>'Ruby'
+          }).
+        to_return(status: 200, body: "", headers: {}) # HTTP 200 means the token is still valid
+      end
+
+      it "preserves the token" do
+        expect(user.valid_token).to_not be nil
+        user.revoke_invalid_tokens
+        user.reload
+        expect(user.valid_token).to_not be nil
+      end
     end
   end
 end
