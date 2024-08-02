@@ -57,4 +57,5 @@ group :test do
   gem "coveralls_reborn", require: false
   gem "database_cleaner-active_record"
   gem "selenium-webdriver"
+  gem "webmock"
 end

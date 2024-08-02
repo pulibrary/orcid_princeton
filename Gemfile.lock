@@ -157,6 +157,9 @@ GEM
       term-ansicolor (~> 1.7)
       thor (~> 1.2)
       tins (~> 1.32)
+    crack (1.0.0)
+      bigdecimal
+      rexml
     crass (1.0.6)
     csv (3.3.0)
     database_cleaner-active_record (2.1.0)
@@ -222,6 +225,7 @@ GEM
     ffaker (2.23.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hashdiff (1.1.1)
     hashie (5.0.0)
     health-monitor-rails (12.1.0)
       railties (>= 6.1)
@@ -500,6 +504,10 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
+    webmock (3.23.1)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
     webrick (1.8.1)
     websocket (1.2.10)
     websocket-driver (0.7.6)
@@ -556,6 +564,7 @@ DEPENDENCIES
   vite_rails
   vite_ruby
   web-console
+  webmock
 
 RUBY VERSION
    ruby 3.2.5p208
