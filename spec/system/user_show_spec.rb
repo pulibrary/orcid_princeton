@@ -6,15 +6,16 @@ describe "user show screen", type: :system, js: true do
     let(:user) { FactoryBot.create :user_with_orcid_and_token }
 
     before do
-      stub_request(:get, "https://api.sandbox.orcid.org/v3.0/#{user.orcid}/record").
-      with(
+      stub_request(:get, "https://api.sandbox.orcid.org/v3.0/#{user.orcid}/record")
+        .with(
         headers: {
-        'Accept'=>'application/json',
-        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-        'Authorization'=>"Bearer #{user.tokens.first.token}",
-        'User-Agent'=>'Ruby'
-        }).
-      to_return(status: 401, body: "", headers: {}) # HTTP 401 means the token is not valid anymore
+          "Accept" => "application/json",
+          "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+          "Authorization" => "Bearer #{user.tokens.first.token}",
+          "User-Agent" => "Ruby"
+        }
+      )
+        .to_return(status: 401, body: "", headers: {}) # HTTP 401 means the token is not valid anymore
     end
 
     it "shows the user's account information" do
