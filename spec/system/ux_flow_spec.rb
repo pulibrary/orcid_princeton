@@ -60,6 +60,7 @@ describe "user experience from start to finish", type: :system, js: true do
     it "displays the token with an expiration date" do
       login_as user
       visit "/users/#{user.id}"
+      expect(page).to have_content "is connected to your NetID"
       expect(page).to have_content "grants Princeton access to read and update your ORCID record"
     end
   end

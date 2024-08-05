@@ -13,13 +13,8 @@
       <% elsif @user.tokens_expired? %>
         <%= render 'tokenprompt', token_prompt: "Your ORCID token has expired. Please click the button below to re-authorize Princeton University to access your ORCID record." %>
 
-        <!-- If the user has a valid token, show them their ORCID iD and tokens with expiration dates -->
-        <p>ORCID iD, <%= @user.valid_token %>, is connected to your NetID, <%= @user.uid %></p>
-        <p>Your token grants Princeton access to read and update your ORCID record until <%=@user.valid_token.expiration.strftime('%m/%d/%Y')%>.</p>
+      <!-- If the user has a valid token, show them their ORCID iD and tokens with expiration dates -->
       <% else %>
-        <!-- TESTING THESE VALUES IN STAGING: DO NOT PUSH TO MAIN -->
-        <p>ORCID iD, <%= @user.valid_token %>, is connected to your NetID, <%= @user.uid %></p>
-        <p>Your token grants Princeton access to read and update your ORCID record until <%=@user.valid_token.expiration.strftime('%m/%d/%Y')%>.</p>
         <%= render @user %>
       <% end %>
   </div>
