@@ -8,14 +8,12 @@
       <!-- If the user doesn't have any tokens, prompt them to create one. -->
       <% if @user.tokens.empty? %>
         <%= render 'tokenprompt' %>
-      
+
       <!-- If all of the user's tokens are expired, let them know that and prompt them to create a new one -->
       <% elsif @user.tokens_expired? %>
         <%= render 'tokenprompt', token_prompt: "Your ORCID token has expired. Please click the button below to re-authorize Princeton University to access your ORCID record." %>
 
-        <!-- If the user has a valid token, show them their ORCID iD and tokens with expiration dates -->
-      <p>ORCID iD, @user.valid_token, is connected to your NetID, @user.uid</p>
-      <p>Your token grants Princeton access to read and update your ORCID record until @user.valid_token.expiration.strftime('%m/%d/%Y').</p>
+      <!-- If the user has a valid token, show them their ORCID iD and tokens with expiration dates -->
       <% else %>
         <%= render @user %>
       <% end %>
@@ -33,4 +31,3 @@
   </div>
 
 </div>
-
