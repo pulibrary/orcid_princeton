@@ -27,7 +27,7 @@ class Token < ApplicationRecord
   # Checks is a token is still valid with ORCiD
   # A token can become invalid if the user revokes it within ORCiD
   def self.valid_in_orcid?(token, orcid)
-    url = "https://api.sandbox.orcid.org/v3.0/#{orcid}/record"
+    url = "#{Rails.application.config.orcid[:url]}/#{orcid}/record"
     headers = {
       "Accept" => "application/json",
       "Authorization" => "Bearer #{token}"

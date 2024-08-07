@@ -1,0 +1,14 @@
+sandbox: &sandbox
+  url: https://api.sandbox.orcid.org/v3.0
+
+development:
+  <<: *sandbox
+
+test:
+  <<: *sandbox
+
+staging:
+  <<: *sandbox
+
+production:
+  url: https://api.orcid.org/v3.0
