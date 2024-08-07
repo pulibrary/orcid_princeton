@@ -320,16 +320,8 @@ button>span {
   width: 2em
 }
 
-@font-face {
-  font-family: 'princetonmontidsregular';
-  src: url('/fonts/princmonds-webfont.woff2') format('woff2'),
-    url('/fonts/princmonds-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 p {
-  font-family: 'princetonmontidsregular', Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .welcome-section {
