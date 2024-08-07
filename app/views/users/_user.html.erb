@@ -8,7 +8,7 @@
 
 <% if user.valid_token %>
   <p>
-    ORCID iD, <%= user.valid_token %>, is connected to your NetID, <%= user.uid %>
+    Your ORCID iD is connected to your NetID, <%= user.uid %>
   </p>
   <p>
     Your token grants Princeton access to read and update your ORCID record until <%= user.valid_token.expiration.strftime('%m/%d/%Y') %>.
