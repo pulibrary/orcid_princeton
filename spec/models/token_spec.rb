@@ -40,4 +40,31 @@ RSpec.describe Token, type: :model do
       end
     end
   end # context "#expired?"
+
+  describe "#valid_in_orcid?" do
+    it "calls out to the api to validate the request" do
+      stub_request(:get, "https://api.sandbox.orcid.org/v3.0/#{user.orcid}/record").to_return(status: 200, body: "", headers: {})
+      token = described_class.create_from_omniauth(credentials, user)
+      expect(Token.valid_in_orcid?(token, user.orcid)).to eq(true)
+
+      stub_request(:get, "https://api.sandbox.orcid.org/v3.0/#{user.orcid}/record").to_return(status: 401, body: "", headers: {})
+      expect(Token.valid_in_orcid?(token, user.orcid)).to eq(false)
+      expect(a_request(:get, "https://api.sandbox.orcid.org/v3.0/#{user.orcid}/record")).to have_been_made.twice
+    end
+
+    context "the url is configured differently" do
+      it "calls out to the api to validate the request" do
+        orig_url = Rails.application.config.orcid[:url]
+        Rails.application.config.orcid[:url] = "https://api.orcid.org/v3.0"
+        stub_request(:get, "https://api.orcid.org/v3.0/#{user.orcid}/record").to_return(status: 200, body: "", headers: {})
+        token = described_class.create_from_omniauth(credentials, user)
+        expect(Token.valid_in_orcid?(token, user.orcid)).to eq(true)
+
+        stub_request(:get, "https://api.orcid.org/v3.0/#{user.orcid}/record").to_return(status: 401, body: "", headers: {})
+        expect(Token.valid_in_orcid?(token, user.orcid)).to eq(false)
+        expect(a_request(:get, "https://api.orcid.org/v3.0/#{user.orcid}/record")).to have_been_made.twice
+        Rails.application.config.orcid[:url] = orig_url
+      end
+    end
+  end
 end
