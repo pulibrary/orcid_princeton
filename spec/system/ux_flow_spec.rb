@@ -2,6 +2,18 @@
 require "rails_helper"
 
 describe "user experience from start to finish", type: :system, js: true do
+  before do
+    stub_request(:get, "https://api.orcid.org/v3.0/apiStatus")
+      .with(
+      headers: {
+        "Accept" => "*/*",
+        "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+        "Host" => "api.orcid.org",
+        "User-Agent" => "Ruby"
+      }
+    )
+      .to_return(status: 200, body: '{"tomcatUp":true,"dbConnectionOk":true,"readOnlyDbConnectionOk":true,"overallOk":true}', headers: {})
+end
   context "a user without an orcid on file" do
     let(:user) { FactoryBot.create :user }
     let(:user2) { FactoryBot.create :user }
