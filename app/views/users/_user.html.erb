@@ -6,7 +6,7 @@
   </p>
 </div>
 
-<% if user.valid_token %>
+<% if user.valid_token && orcid_available? %>
   <p>
     Your ORCID iD is connected to your NetID, <%= user.uid %>
   </p>
