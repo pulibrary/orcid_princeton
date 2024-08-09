@@ -46,6 +46,11 @@
     <%= render partial: 'shared/banner' %>
     <%= render partial: 'shared/header' %>
     <main class="container-0">
+
+    <% unless orcid_available? %>
+        <%= render 'shared/orcid_message' %>
+      <% end %>
+      
       <% if flash[:notice] %>
         <div class="row">
           <div class="col">
