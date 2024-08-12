@@ -86,6 +86,11 @@ export ORCID_CLIENT_SECRET="xxx"
 
 RDSS uses the same [release and deployment process](https://github.com/pulibrary/rdss-handbook/blob/main/release_process.md) for all projects.
 
+## Monitoring
+You can view the ORCID [Honeybadger Uptime check](https://app.honeybadger.io/projects/114910/sites/e8dbf0b6-00b3-4b71-afb2-5ce88138a9a6). Currently it checks every minute and will report downtime when two checks fail in a row (i.e. we should know within 2 minutes).
+
+To be notified of downtime enable notifications in Honeybadger under: Settings + Alerts & Integrtions + email (Edit). Enable notifications for "Uptime Events" for "ORCID Production". Notice that email notifications settings are *per project*.
+
 ## ORCID Branding
 
 In compliance with ORCID's [general brand guidance](https://info.orcid.org/brand-guidelines/#h-general-brand-guidance) around capitalization of the ORCID organization name and ORCID identifier information, we use the following written style to refer to ORCID and ORCID identifiers:
