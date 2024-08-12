@@ -12,14 +12,10 @@ require "rails_helper"
 #   end
 # end
 RSpec.describe BannerHelper, type: :helper do
-
-    describe "#orcid_available?" do
-
-    # ORCID API request is stubbed in RailsHelper 
-    
+  describe "#orcid_available?" do
+    # ORCID API request is stubbed in RailsHelper
     it "returns true if the ORCID API is available" do
-        expect(self.orcid_available?).to eq(true)
+      expect(orcid_available?).to eq(true)
     end
   end
-
 end

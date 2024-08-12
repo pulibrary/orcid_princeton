@@ -104,6 +104,6 @@ RSpec.configure do |config|
         "User-Agent" => "Ruby"
       }
     )
-    .to_return(status: 200, body: '{"tomcatUp":true,"dbConnectionOk":true,"readOnlyDbConnectionOk":true,"overallOk":true}', headers: {})
+      .to_return(status: 200, body: '{"tomcatUp":true,"dbConnectionOk":true,"readOnlyDbConnectionOk":true,"overallOk":true}', headers: {})
   end
 end
