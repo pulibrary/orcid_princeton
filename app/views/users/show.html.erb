@@ -6,17 +6,18 @@
       <h2>Welcome, <%= @user.display_name %></h2>
 
       <!-- If the user doesn't have any tokens, prompt them to create one. -->
-      <% if @user.tokens.empty? %>
+      <% if @user.tokens.empty? && orcid_available? %>
         <%= render 'tokenprompt' %>
 
       <!-- If all of the user's tokens are expired, let them know that and prompt them to create a new one -->
-      <% elsif @user.tokens_expired? %>
+      <% elsif @user.tokens_expired? && orcid_available? %>
         <%= render 'tokenprompt', token_prompt: "Your ORCID token has expired. Please click the button below to re-authorize Princeton University to access your ORCID record." %>
 
       <!-- If the user has a valid token, show them their ORCID iD and tokens with expiration dates -->
       <% else %>
         <%= render @user %>
       <% end %>
+
   </div>
 
 <%= render 'faqsection' %>

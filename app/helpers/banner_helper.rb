@@ -3,6 +3,10 @@
 require "yaml"
 
 module BannerHelper
+  def orcid_available?
+    @available ||= HealthMonitor.check[:results].find { |service| service[:name] == "OrcidApiStatus" }[:status] == "OK"
+  end
+
   # rubocop:disable Rails/ContentTag
   def banner_content
     @yaml_data = Rails.configuration.banner
