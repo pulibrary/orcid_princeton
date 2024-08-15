@@ -1,0 +1,5 @@
+<div id="sign-in-page">
+  <h2 class="info-title">Log in to ORCID@Princeton</h2>
+  <%= button_to "Log-in", user_cas_omniauth_authorize_path, :id => "login-button-black", :type => 'submit', :onclick => "log_plausible_cas_user_login()", :method => :post %>
+  <div class="line"></div>
+</div>
