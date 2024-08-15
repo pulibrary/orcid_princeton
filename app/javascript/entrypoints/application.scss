@@ -164,9 +164,28 @@ a {
   margin-right: 2rem;
 }
 
+#login-button-black {
+  box-shadow: 10px 10px #E57401;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  padding: 0.7rem 2.4rem;
+  height: 3.5rem;
+  margin: 3rem 2rem;
+}
+
 #text-box,
 #login-button {
   display: inline-block;
+}
+
+#sign-in-page {
+  max-width: 1440px;
+  min-width: 710px;
+  margin: 1rem auto 0 auto;
 }
 
 .line {
