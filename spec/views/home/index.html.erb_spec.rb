@@ -2,7 +2,6 @@
 require "rails_helper"
 
 RSpec.feature "home/index.html.erb", type: ["feature", "system"] do
-  pending "add some examples to (or delete) #{__FILE__}"
 
   describe "displays correct homepage message" do
     let(:user) { FactoryBot.create :user_with_orcid_and_token }
