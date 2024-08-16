@@ -25,7 +25,6 @@ require "factory_bot"
 FactoryBot.find_definitions
 
 RSpec.configure do |config|
-
   ##
   # Use WebMock to mock network connections. To temporarily re-enable network
   # connections within tests, toggle the WebMock.disable_net_connect! /
