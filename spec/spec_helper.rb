@@ -116,4 +116,6 @@ RSpec.configure do |config|
 
   # FactoryBot
   config.include FactoryBot::Syntax::Methods
+
+  config.infer_spec_type_from_file_location!
 end

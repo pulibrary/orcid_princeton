@@ -1,16 +1,19 @@
 # frozen_string_literal: true
 require "rails_helper"
 
-# Specs in this file have access to a helper object that includes
-# the UsersHelper. For example:
-#
-# describe UsersHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe UsersHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#full_orcid_display" do
+    include ViteRails::TagHelpers
+
+    user_without_orcid = User.create(uid: "abc")
+    user_with_orcid = FactoryBot.create(:user_with_orcid_and_token)
+
+    it "returns nothing if the user does not have an ORCID iD" do
+      expect(full_orcid_display(user_without_orcid.orcid)).to eq(nil)
+    end
+
+    it "returns an ORCID URL if the user has an ORCID iD" do
+      expect(full_orcid_display(user_with_orcid.orcid)).to include("<a href=\"https://orcid.org/0000-0015-0000-0088\">https://orcid.org/0000-0015-0000-0088</a>")
+    end
+  end
 end
