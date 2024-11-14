@@ -227,7 +227,7 @@ GEM
       activesupport (>= 6.1)
     hashdiff (1.1.1)
     hashie (5.0.0)
-    health-monitor-rails (12.1.0)
+    health-monitor-rails (12.4.0)
       railties (>= 6.1)
     honeybadger (5.8.0)
     httparty (0.22.0)
@@ -543,7 +543,7 @@ DEPENDENCIES
   ed25519
   factory_bot_rails
   ffaker
-  health-monitor-rails
+  health-monitor-rails (= 12.4.0)
   honeybadger
   httparty
   isni
