@@ -3,17 +3,21 @@ Rails.application.config.after_initialize do
   HealthMonitor.configure do |config|
     config.cache
 
-    config.add_custom_provider(OrcidApiStatus)
+    config.add_custom_provider(OrcidApiStatus).configure do |provider_config|
+      # set the orcid API check to not critical
+      provider_config.critical = false
+    end
 
-    # set the orcid API check to no critical
-    config.providers.last.configuration.critical = false
+    config.file_absence.configure do |file_config|
+      file_config.filename = "public/remove-from-nginx"
+    end
 
     # Make this health check available at /health
     config.path = :health
 
     config.error_callback = proc do |e|
       Rails.logger.error "Health check failed with: #{e.message}"
-      Honeybadger.notify(e)
+      Honeybadger.notify(e) unless e.is_a? HealthMonitor::Providers::FileAbsenceException
     end
   end
 end
