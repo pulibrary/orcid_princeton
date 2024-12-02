@@ -45,6 +45,12 @@ a {
   max-width: 1440px;
 }
 
+#landingpage-faq {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .faq-section {
   background-color: #F3F3F3;
   padding: 2rem 5vw;
@@ -221,15 +227,16 @@ h1 {
 
 #help-section {
   padding: 2.5rem 0 2rem 0;
-  background-color: #F3F3F3;
+  background-color: #000000;
   max-width: 1440px;
-  margin: 0vh auto 5vh auto;
+  margin: 5vh auto 5vh auto;
 }
 
 #help-text {
   padding-top: 0.9rem;
   width: 45vw;
   min-width: 220px;
+  color: #FFFFFF;
 }
 
 #help-text p {
@@ -238,14 +245,20 @@ h1 {
 }
 
 #help-text a {
-  color: #004D99;
+  color: #FFFFFF;
 }
 
 .help-contents {
   margin-left: 10vw;
 }
 
-#help-title,
+#help-title {
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
 .project-title,
 .info-title,
 #sponsors-title,
