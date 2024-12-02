@@ -11,6 +11,12 @@ RSpec.feature "home/index.html.erb", type: ["feature", "system"] do
       expect(page).to have_content("Log-in")
     end
 
+    it "shows the faq sections" do
+      visit "/home/index" # root
+      click_on "What do I do if I have more than one ORCID iD?"
+      expect(page).to have_content("You can quickly and easily remove your duplicate account")
+    end
+
     it "displays already signed in message" do
       login_as user
       visit "/home/index" # root
