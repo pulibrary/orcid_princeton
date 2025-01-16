@@ -39,9 +39,9 @@ jobs:
       - run: sudo apt update && sudo apt install postgresql-client libmsgpack-dev
       - install_dependencies
       - persist_to_workspace:
-          root: &root '~/orcid_princeton'
-          paths: 
-            - '*'
+          root: &root "~/orcid_princeton"
+          paths:
+            - "*"
 
   rubocop:
     working_directory: *root
@@ -63,8 +63,12 @@ jobs:
           RAILS_ENV: test
     steps:
       - attach_workspace:
-          at: '~/orcid_princeton'
+          at: "~/orcid_princeton"
       - install_dependencies
+      - run:
+          name: Run prettier
+          command: yarn run prettier --check .
+
       - run:
           name: Run eslint
           # Quote directory globs so not they are expanded by shell,
@@ -83,7 +87,7 @@ jobs:
     steps:
       - attach_workspace:
           at: *root
-      - browser-tools/install-firefox    
+      - browser-tools/install-firefox
       - run:
           name: Wait for PostgreSQL
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
@@ -95,11 +99,10 @@ jobs:
           command: COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN bundle exec rspec --format progress
       - persist_to_workspace:
           root: *root
-          paths: 
-            - 'coverage'
+          paths:
+            - "coverage"
       - store_artifacts:
-          path:
-            /home/circleci/orcid_princeton/tmp/capybara
+          path: /home/circleci/orcid_princeton/tmp/capybara
 
 workflows:
   version: 2

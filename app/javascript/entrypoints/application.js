@@ -30,7 +30,10 @@ console.warn('Vite ⚡️ Rails');
 // If you want to use .jsx or .tsx, add the extension:
 //     <%= vite_javascript_tag 'application.jsx' %>
 
-console.warn('Visit the guide for more information: ', 'https://vite-ruby.netlify.app/guide/rails');
+console.warn(
+  'Visit the guide for more information: ',
+  'https://vite-ruby.netlify.app/guide/rails',
+);
 
 const app = createApp({});
 const createMyApp = () => createApp(app);
@@ -38,8 +41,7 @@ const createMyApp = () => createApp(app);
 document.addEventListener('DOMContentLoaded', () => {
   const elements = document.getElementsByClassName('lux');
   for (let i = 0; i < elements.length; i += 1) {
-    createMyApp().use(lux)
-      .mount(elements[i]);
+    createMyApp().use(lux).mount(elements[i]);
   }
 });
 

@@ -17,7 +17,7 @@ AllCops:
 
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
-  
+
 Layout/LineLength:
   Exclude:
     - "spec/system/data_migration/*"
