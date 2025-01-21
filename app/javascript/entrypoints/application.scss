@@ -1,8 +1,8 @@
 /* Import all of Bootstrap's CSS */
-@import "~bootstrap/scss/bootstrap.scss";
+@import '~bootstrap/scss/bootstrap.scss';
 
 /* Import the LUX styles */
-@import "lux-design-system/dist/style.css";
+@import 'lux-design-system/dist/style.css';
 
 a {
   color: rgb(12, 7, 150);
@@ -39,7 +39,7 @@ a {
 }
 
 .page-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   margin: 1rem auto;
   max-width: 1440px;
@@ -52,24 +52,24 @@ a {
 }
 
 .faq-section {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   padding: 2rem 5vw;
   margin-top: 1rem;
 }
 
 .accordion-body {
-  border-left: 2px solid #E77500;
+  border-left: 2px solid #e77500;
   margin: 1rem 0 1rem 2rem;
 }
 
 .accordion-body p {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   margin-bottom: 0;
 }
 
 .accordion-button {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
 }
 
@@ -88,7 +88,7 @@ a {
 }
 
 .line-userpage {
-  background-color: #E77500;
+  background-color: #e77500;
   width: 80%;
   height: 3px;
   margin: 2vh 0;
@@ -102,7 +102,7 @@ a {
 
 #login-section {
   padding: 2rem 2rem 2rem 3rem;
-  height:370px;
+  height: 370px;
   min-width: 475px;
   display: flex;
   flex-direction: column;
@@ -129,7 +129,7 @@ a {
 }
 
 #text-box p {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
 }
 
@@ -138,13 +138,13 @@ a {
   margin: 4rem 0 4rem 2rem;
   color: white;
   a {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.4rem;
     color: white;
     font-weight: bold;
   }
   p {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
   }
 }
@@ -159,8 +159,8 @@ a {
 }
 
 #login-button {
-  box-shadow: 10px 10px #E57401;
-  font-family: "Montserrat", sans-serif;
+  box-shadow: 10px 10px #e57401;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 1.3rem;
   background-color: #fff;
@@ -171,8 +171,8 @@ a {
 }
 
 #login-button-black {
-  box-shadow: 10px 10px #E57401;
-  font-family: "Montserrat", sans-serif;
+  box-shadow: 10px 10px #e57401;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 1.3rem;
   color: #fff;
@@ -195,7 +195,7 @@ a {
 }
 
 .line {
-  background-color: #E77500;
+  background-color: #e77500;
   width: 100%;
   height: 3px;
   margin: 2vh 0;
@@ -203,7 +203,7 @@ a {
 
 h1 {
   margin: 2rem 3rem;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
 }
@@ -213,7 +213,7 @@ h1 {
 }
 
 .info-component p {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
 }
 
@@ -236,16 +236,16 @@ h1 {
   padding-top: 0.9rem;
   width: 45vw;
   min-width: 220px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #help-text p {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
 }
 
 #help-text a {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .help-contents {
@@ -253,8 +253,8 @@ h1 {
 }
 
 #help-title {
-  color: #FFFFFF;
-  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 1.8rem;
 }
@@ -263,7 +263,7 @@ h1 {
 .info-title,
 #sponsors-title,
 #faq-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 1.8rem;
 }
@@ -280,7 +280,7 @@ h1 {
 
   #help-text p {
     color: white;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
   }
 
@@ -340,8 +340,8 @@ button.log-in-orcid {
 }
 
 /* Add this to align vertically */
-button>img,
-button>span {
+button > img,
+button > span {
   vertical-align: middle;
 }
 
@@ -363,11 +363,11 @@ button>span {
 }
 
 .full_orcid_display img {
-  width: 2em
+  width: 2em;
 }
 
 p {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .welcome-section {
@@ -383,9 +383,17 @@ p {
   margin: 1rem 1.8rem 3rem 2rem;
 }
 
-a[target="_blank"]::after {
-  content: "";width: 11px;height: 11px;margin-left: 4px;background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");background-position: center;background-repeat: no-repeat;background-size: contain;display: inline-block;
-} 
+a[target='_blank']::after {
+  content: '';
+  width: 11px;
+  height: 11px;
+  margin-left: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
 
 .orcid-connect .line {
   width: 60%;
@@ -422,7 +430,7 @@ a[target="_blank"]::after {
 
   #login-button {
     margin: 0 0 2.5rem;
-    box-shadow: 10px 10px #E57401;
+    box-shadow: 10px 10px #e57401;
     padding: 0.7rem 2.4rem;
     height: 3.5rem;
   }

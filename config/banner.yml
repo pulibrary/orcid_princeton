@@ -7,7 +7,7 @@ test:
   body: This is a <b>test</b> <a href="mailto:fake@princeton.edu">message.</a>
 staging:
   title: Welcome to ORCID@Princeton (Staging)!
-  body: This system is connected to the <a href="https://sandbox.orcid.org/">ORCID Sandbox</a>, NOT the real ORCID API. 
+  body: This system is connected to the <a href="https://sandbox.orcid.org/">ORCID Sandbox</a>, NOT the real ORCID API.
 # Intentionally leaving production off the list as they do not want any banner at the moment
 # production:
 #   title:
