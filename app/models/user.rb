@@ -32,7 +32,7 @@ class User < ApplicationRecord
     self.given_name = access_token.extra.givenname || access_token.uid # Harriet
     self.family_name = access_token.extra.sn || access_token.uid # Tubman
     self.display_name = access_token.extra.displayname || access_token.uid # "Harriet Tubman"
-    self.university_id = access_token.extra.universityid || access_token.universityid # "999999999"
+    self.university_id = access_token.extra.universityid # "999999999"
     save!
   end
 
