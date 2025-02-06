@@ -86,4 +86,17 @@ describe "user experience from start to finish", type: :system, js: true do
         .according_to(:wcag2a, :wcag2aa, :wcag21a, :wcag21aa, :section508, :"best-practice")
     end
   end
+
+  context "an administrator user" do
+    let(:user) { FactoryBot.create(:admin) }
+
+    it "walks the user through the process of entering an ORCID and creating a token" do
+      login_as(user)
+
+      visit "/"
+      click_on "Profile"
+
+      expect(page).to have_content "Welcome, #{user.display_name} (Administrator)"
+    end
+  end
 end

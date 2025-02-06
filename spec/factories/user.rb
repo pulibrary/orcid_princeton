@@ -7,6 +7,7 @@ FactoryBot.define do
     given_name { FFaker::Name.first_name }
     family_name { FFaker::Name.last_name }
     display_name { "#{given_name} #{family_name}" }
+    roles { [] }
 
     factory :user_with_orcid do
       # Follow the rules defined in https://support.orcid.org/hc/en-us/articles/360006897674-Structure-of-the-ORCID-Identifier
@@ -33,6 +34,12 @@ FactoryBot.define do
         # Pad the front of the number with zeros until it is 16 digits long
         # Format the ORCID identifier with dashes between each 4 digits
         number_array.join.rjust(16, "0").chars.each_slice(4).map(&:join).join("-")
+      end
+
+      factory :admin do
+        after(:create) do |user|
+          user.add_role(:admin)
+        end
       end
 
       factory :user_with_orcid_and_token do
