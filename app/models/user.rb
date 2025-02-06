@@ -15,8 +15,9 @@ class User < ApplicationRecord
 
   def self.from_cas(access_token)
     user = User.find_by(uid: access_token.uid)
+    # create and persist the new model
     if user.nil?
-      user = User.new(uid: access_token.uid)
+      user = User.new(uid: access_token.uid, university_id: access_token.universityid)
       user.update_with_cas(access_token)
     elsif user.provider.blank?
       user.update_with_cas(access_token)
@@ -31,6 +32,7 @@ class User < ApplicationRecord
     self.given_name = access_token.extra.givenname || access_token.uid # Harriet
     self.family_name = access_token.extra.sn || access_token.uid # Tubman
     self.display_name = access_token.extra.displayname || access_token.uid # "Harriet Tubman"
+    self.university_id = access_token.extra.universityid || access_token.universityid # "999999999"
     save!
   end
 
@@ -55,5 +57,11 @@ class User < ApplicationRecord
         token.save!
       end
     end
+  end
+
+  # The following does not work for cases where ActiveRecord dynamically creates method names
+  # alias_method :universityid, :university_id
+  def universityid
+    university_id
   end
 end

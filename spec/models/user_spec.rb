@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
 
   it "a uid is required" do
     user = User.create
-    expect(user.id).to be_nil
+    expect(user.persisted?).to be false
   end
 
   it "allows an orcid to be optional" do
@@ -36,12 +36,13 @@ RSpec.describe User, type: :model do
   end
 
   describe "#from_cas" do
+    let(:university_id) { "999999999" }
     let(:access_token_full_extras) do
       OmniAuth::AuthHash.new(provider: "cas", uid: "test123",
                              extra: OmniAuth::AuthHash.new(mail: "who@princeton.edu", user: "test123", authnContextClass: "mfa-duo",
                                                            campusid: "who.areyou", puresidentdepartmentnumber: "41999",
                                                            title: "The Developer, Library - Information Technology.", uid: "test123",
-                                                           universityid: "999999999", displayname: "Areyou, Who", pudisplayname: "Areyou, Who",
+                                                           universityid: university_id, displayname: "Areyou, Who", pudisplayname: "Areyou, Who",
                                                            edupersonaffiliation: "staff", givenname: "Who",
                                                            sn: "Areyou", department: "Library - Information Technology",
                                                            edupersonprincipalname: "who@princeton.edu",
@@ -81,6 +82,21 @@ RSpec.describe User, type: :model do
       expect(user.family_name).to eq("Person")
       expect(user.display_name).to eq("Person, Test")
       expect(user.email).to eq("test@princeton.edu")
+    end
+
+    it "creates a User with a `university_id`" do
+      user = described_class.from_cas(access_token_full_extras)
+
+      expect(user.persisted?).to be true
+      expect(user.university_id).to eq university_id
+    end
+  end
+
+  describe "#universityid" do
+    let(:user) { FactoryBot.create(:user_with_university_id) }
+
+    it "aliases for #university_id" do
+      expect(user.universityid).to eq(user.university_id)
     end
   end
 
