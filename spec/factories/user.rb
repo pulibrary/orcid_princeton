@@ -46,6 +46,10 @@ FactoryBot.define do
           FactoryBot.create(:expired_token, user:)
         end
       end
+
+      factory :user_with_university_id do
+        sequence(:university_id) { "999999999" }
+      end
     end
   end
 end
