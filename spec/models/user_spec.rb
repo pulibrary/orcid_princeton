@@ -189,4 +189,34 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe "#admin?" do
+    let(:user) { FactoryBot.create(:user) }
+    let(:admin) { FactoryBot.create(:admin) }
+
+    it "determines whether or not a User is an admin user" do
+      expect(user.admin?).to be false
+      expect(admin.admin?).to be true
+    end
+  end
+
+  describe ".create_default_users" do
+    let(:users) { described_class.all }
+
+    before do
+    end
+
+    it "creates configured User models with the necessary Roles" do
+      expect(users).to be_empty
+      described_class.create_default_users
+      expect(users).not_to be_empty
+
+      models = users.to_a
+      admins = models.select(&:admin?)
+      expect(admins.length).to eq(8)
+
+      non_admins = models.reject(&:admin?)
+      expect(non_admins).to be_empty
+    end
+  end
 end

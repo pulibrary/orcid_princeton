@@ -61,3 +61,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webmock"
 end
+
+gem "rolify", "~> 6.0"

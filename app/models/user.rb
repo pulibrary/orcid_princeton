@@ -2,6 +2,7 @@
 require "devise"
 
 class User < ApplicationRecord
+  rolify
   devise :omniauthable, omniauth_providers: [:cas, :orcid]
   has_many :tokens, dependent: :destroy
 
@@ -56,6 +57,22 @@ class User < ApplicationRecord
         token.expiration = now
         token.save!
       end
+    end
+  end
+
+  def admin?
+    has_role?(:admin)
+  end
+
+  def self.create_admin(uid)
+    user = User.find_or_create_by(uid:)
+    user.add_role(:admin) unless user.admin?
+    user
+  end
+
+  def self.create_default_users
+    Rails.configuration.admins.each do |uid|
+      create_admin(uid)
     end
   end
 

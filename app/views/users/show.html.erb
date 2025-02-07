@@ -3,7 +3,11 @@
   <div class="user-page-content">
   <h1 class="page-title">ORCID@Princeton</h1>
   <div class="welcome-section">
-      <h2>Welcome, <%= @user.display_name %></h2>
+      <% if @user.admin? %>
+        <h2>Welcome, <%= @user.display_name %> (Administrator)</h2>
+      <% else %>
+        <h2>Welcome, <%= @user.display_name %></h2>
+      <% end %>
 
       <!-- If the user doesn't have any tokens, prompt them to create one. -->
       <% if @user.tokens.empty? && orcid_available? %>

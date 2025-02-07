@@ -1,0 +1,13 @@
+---
+production: &default
+  - neggink # Neggin Keshavarzian
+  - kl37 # Kate Lynch
+  - bs3097 # Bess Sadler
+  - cac9 # Carolyn Cole
+  - rl3667 # Robert-Anthony Lee-Faison
+  - jh6441 # Jaymee Hyppolite
+  - hc8719 # Hector Correa
+  - jrg5 # James Griffin
+staging: *default
+development: *default
+test: *default

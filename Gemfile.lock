@@ -405,6 +405,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.3.9)
+    rolify (6.0.1)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.0)
@@ -565,6 +566,7 @@ DEPENDENCIES
   rack (= 2.2.8.1)
   rails (~> 7.1.0)
   rails-controller-testing
+  rolify (~> 6.0)
   rspec-rails
   selenium-webdriver
   simplecov

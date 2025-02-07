@@ -18,4 +18,21 @@ namespace :users do
     valid = Token.valid_in_orcid?(token, orcid)
     puts "Token #{token} is valid for ORCiD #{orcid}: #{valid}"
   end
+
+  desc "Creates user records for the users defined as the default administrators"
+  task setup_default: :environment do
+    User.create_default_users
+  end
+
+  desc "Updates users to make sure the admin role is set"
+  task update_roles: :environment do
+    User.create_default_users
+  end
+
+  desc "Deletes existing user data and recreates the defaults."
+  task reset_default: :environment do
+    Role.delete_all
+    User.delete_all
+    User.create_default_users
+  end
 end
