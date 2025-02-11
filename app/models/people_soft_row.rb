@@ -3,13 +3,17 @@
 class PeopleSoftRow
   attr_accessor :university_id, :row_type, :netid, :full_name, :orcid, :effective_from, :effective_until
 
-  def effective_from_formatted
-    return nil if effective_from.nil?
-    effective_from.strftime("%m/%d/%Y")
-  end
-
-  def effective_until_formatted
-    return nil if effective_until.nil?
-    effective_until.strftime("%m/%d/%Y")
+  class << self
+    def new_from_user(user)
+      row = PeopleSoftRow.new
+      row.university_id = user.university_id
+      row.row_type = "ORC"
+      row.netid = user.uid
+      row.full_name = user.display_name
+      row.orcid = user.orcid
+      row.effective_from = user.valid_token.created_at.strftime("%m/%d/%Y")
+      row.effective_until = user.valid_token.expiration.strftime("%m/%d/%Y")
+      row
+    end
   end
 end
