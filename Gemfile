@@ -27,6 +27,7 @@ gem "simplecov"
 gem "vite_rails"
 gem "vite_ruby"
 
+gem "net-ldap"
 gem "sul_orcid_client"
 
 # Single sign on
