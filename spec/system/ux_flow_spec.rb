@@ -92,11 +92,26 @@ describe "user experience from start to finish", type: :system, js: true do
 
     it "walks the user through the process of entering an ORCID and creating a token" do
       login_as(user)
-
       visit "/"
       click_on "Profile"
 
       expect(page).to have_content "Welcome, #{user.display_name} (Administrator)"
     end
+
+    it "allows ORCID Report download menu option" do
+      login_as user
+      visit "/"
+      page.find(:css, ".lux-submenu-toggle").click
+      byebug
+      expect(page).to have_link "ORCID Report"
+    end
+
+    # let(:file) { ORCID_portal_report_$DATE.csv }
+    # it "allows admin to download the report" do
+    #   visit "/"
+    #   page.find(:css, ".lux-submenu-toggle").click
+    #   click_on "ORCID Report"
+    #   get orcid_report_download_path(file)
+    # end
   end
 end
