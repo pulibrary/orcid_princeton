@@ -1,6 +1,6 @@
 <nav>
 <div class="lux">
-<% if current_user.admin? == true %>
+<% if current_user && current_user.admin? == true %>
     <lux-library-header app-name="ORCID@Princeton" abbr-name="LTR" theme="dark">
       <lux-menu-bar type="main-menu" :menu-items="[
         {name: 'Home', component: 'Home', href: '/'},

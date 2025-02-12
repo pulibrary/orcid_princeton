@@ -102,16 +102,18 @@ describe "user experience from start to finish", type: :system, js: true do
       login_as user
       visit "/"
       page.find(:css, ".lux-submenu-toggle").click
-      byebug
       expect(page).to have_link "ORCID Report"
     end
+  end
 
-    # let(:file) { ORCID_portal_report_$DATE.csv }
-    # it "allows admin to download the report" do
-    #   visit "/"
-    #   page.find(:css, ".lux-submenu-toggle").click
-    #   click_on "ORCID Report"
-    #   get orcid_report_download_path(file)
-    # end
+  context "a non-administrator user" do
+    let(:user) { FactoryBot.create(:user) }
+
+    it "does not allow the ORCID Report download menu option" do
+      login_as user
+      visit "/"
+      page.find(:css, ".lux-submenu-toggle").click
+      expect(page).not_to have_link "ORCID Report"
+    end
   end
 end
