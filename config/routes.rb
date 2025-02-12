@@ -25,7 +25,6 @@ Rails.application.routes.draw do
 
   get "orcid_report", to: "home#orcid_report", as: :orcid_report
 
-
   devise_scope :user do
     get "sign_in", to: "devise/sessions#new", as: :new_user_session
     get "sign_out", to: "devise/sessions#destroy", as: :destroy_user_session
