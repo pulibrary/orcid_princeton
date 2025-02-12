@@ -92,11 +92,28 @@ describe "user experience from start to finish", type: :system, js: true do
 
     it "walks the user through the process of entering an ORCID and creating a token" do
       login_as(user)
-
       visit "/"
       click_on "Profile"
 
       expect(page).to have_content "Welcome, #{user.display_name} (Administrator)"
+    end
+
+    it "allows ORCID Report download menu option" do
+      login_as user
+      visit "/"
+      page.find(:css, ".lux-submenu-toggle").click
+      expect(page).to have_link "ORCID Report"
+    end
+  end
+
+  context "a non-administrator user" do
+    let(:user) { FactoryBot.create(:user) }
+
+    it "does not allow the ORCID Report download menu option" do
+      login_as user
+      visit "/"
+      page.find(:css, ".lux-submenu-toggle").click
+      expect(page).not_to have_link "ORCID Report"
     end
   end
 end
