@@ -17,6 +17,7 @@ class OrcidsController < ApplicationController
     message = request.env["omniauth.error"].detailed_message
     flash[:notice] = "Omniauth linking failed #{message}.  Consider linking your account"
     honeybadger_context = {
+      name: current_user.display_name,
       current_user: current_user.id
     }
     Honeybadger.notify(message, context: honeybadger_context)
