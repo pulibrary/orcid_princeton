@@ -1,7 +1,7 @@
 <nav>
 <div class="lux">
 <% if current_user && current_user.admin? == true %>
-    <lux-library-header app-name="ORCID@Princeton" abbr-name="LTR" theme="dark">
+    <lux-library-header app-name="ORCID@Princeton" abbr-name="ORCID@Princeton" theme="dark">
       <lux-menu-bar type="main-menu" :menu-items="[
         {name: 'Home', component: 'Home', href: '/'},
           {name: '<%= current_user.display_name %>', component: 'Account', href: '/account/', children: [
@@ -13,7 +13,7 @@
       ></lux-menu-bar>
     </lux-library-header>
   <% elsif current_user %>
-  <lux-library-header app-name="ORCID@Princeton" abbr-name="LTR" theme="dark">
+  <lux-library-header app-name="ORCID@Princeton" abbr-name="ORCID@Princeton" theme="dark">
     <lux-menu-bar type="main-menu" :menu-items="[
       {name: 'Home', component: 'Home', href: '/'},
         {name: '<%= current_user.display_name %>', component: 'Account', href: '/account/', children: [
@@ -23,7 +23,7 @@
       ]"
     ></lux-menu-bar>
   <% else %>
-    <lux-library-header app-name="ORCID@Princeton" abbr-name="LTR" theme="dark">
+    <lux-library-header app-name="ORCID@Princeton" abbr-name="ORCID@Princeton" theme="dark">
     </lux-library-header>
   <% end %>
 </div>
