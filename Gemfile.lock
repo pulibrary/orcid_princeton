@@ -243,7 +243,9 @@ GEM
     hashie (5.0.0)
     health-monitor-rails (12.5.0)
       railties (>= 6.1)
-    honeybadger (5.8.0)
+    honeybadger (5.26.4)
+      logger
+      ostruct
     httparty (0.22.0)
       csv
       mini_mime (>= 1.0.0)
