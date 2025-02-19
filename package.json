@@ -17,7 +17,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 || ^17.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "path": "^0.12.7",
