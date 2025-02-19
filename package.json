@@ -24,7 +24,7 @@
     "prettier": "^3.4.2",
     "vite": "^6.0.0",
     "vite-plugin-full-reload": "^1.0.5",
-    "vite-plugin-ruby": "^5.0.0",
+    "vite-plugin-ruby": "^5.1.0",
     "vite-plugin-stimulus-hmr": "^3.0.0"
   }
 }
