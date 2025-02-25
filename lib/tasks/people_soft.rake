@@ -7,4 +7,10 @@ namespace :people_soft do
     report = PeopleSoftReport.new
     report.save_csv(filename)
   end
+
+  desc "Saves the CSV report in the correct location for the environment"
+  task cron_report: :environment do
+    report = PeopleSoftReport.new
+    report.save_csv(Rails.configuration.peoplesoft.output_location)
+  end
 end

@@ -27,6 +27,7 @@ gem "rbnacl"
 gem "simplecov"
 gem "vite_rails"
 gem "vite_ruby"
+gem "whenever"
 
 gem "net-ldap"
 gem "sul_orcid_client"
