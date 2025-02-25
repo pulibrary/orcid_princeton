@@ -1,0 +1,9 @@
+---
+development:
+  output_location: /tmp/ORCID_portal_report.csv
+test:
+  output_location: tmp/ORCID_portal_test_report.csv
+staging:
+  output_location: /mnt/peoplesoft/sr_orcid/test/ORCID_portal_report.csv
+production:
+  output_location: /mnt/peoplesoft/sr_orcid/prod/ORCID_portal_report.csv
