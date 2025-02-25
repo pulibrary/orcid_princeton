@@ -6,7 +6,7 @@ This application leverages ORCID services and ORCID iDs for researchers in the P
 [![Coverage Status](https://coveralls.io/repos/github/pulibrary/orcid_princeton/badge.svg?branch=main)](https://coveralls.io/github/pulibrary/orcid_princeton?branch=main)
 
 ## Dependencies
-* Ruby: 3.2.0
+* Ruby: 3.4.2
 * nodejs: 18.17.0
 * yarn: 1.22.19
 * Lando: 3.6.2
