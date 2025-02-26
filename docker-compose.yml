@@ -1,11 +1,12 @@
 services:
   postgres-db:
     image: postgres   
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "staging_db"
     ports:
-      - "8080:5432"
-
+      - "5432:5432"
 
   orcid:
     build: 
@@ -16,9 +17,10 @@ services:
     environment:
       - SECRET_KEY_BASE=1111111
       - APP_DB_HOST=postgres-db
+      - APP_DB=staging_db
+      - APP_DB_USERNAME=root
+      - APP_DB_PASSWORD=postgres     
       - RAILS_ENV=staging
-    volumes:
-      - .:/myapp
     ports:
       - "3000:3000"
     depends_on:
