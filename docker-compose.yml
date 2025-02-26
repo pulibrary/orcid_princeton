@@ -1,0 +1,25 @@
+services:
+  postgres-db:
+    image: postgres   
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - "8080:5432"
+
+
+  orcid:
+    build: 
+      context: .
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-${UID:-1000}}
+    environment:
+      - SECRET_KEY_BASE=1111111
+      - APP_DB_HOST=postgres-db
+      - RAILS_ENV=staging
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres-db
