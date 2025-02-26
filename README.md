@@ -7,8 +7,8 @@ This application leverages ORCID services and ORCID iDs for researchers in the P
 
 ## Dependencies
 * Ruby: 3.4.2
-* nodejs: 18.17.0
-* yarn: 1.22.19
+* nodejs: 22.14.0
+* yarn: 1.22.22
 * Lando: 3.6.2
 
 ## Updating the banner
