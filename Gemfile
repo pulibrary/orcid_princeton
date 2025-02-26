@@ -4,7 +4,7 @@ source "https://rubygems.org"
 ruby "3.4.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.0"
+gem "rails", "~> 8.0.0"
 
 gem "bcrypt_pbkdf"
 gem "bootsnap", require: false
