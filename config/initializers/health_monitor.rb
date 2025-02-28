@@ -9,7 +9,7 @@ Rails.application.config.after_initialize do
     end
 
     config.file_absence.configure do |file_config|
-      file_config.filename = "public/remove-from-nginx"
+      file_config.filename = "/opt/orcid_princeton/shared/remove-from-nginx"
     end
 
     # Make this health check available at /health
