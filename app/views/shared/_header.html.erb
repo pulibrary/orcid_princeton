@@ -4,7 +4,7 @@
     <lux-library-header app-name="ORCID@Princeton" abbr-name="ORCID@Princeton" theme="dark">
       <lux-menu-bar type="main-menu" :menu-items="[
         {name: 'Home', component: 'Home', href: '/'},
-          {name: '<%= current_user.display_name %>', component: 'Account', href: '/account/', children: [
+          {name: '<%= current_user.uid %>', component: 'Account', href: '/account/', children: [
             {name: 'Profile', component: 'Feedback', href: '<%= user_path(current_user )%> '},
             {name: 'ORCID Report', component: 'Feedback', href: '<%= orcid_report_path%> '},
             {name: 'Logout', component: 'Logout', href: '<%= main_app.destroy_user_session_path %> '}
@@ -16,7 +16,7 @@
   <lux-library-header app-name="ORCID@Princeton" abbr-name="ORCID@Princeton" theme="dark">
     <lux-menu-bar type="main-menu" :menu-items="[
       {name: 'Home', component: 'Home', href: '/'},
-        {name: '<%= current_user.display_name %>', component: 'Account', href: '/account/', children: [
+        {name: '<%= current_user.uid %>', component: 'Account', href: '/account/', children: [
           {name: 'Profile', component: 'Feedback', href: '<%= user_path(current_user )%> '},
           {name: 'Logout', component: 'Logout', href: '<%= main_app.destroy_user_session_path %> '}
         ]}
