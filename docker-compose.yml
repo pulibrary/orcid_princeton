@@ -1,0 +1,27 @@
+services:
+  postgres-db:
+    image: postgres   
+    environment:
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "production_db"
+    ports:
+      - "5432:5432"
+
+  orcid:
+    build: 
+      context: .
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-${UID:-1000}}
+    environment:
+      - SECRET_KEY_BASE=
+      - APP_DB_HOST=postgres-db
+      - APP_DB=production_db
+      - APP_DB_USERNAME=root
+      - APP_DB_PASSWORD=postgres     
+      - RAILS_ENV=production
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres-db
