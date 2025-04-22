@@ -78,12 +78,12 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     ast (2.4.2)
     attr_extras (7.1.0)
-    axe-core-api (4.10.2)
+    axe-core-api (4.10.3)
       dumb_delegator
       ostruct
       virtus
-    axe-core-rspec (4.10.2)
-      axe-core-api (= 4.10.2)
+    axe-core-rspec (4.10.3)
+      axe-core-api (= 4.10.3)
       dumb_delegator
       ostruct
       virtus
