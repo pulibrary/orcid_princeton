@@ -10,7 +10,7 @@ gem "bcrypt_pbkdf"
 gem "bootsnap", require: false
 gem "ed25519"
 # Pinning to 12.4.0 due to Rails 7.1 compatibility issue in 12.4.1
-gem "health-monitor-rails", "12.5.0"
+gem "health-monitor-rails", "12.9.0"
 gem "honeybadger"
 gem "httparty"
 gem "isni"

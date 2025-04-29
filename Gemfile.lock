@@ -149,7 +149,7 @@ GEM
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     concurrent-ruby (1.3.5)
-    connection_pool (2.5.2)
+    connection_pool (2.5.3)
     coveralls_reborn (0.28.0)
       simplecov (~> 0.22.0)
       term-ansicolor (~> 1.7)
@@ -235,7 +235,7 @@ GEM
       activesupport (>= 6.1)
     hashdiff (1.1.2)
     hashie (5.0.0)
-    health-monitor-rails (12.5.0)
+    health-monitor-rails (12.9.0)
       railties (>= 6.1)
     honeybadger (5.27.2)
       logger
@@ -576,7 +576,7 @@ DEPENDENCIES
   ed25519
   factory_bot_rails
   ffaker
-  health-monitor-rails (= 12.5.0)
+  health-monitor-rails (= 12.9.0)
   honeybadger
   httparty
   isni
