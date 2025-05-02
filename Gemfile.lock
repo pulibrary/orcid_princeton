@@ -237,7 +237,7 @@ GEM
     hashie (5.0.0)
     health-monitor-rails (12.9.0)
       railties (>= 6.1)
-    honeybadger (5.27.4)
+    honeybadger (5.28.0)
       logger
       ostruct
     httparty (0.23.1)
