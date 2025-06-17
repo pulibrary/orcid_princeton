@@ -1942,9 +1942,9 @@ lodash@^4.17.20:
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 lux-design-system@^6.0.0:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-6.3.1.tgz#52a6992c052f6c052157eb81ded1caa9d1e72290"
-  integrity sha512-xkQ/rqvyCFQ0OsX+qXYDZ1vrk6evLhhbc3JQtzePLKPKXAG8+KNeyfW/V73zT6u+F7CbXvecUipLGaBaFzTN4g==
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-6.4.0.tgz#4133474c728ad40e771cf1d5c34d9d249ac02cfc"
+  integrity sha512-SIq4ex3i7PXryPV6/RguKRU7AplDAnHtm/osmKV19iHrPQ5kIJInsQnnMltdpq1Kw8aDZhuB10jbKHX2czep/g==
   dependencies:
     core-js "^3.8.3"
     register-service-worker "^1.7.2"
@@ -2180,9 +2180,9 @@ postcss-value-parser@^4.2.0:
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
 postcss@^8.5.3:
-  version "8.5.5"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.5.tgz#04de7797f6911fb1c96550e96616d08681537ef3"
-  integrity sha512-d/jtm+rdNT8tpXuHY5MMtcbJFBkhXE6593XVR9UoGCH8jSFGci7jGvMGH5RYd5PBJW+00NZQt6gf7CbagJCrhg==
+  version "8.5.6"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.6.tgz#2825006615a619b4f62a9e7426cc120b349a8f3c"
+  integrity sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==
   dependencies:
     nanoid "^3.3.11"
     picocolors "^1.1.1"
