@@ -527,9 +527,9 @@
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
 "@types/lodash@^4.14.165":
-  version "4.17.17"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.17.tgz#fb85a04f47e9e4da888384feead0de05f7070355"
-  integrity sha512-RRVJ+J3J+WmyOTqnz3PiBLA501eKwXl2noseKOrNo/6+XEHjTAxO4xHvxQB6QuNm+s4WRbn6rSiap8+EA+ykFQ==
+  version "4.17.20"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.17.20.tgz#1ca77361d7363432d29f5e55950d9ec1e1c6ea93"
+  integrity sha512-H3MHACvFUEiujabxhaI/ImO6gUrd8oOurg7LQtS7mbwIXA/cUqWrvBsaeJ23aZEPk1TAYkurjfMbSELfoCXlGA==
 
 "@types/resize-observer-browser@^0.1.7":
   version "0.1.11"
@@ -1937,9 +1937,9 @@ lodash@^4.17.20:
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 lux-design-system@^6.0.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-6.4.0.tgz#4133474c728ad40e771cf1d5c34d9d249ac02cfc"
-  integrity sha512-SIq4ex3i7PXryPV6/RguKRU7AplDAnHtm/osmKV19iHrPQ5kIJInsQnnMltdpq1Kw8aDZhuB10jbKHX2czep/g==
+  version "6.8.2"
+  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-6.8.2.tgz#0748176005e08c4e80095e5a18a4ce58eac77ea4"
+  integrity sha512-J3WG/S9asHDfHyJX7WVQQz8kx8kFTfkQm8EacAZaWWgfnAoa1odviVmQ0oDiBquvz9icQC+eKY0cQk/sKs2AnQ==
   dependencies:
     core-js "^3.8.3"
     register-service-worker "^1.7.2"
