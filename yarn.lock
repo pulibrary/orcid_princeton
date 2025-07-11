@@ -1888,9 +1888,9 @@ lodash@^4.17.20:
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 lux-design-system@^6.0.0:
-  version "6.8.2"
-  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-6.8.2.tgz#0748176005e08c4e80095e5a18a4ce58eac77ea4"
-  integrity sha512-J3WG/S9asHDfHyJX7WVQQz8kx8kFTfkQm8EacAZaWWgfnAoa1odviVmQ0oDiBquvz9icQC+eKY0cQk/sKs2AnQ==
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-6.9.0.tgz#683eaba63cbd4078dd58ac097b58c6058b4006ec"
+  integrity sha512-0N5Xvo7DEZnc21pqDvtmhMkmOCsyHe/n0KLSydxRWsBQlCGF8woSMQVzhSjDTz847iKv65M413vfRt7606blyA==
   dependencies:
     core-js "^3.8.3"
     register-service-worker "^1.7.2"
